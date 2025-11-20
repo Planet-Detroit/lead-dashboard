@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import About from './components/About';
 import Dashboard from './components/Dashboard';
 import WaterSystemDirectory from './components/WaterSystemDirectory';
 import RankingTable from './components/RankingTable';
@@ -6,9 +7,10 @@ import UnknownMaterialsAlert from './components/UnknownMaterialsAlert';
 import './App.css';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('dashboard');
+  const [activeTab, setActiveTab] = useState('about');
 
   const tabs = [
+    { id: 'about', label: 'About', icon: 'ℹ️' },
     { id: 'dashboard', label: 'Overview', icon: '📊' },
     { id: 'directory', label: 'Search Systems', icon: '🔍' },
     { id: 'ranking', label: 'Rankings', icon: '📋' },
@@ -48,6 +50,14 @@ function App() {
           <h1>Michigan Lead Service Line Tracker</h1>
           <p>Comprehensive data on lead service line replacement across Michigan</p>
         </div>
+        <a 
+          href="https://donorbox.org/planet-detroit-drinking-water-reporting-fund" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="donate-button"
+        >
+          DONATE
+        </a>
       </header>
 
       <nav className="tab-navigation">
@@ -66,6 +76,7 @@ function App() {
       </nav>
 
       <main className="app-content">
+        {activeTab === 'about' && <About />}
         {activeTab === 'dashboard' && <Dashboard />}
         {activeTab === 'directory' && <WaterSystemDirectory />}
         {activeTab === 'ranking' && <RankingTable />}

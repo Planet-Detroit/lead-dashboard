@@ -24,12 +24,6 @@ function Dashboard() {
     { name: 'Non-Lead', value: 2026676, color: '#16a34a' }
   ];
   
-  const populationExposure = {
-    withLead: 3896820,
-    total: 7375073,
-    percentage: 52.8
-  };
-  
   useEffect(() => {
     const duration = 2000;
     const steps = 60;
@@ -55,7 +49,7 @@ function Dashboard() {
       <div className="card">
         <div className="stats-grid">
           <div className="stat-card red">
-            <div className="stat-label">TOTAL TO REPLACE</div>
+            <div className="stat-label">TOTAL TO IDENTIFY AND/OR REPLACE</div>
             <div className="stat-value">{totalToReplace.toLocaleString()}</div>
             <div className="stat-desc">service lines</div>
           </div>
@@ -140,24 +134,6 @@ function Dashboard() {
             </ResponsiveContainer>
             <div className="insight-box yellow">
               <strong>315,372 lines of unknown material</strong> still need testing
-            </div>
-          </div>
-        </div>
-        
-        <div className="population-card">
-          <h3>Population Exposure</h3>
-          <div className="population-grid">
-            <div>
-              <div className="population-value">{populationExposure.withLead.toLocaleString()}</div>
-              <div className="population-label">people served by systems with known lead lines</div>
-            </div>
-            <div>
-              <div className="population-value">{populationExposure.percentage}%</div>
-              <div className="population-label">of Michigan's total population</div>
-            </div>
-            <div>
-              <div className="population-value">1,383</div>
-              <div className="population-label">water systems tracked statewide</div>
             </div>
           </div>
         </div>

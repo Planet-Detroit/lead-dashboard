@@ -24,6 +24,26 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-bottom: 2px solid #e2e8f0;
   text-align: center;
+  position: relative;
+}
+
+/* Donate button in header */
+.donate-button {
+  position: absolute;
+  top: 40px;
+  right: 200px;
+  background-color: #EA5A39;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.3rem;
+  transition: background-color 0.2s ease;
+}
+
+.donate-button:hover {
+  background-color: #d14a2a;
 }
 
 /* Logo section in header */
@@ -155,6 +175,13 @@ body {
     padding: 30px 15px;
   }
   
+  .donate-button {
+    top: 15px;
+    right: 15px;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+  
   .header-logos {
     gap: 20px;
     margin-bottom: 15px;
@@ -193,6 +220,13 @@ body {
 }
 
 @media (max-width: 480px) {
+  .donate-button {
+    top: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+  
   .header-logo {
     height: 35px;
     max-width: 120px;

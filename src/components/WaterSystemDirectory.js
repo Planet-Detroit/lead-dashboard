@@ -6,7 +6,6 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortField, setSortField] = useState('leadLines');
   const [sortDirection, setSortDirection] = useState('desc');
-  const [filterExceedances, setFilterExceedances] = useState(false);
   const [filterLCRExceedances, setFilterLCRExceedances] = useState(false);
   
   const filteredAndSortedData = useMemo(() => {
@@ -15,18 +14,14 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
       system.pwsid.toLowerCase().includes(searchTerm.toLowerCase())
     );
     
-    if (filterExceedances) {
-      filtered = filtered.filter(system => system.exceedance && system.exceedance !== '' && system.exceedance !== '-');
-    }
-    
-    // Filter for LCR exceedances since 2018 (Michigan's LCR revision year)
+    // Filter for LCR exceedances since 2019 (when new sampling protocol was implemented after Michigan's 2018 LCR revision)
     if (filterLCRExceedances) {
       filtered = filtered.filter(system => {
         if (!system.exceedance || system.exceedance === '' || system.exceedance === '-') {
           return false;
         }
         const exceedanceYear = parseInt(system.exceedance, 10);
-        return exceedanceYear >= 2018;
+        return exceedanceYear >= 2019;
       });
     }
     
@@ -45,7 +40,7 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
     });
     
     return filtered;
-  }, [data, searchTerm, sortField, sortDirection, filterExceedances, filterLCRExceedances]);
+  }, [data, searchTerm, sortField, sortDirection, filterLCRExceedances]);
   
   const handleSort = (field) => {
     if (sortField === field) {
@@ -89,19 +84,10 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
           <label className="checkbox-label">
             <input
               type="checkbox"
-              checked={filterExceedances}
-              onChange={(e) => setFilterExceedances(e.target.checked)}
-            />
-            <span>Show only systems with lead action level exceedances</span>
-          </label>
-          
-          <label className="checkbox-label">
-            <input
-              type="checkbox"
               checked={filterLCRExceedances}
               onChange={(e) => setFilterLCRExceedances(e.target.checked)}
             />
-            <span>Show only systems with LCR exceedances since 2018</span>
+            <span>Show only systems that have had lead action level exceedances since the Michigan Lead and Copper Rule was revised in 2018</span>
           </label>
         </div>
         
