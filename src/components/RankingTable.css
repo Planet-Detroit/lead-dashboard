@@ -1,7 +1,7 @@
 /* RankingTable.css - Complete Styling */
 
 .ranking-container {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -27,7 +27,7 @@
   display: flex;
   gap: 12px;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   flex-wrap: wrap;
 }
 
@@ -55,60 +55,62 @@
   border-color: #2563eb;
 }
 
-/* Legend */
+/* Legend - Matching Directory Style */
 .table-legend {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 20px;
-  padding: 15px;
-  background: #f8fafc;
-  border-radius: 8px;
-  flex-wrap: wrap;
+  background: white;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
 }
 
-.legend-title {
+.table-legend h4 {
+  margin: 0 0 15px 0;
+  color: #1e293b;
+  font-size: 1rem;
   font-weight: 600;
-  color: #334155;
-  font-size: 0.95rem;
 }
 
-.legend-items {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
-.legend-item span {
-  font-size: 0.9rem;
-  color: #475569;
-}
-
-/* Status Indicators */
-.status-indicator {
-  width: 16px;
-  height: 16px;
+.legend-dot {
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  display: inline-block;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.status-indicator.no-lead {
-  background-color: #3b82f6;
+.legend-item .legend-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
 }
 
-.status-indicator.compliant {
-  background-color: #16a34a;
+.legend-item .legend-text strong {
+  font-size: 0.85rem;
+  color: #1e293b;
 }
 
-.status-indicator.not-compliant {
-  background-color: #dc2626;
+.legend-item .legend-text span {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.exceedance-legend .exceedance-icon {
+  font-size: 1.1rem;
+  width: 18px;
+  text-align: center;
 }
 
 /* Table Container */
@@ -116,14 +118,16 @@
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
 }
 
 /* Table */
 .ranking-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  min-width: 1100px;
 }
 
 .ranking-table thead {
@@ -132,13 +136,14 @@
 }
 
 .ranking-table th {
-  padding: 16px 12px;
+  padding: 14px 10px;
   text-align: left;
   font-weight: 600;
   color: #334155;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .ranking-table th.sortable {
@@ -157,11 +162,16 @@
 
 .ranking-table th.rank-col {
   text-align: center;
-  width: 80px;
+  width: 70px;
+}
+
+.ranking-table th.status-col {
+  text-align: left;
+  min-width: 200px;
 }
 
 .sort-indicator {
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-left: 4px;
   color: #2563eb;
 }
@@ -185,7 +195,7 @@
 }
 
 .ranking-table td {
-  padding: 16px 12px;
+  padding: 14px 10px;
   color: #334155;
 }
 
@@ -198,6 +208,10 @@
   text-align: center;
 }
 
+.ranking-table td.status-col {
+  text-align: left;
+}
+
 /* Rank Badge */
 .rank-badge {
   display: inline-flex;
@@ -205,70 +219,101 @@
   justify-content: center;
   min-width: 32px;
   height: 32px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
+  color: #64748b;
 }
 
 /* System Name */
 .system-name {
   font-weight: 500;
   color: #1e293b;
-  max-width: 350px;
+  max-width: 280px;
 }
 
 .exceedance-tag {
+  display: inline-block;
   margin-left: 8px;
-  font-size: 1rem;
+  padding: 2px 8px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: #991b1b;
   cursor: help;
 }
 
-/* Lead Count */
+/* Column-specific colors */
 .lead-count {
   font-weight: 600;
   color: #dc2626;
 }
 
-/* Progress Cell */
-.progress-cell {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+.gpcl-count {
+  font-weight: 600;
+  color: #ea580c;
 }
 
+.unknown-count {
+  font-weight: 600;
+  color: #ca8a04;
+}
+
+/* Progress Badge */
 .progress-badge {
-  padding: 6px 12px;
+  padding: 5px 10px;
   border-radius: 6px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   display: inline-block;
-  min-width: 60px;
+  min-width: 55px;
+  text-align: center;
+  border: 1px solid;
+}
+
+/* Status Cell */
+.status-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-text {
+  font-size: 0.8rem;
+  color: #475569;
+  white-space: nowrap;
+}
+
+/* Table Footer */
+.table-footer {
+  padding: 20px 25px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
   text-align: center;
 }
 
-.progress-badge.no-lead {
-  background-color: #dbeafe;
-  color: #1e40af;
-  border: 1px solid #3b82f6;
+.table-footer .results-count {
+  margin: 0 0 8px 0;
+  color: #1e293b;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
-.progress-badge.compliant {
-  background-color: #dcfce7;
-  color: #16a34a;
-  border: 1px solid #16a34a;
-}
-
-.progress-badge.not-compliant {
-  background-color: #fee2e2;
-  color: #dc2626;
-  border: 1px solid #dc2626;
-}
-
-/* Status Indicator Wrapper */
-.status-indicator-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 8px;
+.table-footer .filter-explanation {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Responsive Design */
@@ -283,7 +328,11 @@
   }
   
   .system-name {
-    max-width: 250px;
+    max-width: 200px;
+  }
+  
+  .legend-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
 
@@ -303,19 +352,28 @@
   .view-btn {
     padding: 10px 16px;
     font-size: 0.85rem;
+    flex: 1;
+    min-width: 140px;
   }
   
-  .table-container {
-    overflow-x: auto;
+  .legend-grid {
+    grid-template-columns: 1fr;
   }
   
   .ranking-table {
     font-size: 0.8rem;
-    min-width: 800px;
   }
   
   .ranking-table th,
   .ranking-table td {
     padding: 10px 6px;
+  }
+  
+  .status-text {
+    display: none;
+  }
+  
+  .status-cell {
+    justify-content: center;
   }
 }

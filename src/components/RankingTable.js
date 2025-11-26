@@ -2,6 +2,46 @@ import React, { useState, useMemo } from 'react';
 import './RankingTable.css';
 import waterSystemsData from '../data/waterSystemsData';
 
+// Status configuration matching other components
+const STATUS_CONFIG = {
+  'No lead lines': {
+    color: '#3b82f6',
+    bgColor: '#eff6ff',
+    borderColor: '#bfdbfe',
+    order: 5
+  },
+  'Not compliant': {
+    color: '#dc2626',
+    bgColor: '#fef2f2',
+    borderColor: '#fecaca',
+    order: 3
+  },
+  'Compliant': {
+    color: '#16a34a',
+    bgColor: '#f0fdf4',
+    borderColor: '#bbf7d0',
+    order: 2
+  },
+  'Inventory not received or incomplete': {
+    color: '#9333ea',
+    bgColor: '#faf5ff',
+    borderColor: '#e9d5ff',
+    order: 4
+  },
+  '100% replaced': {
+    color: '#059669',
+    bgColor: '#ecfdf5',
+    borderColor: '#a7f3d0',
+    order: 1
+  },
+  'No service lines; wholesale only': {
+    color: '#6b7280',
+    bgColor: '#f9fafb',
+    borderColor: '#e5e7eb',
+    order: 6
+  }
+};
+
 function RankingTable({ data = waterSystemsData }) {
   const [sortField, setSortField] = useState('leadLines');
   const [sortDirection, setSortDirection] = useState('desc');
@@ -12,55 +52,103 @@ function RankingTable({ data = waterSystemsData }) {
       setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
     } else {
       setSortField(field);
-      if (field === 'percentReplaced') {
-        setSortDirection('desc');
-      } else {
-        setSortDirection('desc');
-      }
+      setSortDirection('desc');
     }
   };
 
   const sortedData = useMemo(() => {
-    let filtered = viewMode === 'most-unknown' 
-      ? [...data].filter(d => d.unknown > 0)
-      : [...data].filter(d => d.leadLines > 0);
+    let filtered;
     
-    filtered.sort((a, b) => {
-      let aVal = a[sortField];
-      let bVal = b[sortField];
-      
-      if (typeof aVal === 'string') {
-        aVal = aVal.toLowerCase();
-        bVal = bVal.toLowerCase();
-      }
-      
-      if (sortDirection === 'asc') {
-        return aVal > bVal ? 1 : -1;
-      } else {
-        return aVal < bVal ? 1 : -1;
-      }
-    });
+    switch (viewMode) {
+      case 'most-lead':
+        // Systems with known lead lines
+        filtered = [...data].filter(d => d.leadLines > 0);
+        break;
+      case 'most-unknown':
+        // Systems with unknown lines
+        filtered = [...data].filter(d => d.unknown > 0);
+        break;
+      case 'best-progress':
+        // Systems that have lines to replace (exclude no-lead, wholesale, incomplete inventory)
+        filtered = [...data].filter(d => 
+          d.status === 'Compliant' || 
+          d.status === '100% replaced' || 
+          d.status === 'Not compliant'
+        );
+        break;
+      case 'worst-progress':
+        // Same filter as best-progress but sorted differently
+        filtered = [...data].filter(d => 
+          d.status === 'Compliant' || 
+          d.status === '100% replaced' || 
+          d.status === 'Not compliant'
+        );
+        break;
+      default:
+        filtered = [...data].filter(d => d.leadLines > 0);
+    }
+    
+    // Sort based on view mode
+    if (viewMode === 'best-progress') {
+      // Sort by percent replaced descending, with 100% replaced first
+      filtered.sort((a, b) => {
+        // 100% replaced always comes first
+        if (a.status === '100% replaced' && b.status !== '100% replaced') return -1;
+        if (b.status === '100% replaced' && a.status !== '100% replaced') return 1;
+        // Then by percent replaced
+        return b.percentReplaced - a.percentReplaced;
+      });
+    } else if (viewMode === 'worst-progress') {
+      // Sort by percent replaced ascending, then by total to replace descending
+      filtered.sort((a, b) => {
+        // First sort by percent replaced (ascending - worst first)
+        if (a.percentReplaced !== b.percentReplaced) {
+          return a.percentReplaced - b.percentReplaced;
+        }
+        // Then by total to replace (descending - biggest problems first)
+        return b.totalToReplace - a.totalToReplace;
+      });
+    } else {
+      // Standard sorting for other views
+      filtered.sort((a, b) => {
+        let aVal = a[sortField];
+        let bVal = b[sortField];
+        
+        if (typeof aVal === 'string') {
+          aVal = aVal.toLowerCase();
+          bVal = bVal.toLowerCase();
+        }
+        
+        if (sortDirection === 'asc') {
+          return aVal > bVal ? 1 : -1;
+        } else {
+          return aVal < bVal ? 1 : -1;
+        }
+      });
+    }
     
     return filtered;
   }, [data, sortField, sortDirection, viewMode]);
 
-  const getProgressClass = (system) => {
-    if (system.totalToReplace === 0) return 'no-lead';
-    if (system.percentReplaced >= 20) return 'compliant';
-    return 'not-compliant';
+  // Get status styling
+  const getStatusStyle = (status) => {
+    return STATUS_CONFIG[status] || { color: '#6b7280', bgColor: '#f9fafb', borderColor: '#e5e7eb' };
   };
 
-  const getStatusLabel = (system) => {
-    if (system.totalToReplace === 0) return 'No lead lines identified';
-    if (system.percentReplaced >= 20) return 'Compliant';
-    return 'Not in Compliance';
-  };
-
+  // Only show award badges for "Best Progress" tab
   const getRank = (index) => {
-    if (index === 0) return '🥇';
-    if (index === 1) return '🥈';
-    if (index === 2) return '🥉';
+    if (viewMode === 'best-progress') {
+      if (index === 0) return '🥇';
+      if (index === 1) return '🥈';
+      if (index === 2) return '🥉';
+    }
     return index + 1;
+  };
+
+  // Format exceedance year (remove .0)
+  const formatExceedance = (exceedance) => {
+    if (!exceedance || exceedance === '-' || exceedance === '') return null;
+    return String(exceedance).replace('.0', '');
   };
 
   return (
@@ -113,20 +201,51 @@ function RankingTable({ data = waterSystemsData }) {
         </button>
       </div>
 
+      {/* Legend */}
       <div className="table-legend">
-        <div className="legend-title">Status Categories:</div>
-        <div className="legend-items">
+        <h4>Status Legend</h4>
+        <div className="legend-grid">
           <div className="legend-item">
-            <div className="status-indicator no-lead"></div>
-            <span>No lead lines identified</span>
+            <span className="legend-dot" style={{ backgroundColor: '#9333ea' }}></span>
+            <div className="legend-text">
+              <strong>Inventory not received or incomplete</strong>
+              <span>No complete inventory filed</span>
+            </div>
           </div>
           <div className="legend-item">
-            <div className="status-indicator compliant"></div>
-            <span>Compliant (≥20% average replacement, 2021–2024)</span>
+            <span className="legend-dot" style={{ backgroundColor: '#dc2626' }}></span>
+            <div className="legend-text">
+              <strong>Not compliant</strong>
+              <span>&lt;20% average replacement, 2021–2024</span>
+            </div>
           </div>
           <div className="legend-item">
-            <div className="status-indicator not-compliant"></div>
-            <span>Not in compliance (&lt;20% average replacement, 2021–2024)</span>
+            <span className="legend-dot" style={{ backgroundColor: '#16a34a' }}></span>
+            <div className="legend-text">
+              <strong>Compliant</strong>
+              <span>≥20% average replacement, 2021–2024</span>
+            </div>
+          </div>
+          <div className="legend-item">
+            <span className="legend-dot" style={{ backgroundColor: '#059669' }}></span>
+            <div className="legend-text">
+              <strong>100% replaced</strong>
+              <span>All identified lead lines replaced</span>
+            </div>
+          </div>
+          <div className="legend-item">
+            <span className="legend-dot" style={{ backgroundColor: '#3b82f6' }}></span>
+            <div className="legend-text">
+              <strong>No lead lines</strong>
+              <span>Inventory completed, no lead lines identified</span>
+            </div>
+          </div>
+          <div className="legend-item exceedance-legend">
+            <span className="exceedance-icon">⚠️</span>
+            <div className="legend-text">
+              <strong>Lead Action Level Exceedance</strong>
+              <span>Exceeded EPA lead action level (year shown)</span>
+            </div>
           </div>
         </div>
       </div>
@@ -158,8 +277,17 @@ function RankingTable({ data = waterSystemsData }) {
                 className="sortable number-col" 
                 onClick={() => handleSort('leadLines')}
               >
-                Lead Lines
+                Known Lead
                 {sortField === 'leadLines' && (
+                  <span className="sort-indicator">{sortDirection === 'asc' ? ' ↑' : ' ↓'}</span>
+                )}
+              </th>
+              <th 
+                className="sortable number-col" 
+                onClick={() => handleSort('gpcl')}
+              >
+                GPCL
+                {sortField === 'gpcl' && (
                   <span className="sort-indicator">{sortDirection === 'asc' ? ' ↑' : ' ↓'}</span>
                 )}
               </th>
@@ -167,7 +295,7 @@ function RankingTable({ data = waterSystemsData }) {
                 className="sortable number-col" 
                 onClick={() => handleSort('unknown')}
               >
-                Unknown Lines
+                Unknown
                 {sortField === 'unknown' && (
                   <span className="sort-indicator">{sortDirection === 'asc' ? ' ↑' : ' ↓'}</span>
                 )}
@@ -183,6 +311,15 @@ function RankingTable({ data = waterSystemsData }) {
               </th>
               <th 
                 className="sortable number-col" 
+                onClick={() => handleSort('totalToReplace')}
+              >
+                Total to ID/Replace
+                {sortField === 'totalToReplace' && (
+                  <span className="sort-indicator">{sortDirection === 'asc' ? ' ↑' : ' ↓'}</span>
+                )}
+              </th>
+              <th 
+                className="sortable number-col" 
                 onClick={() => handleSort('percentReplaced')}
               >
                 Progress
@@ -190,46 +327,78 @@ function RankingTable({ data = waterSystemsData }) {
                   <span className="sort-indicator">{sortDirection === 'asc' ? ' ↑' : ' ↓'}</span>
                 )}
               </th>
-              <th className="number-col">Status</th>
+              <th className="status-col">Status</th>
             </tr>
           </thead>
           <tbody>
-            {sortedData.map((system, index) => (
-              <tr key={index} className={index < 3 ? 'top-three' : ''}>
-                <td className="rank-col">
-                  <span className="rank-badge">{getRank(index)}</span>
-                </td>
-                <td className="system-name">
-                  {system.name}
-                  {system.exceedance && system.exceedance !== '-' && (
-                    <span className="exceedance-tag" title={`Exceeded in ${system.exceedance}`}>
-                      ⚠️
-                    </span>
-                  )}
-                </td>
-                <td className="number-col">{system.population.toLocaleString()}</td>
-                <td className="number-col lead-count">{system.leadLines.toLocaleString()}</td>
-                <td className="number-col" style={{color: '#ca8a04', fontWeight: 600}}>
-                  {system.unknown.toLocaleString()}
-                </td>
-                <td className="number-col">{system.totalReplaced.toLocaleString()}</td>
-                <td className="number-col">
-                  <div className="progress-cell">
-                    <span className={`progress-badge ${getProgressClass(system)}`}>
+            {sortedData.map((system, index) => {
+              const statusStyle = getStatusStyle(system.status);
+              const exceedance = formatExceedance(system.exceedance);
+              const isTopThree = index < 3 && viewMode === 'best-progress';
+              
+              return (
+                <tr key={system.pwsid} className={isTopThree ? 'top-three' : ''}>
+                  <td className="rank-col">
+                    <span className="rank-badge">{getRank(index)}</span>
+                  </td>
+                  <td className="system-name">
+                    {system.name}
+                    {exceedance && (
+                      <span className="exceedance-tag" title={`Exceeded EPA lead action level in ${exceedance}`}>
+                        ⚠️ {exceedance}
+                      </span>
+                    )}
+                  </td>
+                  <td className="number-col">{system.population.toLocaleString()}</td>
+                  <td className="number-col lead-count">{system.leadLines.toLocaleString()}</td>
+                  <td className="number-col gpcl-count">{system.gpcl.toLocaleString()}</td>
+                  <td className="number-col unknown-count">{system.unknown.toLocaleString()}</td>
+                  <td className="number-col">{system.totalReplaced.toLocaleString()}</td>
+                  <td className="number-col">{system.totalToReplace.toLocaleString()}</td>
+                  <td className="number-col">
+                    <span 
+                      className="progress-badge"
+                      style={{
+                        color: statusStyle.color,
+                        backgroundColor: statusStyle.bgColor,
+                        borderColor: statusStyle.borderColor
+                      }}
+                    >
                       {system.percentReplaced.toFixed(1)}%
                     </span>
-                  </div>
-                </td>
-                <td className="number-col">
-                  <div className="status-indicator-wrapper">
-                    <div className={`status-indicator ${getProgressClass(system)}`}></div>
-                    <span className="status-text">{getStatusLabel(system)}</span>
-                  </div>
-                </td>
-              </tr>
-            ))}
+                  </td>
+                  <td className="status-col">
+                    <div className="status-cell">
+                      <span 
+                        className="status-dot"
+                        style={{ backgroundColor: statusStyle.color }}
+                      ></span>
+                      <span className="status-text">{system.status}</span>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
+      </div>
+      
+      <div className="table-footer">
+        <p className="results-count">Showing {sortedData.length.toLocaleString()} water systems</p>
+        <p className="filter-explanation">
+          {viewMode === 'most-lead' && (
+            <>This view shows only systems with identified lead service lines.</>
+          )}
+          {viewMode === 'most-unknown' && (
+            <>This view shows only systems with service lines of unknown material that still need to be identified.</>
+          )}
+          {viewMode === 'best-progress' && (
+            <>This view shows systems actively replacing lead lines (Compliant, Not Compliant, or 100% Replaced). Systems with no lead lines, incomplete inventories, or wholesale-only operations are excluded.</>
+          )}
+          {viewMode === 'worst-progress' && (
+            <>This view shows systems actively replacing lead lines, sorted by lowest progress first, then by total lines needing attention. Systems with no lead lines, incomplete inventories, or wholesale-only operations are excluded.</>
+          )}
+        </p>
       </div>
     </div>
   );

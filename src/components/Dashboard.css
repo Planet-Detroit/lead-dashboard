@@ -193,6 +193,50 @@ body {
   color: #854d0e;
 }
 
+/* Pie Chart Legend */
+.pie-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 15px 0;
+  padding: 15px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.pie-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.pie-legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.pie-legend-label {
+  flex: 1;
+  color: #334155;
+  font-weight: 500;
+}
+
+.pie-legend-value {
+  font-weight: 600;
+  color: #1e293b;
+  min-width: 80px;
+  text-align: right;
+}
+
+.pie-legend-percent {
+  color: #64748b;
+  min-width: 55px;
+  text-align: right;
+}
+
 .population-card {
   background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
   padding: 25px;

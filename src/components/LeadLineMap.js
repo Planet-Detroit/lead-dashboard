@@ -4,88 +4,129 @@ import 'leaflet/dist/leaflet.css';
 import waterSystemsData from '../data/waterSystemsData';
 import './LeadLineMap.css';
 
+// Status configuration with colors and descriptions
+const STATUS_CONFIG = {
+  'No lead lines': {
+    color: '#3b82f6',      // Blue
+    description: 'Inventory completed, no lead lines identified'
+  },
+  'Not compliant': {
+    color: '#dc2626',      // Red
+    description: '<20% average replacement, 2021–2024'
+  },
+  'Compliant': {
+    color: '#16a34a',      // Green
+    description: '≥20% average replacement, 2021–2024'
+  },
+  'Inventory not received or incomplete': {
+    color: '#9333ea',      // Purple
+    description: 'No complete inventory filed'
+  },
+  '100% replaced': {
+    color: '#059669',      // Emerald (darker green)
+    description: 'All lead lines replaced'
+  },
+  'No service lines; wholesale only': {
+    color: '#6b7280',      // Gray
+    description: 'Wholesale water provider, no service lines'
+  },
+  'Unknown': {
+    color: '#9ca3af',      // Light gray
+    description: 'Status unknown'
+  }
+};
+
 function LeadLineMap() {
-  const [showNoLead, setShowNoLead] = useState(true);
-  const [showCompliant, setShowCompliant] = useState(true);
-  const [showNonCompliant, setShowNonCompliant] = useState(true);
+  // Filter states for each status category
+  const [filters, setFilters] = useState({
+    'Inventory not received or incomplete': true,
+    'No lead lines': true,
+    'Compliant': true,
+    '100% replaced': true,
+    'Not compliant': true,
+    'No service lines; wholesale only': true
+  });
 
   // Filter systems with coordinates
   const systemsWithCoords = waterSystemsData.filter(
     system => system.latitude && system.longitude
   );
 
-  // Filter by compliance status
-  const filteredSystems = systemsWithCoords.filter(system => {
-    // Three categories:
-    // 1. No lead lines identified
-    if (system.totalToReplace === 0) {
-      return showNoLead;
-    }
-    // 2. Compliant (≥20% progress)
-    if (system.percentReplaced >= 20) {
-      return showCompliant;
-    }
-    // 3. Not in Compliance (<20% progress)
-    return showNonCompliant;
+  // Count systems by status
+  const statusCounts = {};
+  systemsWithCoords.forEach(system => {
+    const status = system.status || 'Unknown';
+    statusCounts[status] = (statusCounts[status] || 0) + 1;
   });
 
-  // Determine marker color based on compliance
+  // Filter systems based on selected statuses
+  const filteredSystems = systemsWithCoords.filter(system => {
+    const status = system.status || 'Unknown';
+    return filters[status] !== false;
+  });
+
+  // Get marker color based on status
   const getMarkerColor = (system) => {
-    // No lead lines identified - blue
-    if (system.totalToReplace === 0) return '#3b82f6';
-    // Compliant (≥20%) - green
-    if (system.percentReplaced >= 20) return '#16a34a';
-    // Not in Compliance (<20%) - red
-    return '#dc2626';
+    const status = system.status || 'Unknown';
+    return STATUS_CONFIG[status]?.color || STATUS_CONFIG['Unknown'].color;
   };
 
   // Calculate marker radius based on total lines to replace
-  const getMarkerRadius = (totalToReplace) => {
+  const getMarkerRadius = (system) => {
+    // For non-filers or systems with no data, use a fixed size
+    if (system.status === 'Inventory not received or incomplete' || 
+        system.status === 'No service lines; wholesale only') {
+      return 6;
+    }
+    // For systems with no lead lines, use small fixed size
+    if (system.totalToReplace === 0) return 5;
     // Scale radius: sqrt for better visual proportion
-    const baseRadius = Math.sqrt(totalToReplace) / 5;
+    const baseRadius = Math.sqrt(system.totalToReplace) / 5;
     return Math.max(baseRadius, 4); // Minimum 4px radius
   };
 
-  // Get compliance status text
-  const getComplianceStatus = (system) => {
-    if (system.totalToReplace === 0) return 'No lead lines identified';
-    if (system.percentReplaced >= 20) return 'Compliant';
-    return 'Not in Compliance';
+  // Toggle filter for a status
+  const toggleFilter = (status) => {
+    setFilters(prev => ({
+      ...prev,
+      [status]: !prev[status]
+    }));
   };
+
+  // Order of statuses for display (most concerning first)
+  const statusOrder = [
+    'Inventory not received or incomplete',
+    'Not compliant',
+    'Compliant',
+    '100% replaced',
+    'No lead lines',
+    'No service lines; wholesale only'
+  ];
 
   return (
     <div className="map-container">
       <h2>Geographic Distribution of Lead Service Line Replacement Compliance in Michigan</h2>
       <p className="map-subtitle">
-        Showing {filteredSystems.length} of {systemsWithCoords.length} water systems with location data
+        Showing {filteredSystems.length.toLocaleString()} of {systemsWithCoords.length.toLocaleString()} water systems with location data
       </p>
 
       {/* Filter Controls */}
       <div className="map-controls">
-        <label>
-          <input
-            type="checkbox"
-            checked={showNoLead}
-            onChange={(e) => setShowNoLead(e.target.checked)}
-          />
-          <span className="no-lead-label">● No lead lines identified</span>
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            checked={showCompliant}
-            onChange={(e) => setShowCompliant(e.target.checked)}
-          />
-          <span className="compliant-label">● Compliant (≥20% replaced between 2021 and 2024)</span>
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            checked={showNonCompliant}
-            onChange={(e) => setShowNonCompliant(e.target.checked)}
-          />
-          <span className="noncompliant-label">● Not in Compliance (&lt;20% between 2021 and 2024)</span>
-        </label>
+        {statusOrder.map(status => (
+          <label key={status}>
+            <input
+              type="checkbox"
+              checked={filters[status]}
+              onChange={() => toggleFilter(status)}
+            />
+            <span 
+              className="status-label"
+              style={{ color: STATUS_CONFIG[status].color }}
+            >
+              ● {status} ({statusCounts[status] || 0})
+            </span>
+          </label>
+        ))}
       </div>
 
       {/* Map */}
@@ -106,7 +147,7 @@ function LeadLineMap() {
           <CircleMarker
             key={system.pwsid}
             center={[system.latitude, system.longitude]}
-            radius={getMarkerRadius(system.totalToReplace)}
+            radius={getMarkerRadius(system)}
             fillColor={getMarkerColor(system)}
             fillOpacity={0.6}
             color="#ffffff"
@@ -118,22 +159,45 @@ function LeadLineMap() {
                 <div className="popup-stats">
                   <p><strong>PWSID:</strong> {system.pwsid}</p>
                   <p><strong>Population:</strong> {system.population.toLocaleString()}</p>
-                  <p><strong>Lead Lines:</strong> {system.leadLines.toLocaleString()}</p>
-                  <p><strong>Total to Replace:</strong> {system.totalToReplace.toLocaleString()}</p>
-                  <p><strong>Replaced:</strong> {system.totalReplaced.toLocaleString()}</p>
-                  <p><strong>Progress:</strong> {system.percentReplaced.toFixed(1)}%</p>
+                  
+                  {system.status !== 'Inventory not received or incomplete' && 
+                   system.status !== 'No service lines; wholesale only' && (
+                    <>
+                      <p><strong>Lead Lines:</strong> {system.leadLines.toLocaleString()}</p>
+                      <p><strong>Total to Replace:</strong> {system.totalToReplace.toLocaleString()}</p>
+                      <p><strong>Replaced:</strong> {system.totalReplaced.toLocaleString()}</p>
+                      {system.totalToReplace > 0 && (
+                        <p><strong>Progress:</strong> {system.percentReplaced.toFixed(1)}%</p>
+                      )}
+                    </>
+                  )}
+                  
+                  {system.status === 'Inventory not received or incomplete' && (
+                    <p className="status-warning inventory-warning">
+                      <strong>⚠️ No complete inventory filed</strong>
+                    </p>
+                  )}
+                  
+                  {system.status === 'No service lines; wholesale only' && (
+                    <p className="status-info">
+                      <strong>ℹ️ Wholesale provider - no service lines</strong>
+                    </p>
+                  )}
+                  
                   <p>
                     <strong>Status:</strong>{' '}
                     <span style={{ 
                       color: getMarkerColor(system),
                       fontWeight: 'bold'
                     }}>
-                      {getComplianceStatus(system)}
+                      {system.status}
                     </span>
                   </p>
-                  {system.exceedance && (
+                  
+                  {system.exceedance && system.exceedance !== '-' && system.exceedance !== '' && (
                     <p><strong>LCR Exceedance:</strong> {system.exceedance}</p>
                   )}
+                  
                   {system.epaLink && (
                     <p className="epa-link">
                       <a 
@@ -156,29 +220,40 @@ function LeadLineMap() {
       {/* Legend */}
       <div className="map-legend">
         <h4>Legend</h4>
-        <div className="legend-items">
-          <div className="legend-item">
-            <span className="legend-circle no-lead"></span>
-            <span>No lead lines identified</span>
-          </div>
-          <div className="legend-item">
-            <span className="legend-circle compliant"></span>
-            <span>Compliant (≥20% replaced)</span>
-          </div>
-          <div className="legend-item">
-            <span className="legend-circle noncompliant"></span>
-            <span>Not in Compliance (&lt;20% replaced)</span>
-          </div>
-          <div className="legend-item">
-            <span className="legend-text">Circle size = Total lead lines to be identified or replaced</span>
-          </div>
-        </div>
+        <table className="legend-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Status</th>
+              <th>Count</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {statusOrder.map(status => (
+              <tr key={status}>
+                <td>
+                  <span 
+                    className="legend-circle"
+                    style={{ backgroundColor: STATUS_CONFIG[status].color }}
+                  ></span>
+                </td>
+                <td className="legend-status">{status}</td>
+                <td className="legend-count">{statusCounts[status] || 0}</td>
+                <td className="legend-description">{STATUS_CONFIG[status].description}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="legend-note">
+          <em>Circle size = Total lines to be identified or replaced</em>
+        </p>
       </div>
 
       {/* Info Box */}
       <div className="map-info">
         <p>
-          <strong>Note:</strong> This map shows {systemsWithCoords.length} water systems 
+          <strong>Note:</strong> This map shows {systemsWithCoords.length.toLocaleString()} water systems 
           ({(systemsWithCoords.length / waterSystemsData.length * 100).toFixed(1)}% of all Michigan systems) 
           with verified location data from EPA community water system boundaries. Click on any circle to see detailed information and access the EPA facility report.
         </p>

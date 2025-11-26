@@ -110,15 +110,14 @@ function Dashboard() {
           
           <div className="chart-card">
             <h3>Service Line Composition</h3>
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={250}>
               <PieChart>
                 <Pie
                   data={compositionData}
                   cx="50%"
                   cy="50%"
                   labelLine={false}
-                  label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(1)}%`}
-                  outerRadius={100}
+                  outerRadius={80}
                   fill="#8884d8"
                   dataKey="value"
                 >
@@ -132,6 +131,16 @@ function Dashboard() {
                 />
               </PieChart>
             </ResponsiveContainer>
+            <div className="pie-legend">
+              {compositionData.map((entry, index) => (
+                <div key={index} className="pie-legend-item">
+                  <span className="pie-legend-color" style={{ backgroundColor: entry.color }}></span>
+                  <span className="pie-legend-label">{entry.name}</span>
+                  <span className="pie-legend-value">{entry.value.toLocaleString()}</span>
+                  <span className="pie-legend-percent">({((entry.value / 2606706) * 100).toFixed(1)}%)</span>
+                </div>
+              ))}
+            </div>
             <div className="insight-box yellow">
               <strong>315,372 lines of unknown material</strong> still need testing
             </div>

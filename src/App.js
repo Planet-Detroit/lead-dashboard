@@ -11,9 +11,9 @@ function App() {
 
   const tabs = [
     { id: 'map', label: 'Map', icon: '🗺️' },
+    { id: 'dashboard', label: 'Overview', icon: '📊' },
     { id: 'directory', label: 'Search Systems', icon: '🔍' },
     { id: 'ranking', label: 'Rankings', icon: '📋' },
-    { id: 'dashboard', label: 'Overview', icon: '📊' },
     { id: 'about', label: 'About', icon: 'ℹ️' }
   ];
 

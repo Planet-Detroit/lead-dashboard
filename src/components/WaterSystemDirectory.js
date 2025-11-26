@@ -2,34 +2,89 @@ import React, { useState, useMemo } from 'react';
 import './WaterSystemDirectory.css';
 import waterSystemsData from '../data/waterSystemsData';
 
+// Status configuration with colors
+const STATUS_CONFIG = {
+  'No lead lines': {
+    color: '#3b82f6',
+    bgColor: '#eff6ff',
+    borderColor: '#bfdbfe'
+  },
+  'Not compliant': {
+    color: '#dc2626',
+    bgColor: '#fef2f2',
+    borderColor: '#fecaca'
+  },
+  'Compliant': {
+    color: '#16a34a',
+    bgColor: '#f0fdf4',
+    borderColor: '#bbf7d0'
+  },
+  'Inventory not received or incomplete': {
+    color: '#9333ea',
+    bgColor: '#faf5ff',
+    borderColor: '#e9d5ff'
+  },
+  '100% replaced': {
+    color: '#059669',
+    bgColor: '#ecfdf5',
+    borderColor: '#a7f3d0'
+  },
+  'No service lines; wholesale only': {
+    color: '#6b7280',
+    bgColor: '#f9fafb',
+    borderColor: '#e5e7eb'
+  },
+  'Unknown': {
+    color: '#9ca3af',
+    bgColor: '#f9fafb',
+    borderColor: '#e5e7eb'
+  }
+};
+
 function WaterSystemDirectory({ data = waterSystemsData }) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortField, setSortField] = useState('leadLines');
-  const [sortDirection, setSortDirection] = useState('desc');
-  const [filterLCRExceedances, setFilterLCRExceedances] = useState(false);
-  
+  const [sortField, setSortField] = useState('name');
+  const [sortDirection, setSortDirection] = useState('asc');
+  const [filterStatus, setFilterStatus] = useState('all');
+  const [filterExceedances, setFilterExceedances] = useState(false);
+
+  // Get unique statuses for filter dropdown
+  const availableStatuses = useMemo(() => {
+    const statuses = new Set(data.map(s => s.status));
+    return Array.from(statuses).sort();
+  }, [data]);
+
   const filteredAndSortedData = useMemo(() => {
     let filtered = data.filter(system => 
-      system.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      system.pwsid.toLowerCase().includes(searchTerm.toLowerCase())
+      system.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     
-    // Filter for LCR exceedances since 2019 (when new sampling protocol was implemented after Michigan's 2018 LCR revision)
-    if (filterLCRExceedances) {
-      filtered = filtered.filter(system => {
-        if (!system.exceedance || system.exceedance === '' || system.exceedance === '-') {
-          return false;
-        }
-        const exceedanceYear = parseInt(system.exceedance, 10);
-        return exceedanceYear >= 2019;
-      });
+    // Filter by status
+    if (filterStatus !== 'all') {
+      filtered = filtered.filter(system => system.status === filterStatus);
     }
     
-    // Show all systems in the directory (removed totalToReplace > 0 filter)
+    // Filter by exceedances
+    if (filterExceedances) {
+      filtered = filtered.filter(system => 
+        system.exceedance && system.exceedance !== '' && system.exceedance !== '-'
+      );
+    }
     
+    // Sort
     filtered.sort((a, b) => {
       let aVal = a[sortField];
       let bVal = b[sortField];
+      
+      // Handle string comparison
+      if (typeof aVal === 'string') {
+        aVal = aVal.toLowerCase();
+        bVal = bVal.toLowerCase();
+      }
+      
+      // Handle null/undefined
+      if (aVal == null) aVal = sortDirection === 'asc' ? Infinity : -Infinity;
+      if (bVal == null) bVal = sortDirection === 'asc' ? Infinity : -Infinity;
       
       if (sortDirection === 'asc') {
         return aVal > bVal ? 1 : -1;
@@ -39,41 +94,62 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
     });
     
     return filtered;
-  }, [data, searchTerm, sortField, sortDirection, filterLCRExceedances]);
+  }, [data, searchTerm, sortField, sortDirection, filterStatus, filterExceedances]);
   
   const handleSort = (field) => {
     if (sortField === field) {
       setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
     } else {
       setSortField(field);
-      setSortDirection('desc');
+      setSortDirection(field === 'name' ? 'asc' : 'desc');
     }
   };
-  
-  const getProgressColor = (system) => {
-    if (system.totalToReplace === 0) return '#3b82f6'; // No lead - blue
-    if (system.percentReplaced >= 20) return '#16a34a'; // Compliant - green
-    return '#dc2626'; // Not in compliance - red
+
+  // Check if system should show lead line details
+  const shouldShowLeadDetails = (system) => {
+    return system.status !== 'No lead lines' && 
+           system.status !== '100% replaced' &&
+           system.status !== 'No service lines; wholesale only';
   };
-  
-  const getProgressLabel = (system) => {
-    if (system.totalToReplace === 0) return 'No lead lines identified';
-    if (system.percentReplaced >= 20) return 'Compliant';
-    return 'Not in compliance';
+
+  // Get status styling
+  const getStatusStyle = (status) => {
+    const config = STATUS_CONFIG[status] || STATUS_CONFIG['Unknown'];
+    return config;
   };
-  
+
+  // Get header gradient based on status
+  const getHeaderStyle = (status) => {
+    switch (status) {
+      case 'Inventory not received or incomplete':
+        return 'card-header status-incomplete';
+      case 'Not compliant':
+        return 'card-header status-noncompliant';
+      case 'Compliant':
+        return 'card-header status-compliant';
+      case '100% replaced':
+        return 'card-header status-complete';
+      case 'No lead lines':
+        return 'card-header status-nolead';
+      case 'No service lines; wholesale only':
+        return 'card-header status-wholesale';
+      default:
+        return 'card-header';
+    }
+  };
+
   return (
     <div className="directory-container">
       <div className="directory-header">
         <h1>Michigan Water System Directory</h1>
-        <p>Search for your water system to see lead service line data</p>
+        <p>Search and explore lead service line data for water systems across Michigan</p>
       </div>
       
       <div className="search-controls">
         <div className="search-box">
           <input
             type="text"
-            placeholder="Search by city or water system name..."
+            placeholder="Search by water system name..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="search-input"
@@ -81,23 +157,93 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
           <span className="search-icon">🔍</span>
         </div>
         
-        <div className="filter-controls">
+        <div className="filter-row">
+          <div className="filter-group">
+            <label className="filter-label">Filter by Status:</label>
+            <select 
+              value={filterStatus} 
+              onChange={(e) => setFilterStatus(e.target.value)}
+              className="status-select"
+            >
+              <option value="all">All Statuses</option>
+              {availableStatuses.map(status => (
+                <option key={status} value={status}>{status}</option>
+              ))}
+            </select>
+          </div>
+          
           <label className="checkbox-label">
             <input
               type="checkbox"
-              checked={filterLCRExceedances}
-              onChange={(e) => setFilterLCRExceedances(e.target.checked)}
+              checked={filterExceedances}
+              onChange={(e) => setFilterExceedances(e.target.checked)}
             />
-            <span>Show only systems that have had lead action level exceedances since the Michigan Lead and Copper Rule was revised in 2018</span>
+            <span>Show only systems with lead action level exceedances</span>
           </label>
         </div>
         
         <div className="results-count">
-          Showing {filteredAndSortedData.length} systems
+          Showing {filteredAndSortedData.length.toLocaleString()} of {data.length.toLocaleString()} systems
+        </div>
+      </div>
+
+      {/* Legend */}
+      <div className="directory-legend">
+        <h4>Status Legend</h4>
+        <div className="legend-grid">
+          <div className="legend-item">
+            <span className="legend-color" style={{ background: 'linear-gradient(135deg, #7e22ce, #9333ea)' }}></span>
+            <div className="legend-text">
+              <strong>Inventory not received or incomplete</strong>
+              <span>No complete inventory filed with EGLE</span>
+            </div>
+          </div>
+          <div className="legend-item">
+            <span className="legend-color" style={{ background: 'linear-gradient(135deg, #b91c1c, #dc2626)' }}></span>
+            <div className="legend-text">
+              <strong>Not compliant</strong>
+              <span>&lt;20% average replacement, 2021–2024</span>
+            </div>
+          </div>
+          <div className="legend-item">
+            <span className="legend-color" style={{ background: 'linear-gradient(135deg, #15803d, #16a34a)' }}></span>
+            <div className="legend-text">
+              <strong>Compliant</strong>
+              <span>≥20% average replacement, 2021–2024</span>
+            </div>
+          </div>
+          <div className="legend-item">
+            <span className="legend-color" style={{ background: 'linear-gradient(135deg, #047857, #059669)' }}></span>
+            <div className="legend-text">
+              <strong>100% replaced</strong>
+              <span>All identified lead lines replaced</span>
+            </div>
+          </div>
+          <div className="legend-item">
+            <span className="legend-color" style={{ background: 'linear-gradient(135deg, #1d4ed8, #3b82f6)' }}></span>
+            <div className="legend-text">
+              <strong>No lead lines</strong>
+              <span>Inventory completed, no lead lines identified</span>
+            </div>
+          </div>
+          <div className="legend-item">
+            <span className="legend-color" style={{ background: 'linear-gradient(135deg, #4b5563, #6b7280)' }}></span>
+            <div className="legend-text">
+              <strong>No service lines; wholesale only</strong>
+              <span>Wholesale water provider with no service lines</span>
+            </div>
+          </div>
         </div>
         
-        <div className="compliance-info">
-          <strong>Understanding Compliance:</strong> A system is considered "compliant" if it has replaced an average of 20% of its identified lead service lines during the 4-year period from 2021–2024. Systems with no identified lead lines are shown separately as "No lead lines identified."
+        <div className="progress-explainer">
+          <h4>Understanding "Progress"</h4>
+          <div className="formula-box">
+            <code>% Replaced = (Lines Replaced ÷ Total to Identify and/or Replace) × 100</code>
+          </div>
+          <p>
+            <strong>Note:</strong> We calculate Progress based on % Replaced as described above. Systems with many "Unknown" lines may show low progress even if they've replaced all <em>known</em> lead lines. 
+            The unknown lines still need to be identified and potentially replaced, which is why they're included in the denominator.
+          </p>
         </div>
       </div>
 
@@ -110,16 +256,16 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
           Name {sortField === 'name' && (sortDirection === 'asc' ? '↑' : '↓')}
         </button>
         <button 
-          className={`sort-btn ${sortField === 'leadLines' ? 'active' : ''}`}
-          onClick={() => handleSort('leadLines')}
-        >
-          Lead Lines {sortField === 'leadLines' && (sortDirection === 'asc' ? '↑' : '↓')}
-        </button>
-        <button 
           className={`sort-btn ${sortField === 'population' ? 'active' : ''}`}
           onClick={() => handleSort('population')}
         >
           Population {sortField === 'population' && (sortDirection === 'asc' ? '↑' : '↓')}
+        </button>
+        <button 
+          className={`sort-btn ${sortField === 'status' ? 'active' : ''}`}
+          onClick={() => handleSort('status')}
+        >
+          Status {sortField === 'status' && (sortDirection === 'asc' ? '↑' : '↓')}
         </button>
         <button 
           className={`sort-btn ${sortField === 'percentReplaced' ? 'active' : ''}`}
@@ -128,102 +274,110 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
           Progress {sortField === 'percentReplaced' && (sortDirection === 'asc' ? '↑' : '↓')}
         </button>
       </div>
-      
+
       <div className="systems-grid">
         {filteredAndSortedData.length === 0 ? (
           <div className="no-results">
-            <p>No systems found matching "{searchTerm}"</p>
-            <p className="hint">Try searching for a city name like "Detroit" or "Grand Rapids"</p>
+            <p>No water systems found</p>
+            <p className="hint">Try adjusting your search or filters</p>
           </div>
         ) : (
-          filteredAndSortedData.map((system) => (
-            <div key={system.pwsid} className="system-card">
-              <div className="card-header">
-                <h3>{system.name}</h3>
-                {system.exceedance && system.exceedance !== '-' && (
-                  <span className="exceedance-badge" title={`Lead action level exceeded in ${system.exceedance}`}>
-                    ⚠️ Exceedance
-                  </span>
-                )}
-              </div>
-              
-              <div className="card-body">
-                <div className="stat-row">
-                  <span className="stat-label">Population Served</span>
-                  <span className="stat-value">{system.population.toLocaleString()}</span>
-                </div>
-                
-                <div className="stat-row highlight">
-                  <span className="stat-label">Known Lead Lines</span>
-                  <span className="stat-value large">{system.leadLines.toLocaleString()}</span>
-                </div>
-                
-                <div className="stat-row">
-                  <span className="stat-label">Lines Replaced</span>
-                  <span className="stat-value">{system.totalReplaced.toLocaleString()}</span>
-                </div>
-                
-                {system.gpcl > 0 && (
-                  <div className="stat-row warning">
-                    <span className="stat-label">Galvanized (GPCL)</span>
-                    <span className="stat-value">{system.gpcl.toLocaleString()}</span>
-                  </div>
-                )}
-                
-                {system.unknown > 0 && (
-                  <div className="stat-row warning">
-                    <span className="stat-label">Unknown Material</span>
-                    <span className="stat-value">{system.unknown.toLocaleString()}</span>
-                  </div>
-                )}
-                
-                <div className="stat-row">
-                  <span className="stat-label">Total to be Identified and/or Replaced</span>
-                  <span className="stat-value">{system.totalToReplace.toLocaleString()}</span>
-                </div>
-                
-                {system.exceedance && system.exceedance !== '-' && (
-                  <div className="stat-row" style={{background: '#fef2f2', margin: '10px -20px', padding: '12px 20px'}}>
-                    <span className="stat-label">Most Recent Lead Action Level Exceedance</span>
-                    <span className="stat-value" style={{color: '#dc2626'}}>{system.exceedance}</span>
-                  </div>
-                )}
-                
-                <div className="progress-section">
-                  <div className="progress-label-row">
-                    <span className="progress-label">Replacement Progress</span>
-                    <span className="progress-percent">{system.percentReplaced.toFixed(1)}%</span>
-                  </div>
-                  <div className="progress-bar-outer">
-                    <div 
-                      className="progress-bar-inner"
-                      style={{ 
-                        width: `${Math.min(system.percentReplaced, 100)}%`,
-                        backgroundColor: getProgressColor(system)
-                      }}
-                    />
-                  </div>
-                  <div className="progress-status" style={{ color: getProgressColor(system) }}>
-                    {getProgressLabel(system)}
-                  </div>
-                </div>
-                
-                <div className="card-footer">
-                  <span className="pwsid">ID: {system.pwsid}</span>
-                  {system.epaLink && (
-                    <a 
-                      href={system.epaLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="epa-link-button"
-                    >
-                      View EPA Report →
-                    </a>
+          filteredAndSortedData.map((system) => {
+            const statusStyle = getStatusStyle(system.status);
+            const showDetails = shouldShowLeadDetails(system);
+            const hasExceedance = system.exceedance && system.exceedance !== '' && system.exceedance !== '-';
+            
+            return (
+              <div key={system.pwsid} className="system-card">
+                <div className={getHeaderStyle(system.status)}>
+                  <h3>{system.name}</h3>
+                  {hasExceedance && (
+                    <span className="exceedance-badge">
+                      ⚠️ LCR Exceedance {String(system.exceedance).replace('.0', '')}
+                    </span>
                   )}
                 </div>
+                
+                <div className="card-body">
+                  {/* Population */}
+                  <div className="stat-row">
+                    <span className="stat-label">Population Served</span>
+                    <span className="stat-value">{system.population.toLocaleString()}</span>
+                  </div>
+                  
+                  {/* Status Badge */}
+                  <div className="status-section">
+                    <span 
+                      className="status-badge"
+                      style={{
+                        color: statusStyle.color,
+                        backgroundColor: statusStyle.bgColor,
+                        borderColor: statusStyle.borderColor
+                      }}
+                    >
+                      {system.status}
+                    </span>
+                    <p className="status-explanation">{system.statusExplanation}</p>
+                  </div>
+                  
+                  {/* Lead line details - only show if applicable */}
+                  {showDetails && (
+                    <div className="lead-details">
+                      {system.totalToReplace > 0 && (
+                        <div className="stat-row highlight">
+                          <span className="stat-label">Progress</span>
+                          <span className="stat-value large">{system.percentReplaced.toFixed(1)}%</span>
+                        </div>
+                      )}
+                      
+                      <div className="line-counts">
+                        {system.leadLines > 0 && (
+                          <div className="line-count-item lead">
+                            <span className="line-count-value">{system.leadLines.toLocaleString()}</span>
+                            <span className="line-count-label">Lead Lines</span>
+                          </div>
+                        )}
+                        {system.gpcl > 0 && (
+                          <div className="line-count-item gpcl">
+                            <span className="line-count-value">{system.gpcl.toLocaleString()}</span>
+                            <span className="line-count-label">GPCL</span>
+                          </div>
+                        )}
+                        {system.unknown > 0 && (
+                          <div className="line-count-item unknown">
+                            <span className="line-count-value">{system.unknown.toLocaleString()}</span>
+                            <span className="line-count-label">Unknown</span>
+                          </div>
+                        )}
+                      </div>
+                      
+                      {system.totalReplaced > 0 && (
+                        <div className="stat-row">
+                          <span className="stat-label">Total Replaced (2021-2024)</span>
+                          <span className="stat-value">{system.totalReplaced.toLocaleString()}</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  
+                  {/* Footer with PWSID and EPA link */}
+                  <div className="card-footer">
+                    <span className="pwsid">PWSID: {system.pwsid}</span>
+                    {system.epaLink && (
+                      <a 
+                        href={system.epaLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="epa-link-button"
+                      >
+                        EPA Report →
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
-          ))
+            );
+          })
         )}
       </div>
     </div>

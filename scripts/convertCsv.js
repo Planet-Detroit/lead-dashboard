@@ -10,44 +10,72 @@ const parsed = Papa.parse(csvFile, {
 
 const jsData = parsed.data.map(row => {
   const clean = (val) => {
-    if (!val || val === '-' || val === '-   ') return 0;
-    const num = parseFloat(String(val).replace(/[,"\s]/g, ''));
+    if (!val || val === '-' || val === '-   ' || val === '') return 0;
+    const num = parseFloat(String(val).replace(/[,"\s%]/g, ''));
     return isNaN(num) ? 0 : num;
   };
 
-  const leadLines = clean(row['Lead in CDSMI']);
-  const gpcl = clean(row['GPCL in CDSMI']);
-  const unknown = clean(row['Unknown in CDSMI']);
-  const totalToReplace = leadLines + gpcl + unknown;
-  const totalReplaced = clean(row['Grand Total of Lead Service Lines Replaced']);
+  const cleanString = (val) => {
+    if (!val || val === '-' || val === '-   ') return '';
+    return String(val).trim();
+  };
+
+  const leadLines = clean(row['Lead Lines']);
+  const gpcl = clean(row['GPCL']);
+  const unknown = clean(row['Unknown']);
+  const totalToReplace = clean(row['Total To Replace']) || (leadLines + gpcl + unknown);
+  const totalReplaced = clean(row['Total Replaced']);
   
+  // Use the manually categorized status
+  const status = cleanString(row['Status']) || 'Unknown';
+  
+  // Calculate percent replaced, but cap at 100%
   let percentReplaced = totalToReplace > 0 ? (totalReplaced / totalToReplace) * 100 : 0;
   if (percentReplaced > 100) percentReplaced = 100;
 
-  const latitude = parseFloat(row['Latitude']) || null;
-  const longitude = parseFloat(row['Longitude']) || null;
-
   return {
-    pwsid: (row['PWSID'] || '').trim(),
-    name: (row['Supply Name'] || '').trim(),
-    population: clean(row['Population Served (2025)']),
+    pwsid: cleanString(row['PWSID']),
+    name: cleanString(row['Supply Name']),
+    population: clean(row['Population']),
+    y2021: clean(row['2021']),
+    y2022: clean(row['2022']),
+    y2023: clean(row['2023']),
+    y2024: clean(row['2024']),
     leadLines: leadLines,
     gpcl: gpcl,
     unknown: unknown,
     totalToReplace: totalToReplace,
     totalReplaced: totalReplaced,
     percentReplaced: percentReplaced,
-    exceedance: (row['Most Recent Lead Action Level Exceedance'] || '').trim(),
-    latitude: latitude,
-    longitude: longitude,
-    epaLink: (row['EPA_Link'] || '').trim(),
+    nonLead: clean(row['Non-Lead']),
+    totalLines: clean(row['Total Lines']),
+    exceedance: cleanString(row['Exceedance']),
+    latitude: clean(row['Latitude']) || null,
+    longitude: clean(row['Longitude']) || null,
+    epaLink: cleanString(row['EPA_Link']),
+    status: status,
+    statusExplanation: cleanString(row['Status Explanation'])
   };
 }).filter(row => row.pwsid);
+
+// Generate summary statistics
+const stats = {
+  total: jsData.length,
+  byStatus: {}
+};
+
+jsData.forEach(row => {
+  stats.byStatus[row.status] = (stats.byStatus[row.status] || 0) + 1;
+});
+
+console.log('=== Data Summary ===');
+console.log(`Total systems: ${stats.total}`);
+console.log('\nBy Status:');
+Object.entries(stats.byStatus).sort((a, b) => b[1] - a[1]).forEach(([status, count]) => {
+  console.log(`  ${status}: ${count}`);
+});
 
 const output = 'export const waterSystemsData = ' + JSON.stringify(jsData, null, 2) + ';\n\nexport default waterSystemsData;';
 
 fs.writeFileSync('src/data/waterSystemsData.js', output);
-console.log('✓ Converted ' + jsData.length + ' systems');
-
-const withCoords = jsData.filter(s => s.latitude && s.longitude);
-console.log('✓ ' + withCoords.length + ' systems have coordinates for mapping');
+console.log('\nDone! Written to src/data/waterSystemsData.js');

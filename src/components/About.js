@@ -17,7 +17,7 @@ function About() {
             Michigan revised its Lead and Copper Rule in 2018, requiring all community water systems to inventory their service line materials and replace lead lines. The new sampling protocol took effect in 2019. The federal Lead and Copper Rule Improvements (2024) mandates full replacement nationwide by 2037.
           </p>
           <p>
-            <strong>Action Level Exceedances:</strong> Water systems that exceed the lead action level (15 parts per billion from 2019–2024; 10 12 parts per billion starting in 2025; and 10 ppb starting in 2027) face additional monitoring, public communication, and accelerated replacement requirements.
+            <strong>Action Level Exceedances:</strong> Water systems that exceed the lead action level (15 parts per billion (ppb) from 2019–2024; 12 ppb starting in 2025; and 10 ppb starting in 2027) face additional monitoring, public communication, and accelerated replacement requirements.
           </p>
         </section>
         
