@@ -1,0 +1,133 @@
+.embed-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+/* Compact Filter Controls */
+.embed-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px 15px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 12px;
+}
+
+.embed-filter {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.embed-filter input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+/* Popup Styling */
+.embed-popup {
+  min-width: 200px;
+  font-size: 12px;
+}
+
+.embed-popup h3 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #1e293b;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 6px;
+}
+
+.embed-popup p {
+  margin: 4px 0;
+  color: #475569;
+}
+
+.embed-popup a {
+  color: #0284c7;
+  text-decoration: none;
+}
+
+.embed-popup a:hover {
+  text-decoration: underline;
+}
+
+/* Compact Legend */
+.embed-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 10px 15px;
+  background: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  font-size: 11px;
+  align-items: center;
+}
+
+.embed-legend .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.embed-legend .legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.embed-legend .legend-label {
+  color: #475569;
+  font-weight: 500;
+}
+
+.embed-legend .legend-note {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.embed-credit {
+  margin-left: auto;
+  color: #0284c7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.embed-credit:hover {
+  text-decoration: underline;
+}
+
+/* Leaflet overrides for embed */
+.leaflet-popup-content-wrapper {
+  border-radius: 6px;
+}
+
+.leaflet-popup-content {
+  margin: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .embed-controls {
+    gap: 8px;
+    font-size: 10px;
+  }
+  
+  .embed-legend {
+    font-size: 10px;
+    gap: 10px;
+  }
+  
+  .embed-legend .legend-dot {
+    width: 10px;
+    height: 10px;
+  }
+}

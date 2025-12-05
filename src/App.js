@@ -4,10 +4,20 @@ import Dashboard from './components/Dashboard';
 import WaterSystemDirectory from './components/WaterSystemDirectory';
 import RankingTable from './components/RankingTable';
 import LeadLineMap from './components/LeadLineMap';
+import EmbedMap from './components/EmbedMap';
 import './App.css';
 
 function App() {
   const [activeTab, setActiveTab] = useState('map');
+
+  // Check if this is an embed route
+  const isEmbed = window.location.hash.includes('/embed/map') || 
+                  window.location.pathname.includes('/embed/map');
+  
+  // If embed route, render only the embed map (no header/footer)
+  if (isEmbed) {
+    return <EmbedMap />;
+  }
 
   const tabs = [
     { id: 'map', label: 'Map', icon: '🗺️' },
