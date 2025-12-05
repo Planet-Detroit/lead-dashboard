@@ -259,7 +259,7 @@ function RankingTable({ data = waterSystemsData }) {
             <span className="exceedance-icon">⚠️</span>
             <div className="legend-text">
               <strong>Lead Action Level Exceedance</strong>
-              <span>Exceeded EPA lead action level (year shown)</span>
+              <span>Exceeded Michigan lead action level (most recent year shown)</span>
             </div>
           </div>
         </div>
@@ -359,7 +359,7 @@ function RankingTable({ data = waterSystemsData }) {
                   <td className="system-name">
                     {system.name}
                     {exceedance && (
-                      <span className="exceedance-tag" title={`Exceeded EPA lead action level in ${exceedance}`}>
+                      <span className="exceedance-tag" title={`Exceeded Michigan lead action level in ${exceedance}`}>
                         ⚠️ {exceedance}
                       </span>
                     )}

@@ -250,6 +250,13 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
               <span>Wholesale water provider with no service lines</span>
             </div>
           </div>
+          <div className="legend-item">
+            <span style={{ fontSize: '1.2rem', width: '24px', textAlign: 'center' }}>⚠️</span>
+            <div className="legend-text">
+              <strong>Lead Action Level Exceedance</strong>
+              <span>Exceeded Michigan lead action level (most recent year shown)</span>
+            </div>
+          </div>
         </div>
         
         <div className="progress-explainer">
