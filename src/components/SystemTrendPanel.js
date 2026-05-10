@@ -22,7 +22,7 @@
  *   data {Array} — merged dataset (default: mergedData)
  */
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect, useCallback } from 'react';
 import {
   BarChart,
   Bar,
@@ -268,20 +268,165 @@ function LeadDot({ cx, cy, payload }) {
 }
 
 // =============================================================================
-// SHARED DROPDOWN STYLES
+// SEARCHABLE SYSTEM SELECTOR
 // =============================================================================
 
-const selectStyle = {
-  height:       '30px',
-  padding:      '0 0.5rem',
-  fontSize:     '0.82rem',
-  border:       '1px solid #d1d5db',
-  borderRadius: '6px',
-  background:   '#fff',
-  color:        '#1f2937',
-  cursor:       'pointer',
-  maxWidth:     '240px',
-};
+function SystemSearch({ systems, selectedPwsid, onSelect }) {
+  const [query, setQuery] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+  const [highlightIndex, setHighlightIndex] = useState(0);
+  const wrapperRef = useRef(null);
+  const inputRef = useRef(null);
+  const listRef = useRef(null);
+
+  const selectedName = systems.find(s => s.base_pwsid === selectedPwsid)?.display_name ?? '';
+
+  const filtered = useMemo(() => {
+    if (!query.trim()) return systems.slice(0, 50);
+    const q = query.toLowerCase();
+    return systems.filter(s =>
+      s.display_name.toLowerCase().includes(q) ||
+      s.base_pwsid.toLowerCase().includes(q)
+    ).slice(0, 50);
+  }, [query, systems]);
+
+  useEffect(() => { setHighlightIndex(0); }, [filtered]);
+
+  useEffect(() => {
+    if (isOpen && listRef.current) {
+      const el = listRef.current.children[highlightIndex];
+      if (el) el.scrollIntoView({ block: 'nearest' });
+    }
+  }, [highlightIndex, isOpen]);
+
+  const close = useCallback(() => {
+    setIsOpen(false);
+    setQuery('');
+  }, []);
+
+  useEffect(() => {
+    function handleClick(e) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) close();
+    }
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [close]);
+
+  function handleSelect(pwsid) {
+    onSelect(pwsid);
+    close();
+  }
+
+  function handleKeyDown(e) {
+    if (!isOpen) return;
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setHighlightIndex(i => Math.min(i + 1, filtered.length - 1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setHighlightIndex(i => Math.max(i - 1, 0));
+    } else if (e.key === 'Enter' && filtered[highlightIndex]) {
+      e.preventDefault();
+      handleSelect(filtered[highlightIndex].base_pwsid);
+    } else if (e.key === 'Escape') {
+      close();
+    }
+  }
+
+  const wrapperStyle = { position: 'relative', minWidth: '260px', maxWidth: '340px' };
+
+  const inputStyle = {
+    width: '100%', boxSizing: 'border-box',
+    height: '32px', padding: '0 2rem 0 0.6rem',
+    fontSize: '0.82rem', border: '1px solid #d1d5db',
+    borderRadius: '6px', background: '#fff', color: '#1f2937',
+    outline: 'none',
+  };
+
+  const listStyle = {
+    position: 'absolute', top: '100%', left: 0, right: 0,
+    maxHeight: '240px', overflowY: 'auto', zIndex: 100,
+    background: '#fff', border: '1px solid #d1d5db',
+    borderTop: 'none', borderRadius: '0 0 6px 6px',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+    margin: 0, padding: 0, listStyle: 'none',
+  };
+
+  const itemBase = {
+    padding: '0.45rem 0.6rem', fontSize: '0.82rem',
+    cursor: 'pointer', borderBottom: '1px solid #f3f4f6',
+  };
+
+  return (
+    <div ref={wrapperRef} style={wrapperStyle}>
+      {isOpen ? (
+        <>
+          <input
+            ref={inputRef}
+            type="text"
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Type to search..."
+            autoFocus
+            style={{ ...inputStyle, borderRadius: filtered.length ? '6px 6px 0 0' : '6px' }}
+          />
+          {filtered.length > 0 && (
+            <ul ref={listRef} style={listStyle}>
+              {filtered.map((s, i) => (
+                <li
+                  key={s.base_pwsid}
+                  onMouseDown={() => handleSelect(s.base_pwsid)}
+                  onMouseEnter={() => setHighlightIndex(i)}
+                  style={{
+                    ...itemBase,
+                    background: i === highlightIndex ? '#eff6ff' : '#fff',
+                    color: '#1f2937',
+                  }}
+                >
+                  <span style={{ fontWeight: 500 }}>{s.display_name}</span>
+                  <span style={{ marginLeft: '0.5rem', fontSize: '0.72rem', color: '#9ca3af' }}>
+                    {s.base_pwsid}
+                  </span>
+                </li>
+              ))}
+              {query && filtered.length === 50 && (
+                <li style={{ ...itemBase, color: '#9ca3af', cursor: 'default', textAlign: 'center', fontSize: '0.75rem' }}>
+                  Keep typing to narrow results...
+                </li>
+              )}
+            </ul>
+          )}
+          {query && filtered.length === 0 && (
+            <ul style={listStyle}>
+              <li style={{ ...itemBase, color: '#9ca3af', cursor: 'default', textAlign: 'center' }}>
+                No systems found
+              </li>
+            </ul>
+          )}
+        </>
+      ) : (
+        <button
+          type="button"
+          onClick={() => setIsOpen(true)}
+          style={{
+            ...inputStyle,
+            cursor: 'pointer', textAlign: 'left',
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          }}
+        >
+          <span style={{
+            overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+            color: selectedName ? '#1f2937' : '#9ca3af',
+          }}>
+            {selectedName || 'Select a system...'}
+          </span>
+          <span style={{ fontSize: '0.65rem', color: '#9ca3af', marginLeft: '0.5rem', flexShrink: 0 }}>▼</span>
+        </button>
+      )}
+    </div>
+  );
+}
 
 // =============================================================================
 // MAIN COMPONENT
@@ -306,11 +451,6 @@ function SystemTrendPanel({ data = mergedData }) {
   const [selectedPwsid, setSelectedPwsid] = useState(
     () => allSystems[0]?.base_pwsid ?? null
   );
-
-  // eslint-disable-next-line no-unused-vars
-  const selectedName = allSystems.find(
-    (s) => s.base_pwsid === selectedPwsid
-  )?.display_name ?? '';
 
   // Replacement data for selected system
   const replacementData = useMemo(
@@ -350,26 +490,7 @@ function SystemTrendPanel({ data = mergedData }) {
         gap:            '0.5rem',
       }}>
         <h3 style={{ margin: 0 }}>System Trends</h3>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-          <label
-            htmlFor="systemTrendSelect"
-            style={{ fontSize: '0.8rem', color: '#6b7280', whiteSpace: 'nowrap' }}
-          >
-            Water system
-          </label>
-          <select
-            id="systemTrendSelect"
-            value={selectedPwsid ?? ''}
-            onChange={(e) => setSelectedPwsid(e.target.value)}
-            style={selectStyle}
-          >
-            {allSystems.map((s) => (
-              <option key={s.base_pwsid} value={s.base_pwsid}>
-                {s.display_name}
-              </option>
-            ))}
-          </select>
-        </div>
+        <SystemSearch systems={allSystems} selectedPwsid={selectedPwsid} onSelect={setSelectedPwsid} />
       </div>
 
       {/* ── Chart 1: Annual Replacement Trend ── */}
