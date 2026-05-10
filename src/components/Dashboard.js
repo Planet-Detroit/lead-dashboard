@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
 import './Dashboard.css';
+import SystemTrendPanel from './SystemTrendPanel';
+import ComplianceStatusChart from './ComplianceStatusChart';
+
 
 function Dashboard() {
   const [animatedProgress, setAnimatedProgress] = useState(0);
@@ -10,19 +13,14 @@ function Dashboard() {
   const totalReplaced = 69891;
   const actualProgress = 12.0;
   
-  const yearlyData = [
-    { year: '2021', replacements: 10316 },
-    { year: '2022', replacements: 16379 },
-    { year: '2023', replacements: 18675 },
-    { year: '2024', replacements: 24521 }
-  ];
-  
   const compositionData = [
     { name: 'Known Lead Lines', value: 203050, color: '#dc2626' },
     { name: 'Galvanized (GPCL)', value: 61608, color: '#ea580c' },
     { name: 'Unknown Material', value: 315372, color: '#ca8a04' },
     { name: 'Non-Lead', value: 2026676, color: '#16a34a' }
   ];
+
+  const compositionTotal = compositionData.reduce((sum, d) => sum + d.value, 0);
   
   useEffect(() => {
     const duration = 2000;
@@ -82,32 +80,13 @@ function Dashboard() {
         </div>
         
         <div className="charts-grid">
-          <div className="chart-card">
-            <h3>Annual Replacement Trend</h3>
-            <ResponsiveContainer width="100%" height={300}>
-              <LineChart data={yearlyData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                <XAxis dataKey="year" stroke="#64748b" />
-                <YAxis stroke="#64748b" />
-                <Tooltip 
-                  contentStyle={{ backgroundColor: '#fff', border: '1px solid #e2e8f0', borderRadius: '6px' }}
-                  formatter={(value) => [value.toLocaleString() + ' lines', 'Replaced']}
-                />
-                <Line 
-                  type="monotone" 
-                  dataKey="replacements" 
-                  stroke="#3b82f6" 
-                  strokeWidth={3}
-                  dot={{ fill: '#3b82f6', r: 6 }}
-                  activeDot={{ r: 8 }}
-                />
-              </LineChart>
-            </ResponsiveContainer>
-            <div className="insight-box green">
-              <strong>138% increase</strong> from 2021 to 2024 – progress is accelerating!
-            </div>
-          </div>
-          
+          {/* Combined system trend panel — one dropdown controls both
+              Annual Replacement Trend and Lead Levels Over Time charts.
+              Spans the full left column height. */}
+          <SystemTrendPanel />
+
+          {/* Right column: composition pie chart + compliance breakdown stacked */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', minWidth: 0 }}>
           <div className="chart-card">
             <h3>Service Line Composition</h3>
             <ResponsiveContainer width="100%" height={250}>
@@ -137,7 +116,7 @@ function Dashboard() {
                   <span className="pie-legend-color" style={{ backgroundColor: entry.color }}></span>
                   <span className="pie-legend-label">{entry.name}</span>
                   <span className="pie-legend-value">{entry.value.toLocaleString()}</span>
-                  <span className="pie-legend-percent">({((entry.value / 2606706) * 100).toFixed(1)}%)</span>
+                  <span className="pie-legend-percent">({((entry.value / compositionTotal) * 100).toFixed(1)}%)</span>
                 </div>
               ))}
             </div>
@@ -145,7 +124,11 @@ function Dashboard() {
               <strong>315,372 lines of unknown material</strong> still need testing
             </div>
           </div>
-        </div>
+
+          {/* Compliance status breakdown — stacked below composition in right column */}
+          <ComplianceStatusChart />
+          </div> {/* end right column wrapper */}
+        </div> {/* end charts-grid */}
         
         <div className="footer">
           <p>Data source: Michigan EGLE Community Drinking Supply Monitoring Inventory (CDSMI) and Lead Service Line Replacement Reports</p>

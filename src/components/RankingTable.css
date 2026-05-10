@@ -1,9 +1,35 @@
-/* RankingTable.css - Complete Styling */
+/**
+ * RankingTable.css
+ *
+ * Styles for the Rankings tab.
+ *
+ * Section index:
+ *   1.  Container & page header
+ *   2.  View mode buttons
+ *   3.  Legend panel (collapsible)
+ *   4.  Results meta bar
+ *   5.  Table container & table
+ *   6.  Table header
+ *   7.  Table rows & cells
+ *   8.  Rank badge
+ *   9.  System name & exceedance tag
+ *  10.  Column-specific colors
+ *  11.  Progress badge & incomplete state
+ *  12.  Status cell
+ *  13.  Pagination
+ *  14.  Footer
+ *  15.  Responsive overrides
+ */
+
+/* =============================================================================
+   1. Container & page header
+   ============================================================================= */
 
 .ranking-container {
   max-width: 1600px;
   margin: 0 auto;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .ranking-header {
@@ -20,14 +46,18 @@
 .ranking-header p {
   color: #64748b;
   font-size: 1.1rem;
+  margin: 0;
 }
 
-/* View Controls */
+/* =============================================================================
+   2. View mode buttons
+   ============================================================================= */
+
 .view-controls {
   display: flex;
   gap: 12px;
   justify-content: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
@@ -40,7 +70,7 @@
   font-weight: 600;
   color: #475569;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
 }
 
 .view-btn:hover {
@@ -55,40 +85,69 @@
   border-color: #2563eb;
 }
 
-/* Legend - Matching Directory Style */
+/* =============================================================================
+   3. Legend panel (collapsible)
+   Same pattern as WaterSystemDirectory legend.
+   ============================================================================= */
+
 .table-legend {
   background: white;
-  padding: 20px 25px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 25px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
 }
 
-.table-legend h4 {
-  margin: 0 0 15px 0;
-  color: #1e293b;
-  font-size: 1rem;
-  font-weight: 600;
+.legend-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: none;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.1s;
+}
+
+.legend-toggle:hover {
+  background: #f9fafb;
+}
+
+.legend-toggle-icon {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  width: 12px;
+}
+
+.legend-body {
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid #f3f4f6;
 }
 
 .legend-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.6rem;
+  margin-top: 1rem;
 }
 
 .legend-item {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 10px;
 }
 
 .legend-dot {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   flex-shrink: 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  margin-top: 2px;
 }
 
 .legend-item .legend-text {
@@ -98,7 +157,8 @@
 }
 
 .legend-item .legend-text strong {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
   color: #1e293b;
 }
 
@@ -107,28 +167,68 @@
   color: #64748b;
 }
 
-.exceedance-legend .exceedance-icon {
-  font-size: 1.1rem;
-  width: 18px;
-  text-align: center;
+.exceedance-icon {
+  font-size: 14px;
+  width: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
 }
 
-/* Table Container */
+/* =============================================================================
+   4. Results meta bar
+   ============================================================================= */
+
+.ranking-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.ranking-meta .results-count {
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.ranking-meta .results-count strong {
+  color: #1e293b;
+}
+
+.ranking-meta .filter-explanation {
+  color: #6b7280;
+  font-size: 0.82rem;
+  text-align: right;
+}
+
+/* =============================================================================
+   5. Table container & table
+   overflow-x: auto enables horizontal scroll on mobile without hiding content.
+   min-width on the table ensures columns don't collapse below readable widths.
+   ============================================================================= */
+
 .table-container {
   background: white;
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  /* Prevent container itself from overflowing its parent */
+  min-width: 0;
 }
 
-/* Table */
 .ranking-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.9rem;
-  min-width: 1100px;
+  /* Minimum width before horizontal scroll kicks in */
+  min-width: 1000px;
 }
+
+/* =============================================================================
+   6. Table header
+   ============================================================================= */
 
 .ranking-table thead {
   background: #f8fafc;
@@ -140,7 +240,7 @@
   text-align: left;
   font-weight: 600;
   color: #334155;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   white-space: nowrap;
@@ -149,54 +249,42 @@
 .ranking-table th.sortable {
   cursor: pointer;
   user-select: none;
-  transition: background 0.2s ease;
+  transition: background 0.15s;
 }
 
 .ranking-table th.sortable:hover {
   background: #f1f5f9;
 }
 
-.ranking-table th.number-col {
-  text-align: right;
-}
+.ranking-table th.number-col { text-align: right; }
+.ranking-table th.rank-col   { text-align: center; width: 70px; }
+.ranking-table th.status-col { text-align: left; min-width: 220px; }
 
-.ranking-table th.rank-col {
-  text-align: center;
-  width: 70px;
-}
+/* Active sort indicator (blue) vs inactive (gray) */
+.sort-indicator             { font-size: 0.75rem; margin-left: 3px; color: #2563eb; }
+.sort-indicator--inactive   { color: #d1d5db; }
 
-.ranking-table th.status-col {
-  text-align: left;
-  min-width: 200px;
-}
+/* =============================================================================
+   7. Table rows & cells
+   ============================================================================= */
 
-.sort-indicator {
-  font-size: 0.9rem;
-  margin-left: 4px;
-  color: #2563eb;
-}
-
-/* Table Body */
 .ranking-table tbody tr {
   border-bottom: 1px solid #f1f5f9;
-  transition: background 0.2s ease;
+  transition: background 0.15s;
 }
 
 .ranking-table tbody tr:hover {
   background: #f8fafc;
 }
 
-.ranking-table tbody tr.top-three {
-  background: #fefce8;
-}
-
-.ranking-table tbody tr.top-three:hover {
-  background: #fef9c3;
-}
+/* Top 3 rows in Best Progress mode get a gold tint */
+.ranking-table tbody tr.top-three       { background: #fefce8; }
+.ranking-table tbody tr.top-three:hover { background: #fef9c3; }
 
 .ranking-table td {
   padding: 14px 10px;
   color: #334155;
+  vertical-align: middle;
 }
 
 .ranking-table td.number-col {
@@ -204,15 +292,13 @@
   font-variant-numeric: tabular-nums;
 }
 
-.ranking-table td.rank-col {
-  text-align: center;
-}
+.ranking-table td.rank-col   { text-align: center; }
+.ranking-table td.status-col { text-align: left; }
 
-.ranking-table td.status-col {
-  text-align: left;
-}
+/* =============================================================================
+   8. Rank badge
+   ============================================================================= */
 
-/* Rank Badge */
 .rank-badge {
   display: inline-flex;
   align-items: center;
@@ -224,11 +310,16 @@
   color: #64748b;
 }
 
-/* System Name */
+/* =============================================================================
+   9. System name & exceedance tag
+   ============================================================================= */
+
 .system-name {
   font-weight: 500;
   color: #1e293b;
-  max-width: 280px;
+  max-width: 260px;
+  /* Allow wrapping on narrow viewports rather than overflowing */
+  word-break: break-word;
 }
 
 .exceedance-tag {
@@ -241,27 +332,23 @@
   font-size: 0.75rem;
   color: #991b1b;
   cursor: help;
+  white-space: nowrap;
 }
 
-/* Column-specific colors */
-.lead-count {
-  font-weight: 600;
-  color: #dc2626;
-}
+/* =============================================================================
+   10. Column-specific colors
+   ============================================================================= */
 
-.gpcl-count {
-  font-weight: 600;
-  color: #ea580c;
-}
+.lead-count    { font-weight: 600; color: #dc2626; }
+.gpcl-count    { font-weight: 600; color: #ea580c; }
+.unknown-count { font-weight: 600; color: #ca8a04; }
 
-.unknown-count {
-  font-weight: 600;
-  color: #ca8a04;
-}
+/* =============================================================================
+   11. Progress badge & incomplete state
+   ============================================================================= */
 
-/* Progress Badge */
 .progress-badge {
-  padding: 5px 10px;
+  padding: 4px 10px;
   border-radius: 6px;
   font-weight: 600;
   font-size: 0.85rem;
@@ -271,7 +358,18 @@
   border: 1px solid;
 }
 
-/* Status Cell */
+/* Shown instead of a percentage when inventory is incomplete */
+.progress-incomplete {
+  font-size: 0.82rem;
+  color: #9ca3af;
+  font-style: italic;
+  cursor: help;
+}
+
+/* =============================================================================
+   12. Status cell
+   ============================================================================= */
+
 .status-cell {
   display: flex;
   align-items: center;
@@ -286,24 +384,80 @@
 }
 
 .status-text {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #475569;
-  white-space: nowrap;
+  /* Allow long labels to wrap rather than overflow */
+  white-space: normal;
+  word-break: break-word;
+  max-width: 200px;
 }
 
-/* Table Footer */
-.table-footer {
-  padding: 20px 25px;
-  background: #f8fafc;
-  border-top: 1px solid #e2e8f0;
-  text-align: center;
+/* =============================================================================
+   13. Pagination
+   Same visual style as WaterSystemDirectory pagination.
+   ============================================================================= */
+
+.ranking-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
 }
 
-.table-footer .results-count {
-  margin: 0 0 8px 0;
-  color: #1e293b;
-  font-size: 0.95rem;
+.pag-btn {
+  height: 34px;
+  min-width: 34px;
+  padding: 0 10px;
+  font-size: 0.82rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+  background: #fff;
+  color: #374151;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.1s, border-color 0.1s;
+}
+
+.pag-btn:hover:not(:disabled) {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.pag-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.pag-btn--active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
   font-weight: 600;
+}
+
+.pag-btn--active:hover {
+  background: #1d4ed8 !important;
+}
+
+.pag-ellipsis {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+}
+
+/* =============================================================================
+   14. Footer
+   ============================================================================= */
+
+.table-footer {
+  padding: 16px 0;
+  text-align: center;
 }
 
 .table-footer .filter-explanation {
@@ -311,69 +465,79 @@
   color: #64748b;
   font-size: 0.85rem;
   line-height: 1.5;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* Responsive Design */
+/* =============================================================================
+   15. Responsive overrides
+   ============================================================================= */
+
 @media (max-width: 1024px) {
   .ranking-table {
     font-size: 0.85rem;
   }
-  
+
   .ranking-table th,
   .ranking-table td {
     padding: 12px 8px;
   }
-  
+
   .system-name {
     max-width: 200px;
   }
-  
+
   .legend-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
   .ranking-container {
-    padding: 15px;
+    padding: 12px;
   }
-  
+
   .ranking-header h2 {
     font-size: 1.5rem;
   }
-  
+
   .view-controls {
     gap: 8px;
   }
-  
+
   .view-btn {
-    padding: 10px 16px;
+    padding: 10px 14px;
     font-size: 0.85rem;
     flex: 1;
-    min-width: 140px;
+    min-width: 130px;
   }
-  
+
   .legend-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .ranking-table {
     font-size: 0.8rem;
   }
-  
+
   .ranking-table th,
   .ranking-table td {
     padding: 10px 6px;
   }
-  
+
+  /* Hide status text on very small screens — dot color still conveys the status */
   .status-text {
     display: none;
   }
-  
+
   .status-cell {
     justify-content: center;
+  }
+
+  .ranking-meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .ranking-meta .filter-explanation {
+    text-align: left;
   }
 }

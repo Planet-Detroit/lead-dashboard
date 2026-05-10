@@ -1,591 +1,981 @@
-.directory-container {
+/**
+ * WaterSystemDirectory.css
+ *
+ * Styles for the Michigan Water System Directory (Search Systems tab).
+ * Organized into clearly labelled sections matching the component structure.
+ *
+ * Section index:
+ *   1.  Container & page header
+ *   2.  Search & filter controls
+ *   3.  Legend panel
+ *   4.  Table wrapper & column widths
+ *   5.  Table header
+ *   6.  Row status colors  <-- edit here to change per-status tints & borders
+ *   7.  Table cells & name column
+ *   8.  Status badges      <-- edit here to change badge colors
+ *   9.  Progress bar (table row)
+ *  10.  Expanded detail panel
+ *  11.  Narrative sentence
+ *  12.  Large progress bar (expanded)
+ *  13.  Stat cards grid
+ *  14.  Sparkline bar chart
+ *  15.  Expanded footer
+ *  16.  Empty state
+ *  17.  Pagination
+ *  18.  Responsive overrides
+ */
+
+/* =============================================================================
+   1. Container & page header
+   ============================================================================= */
+
+.dir-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  min-height: 100vh;
+  padding: 2rem 1.5rem 4rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.directory-header {
-  text-align: center;
-  margin-bottom: 40px;
+.dir-header {
+  margin-bottom: 1.75rem;
 }
 
-.directory-header h1 {
-  font-size: 2.5rem;
-  color: #1e293b;
-  margin-bottom: 10px;
+.dir-header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.35rem;
 }
 
-.directory-header p {
-  font-size: 1.1rem;
-  color: #64748b;
+.dir-header p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin: 0;
 }
 
-/* Search Controls */
-.search-controls {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
+/* =============================================================================
+   2. Search & filter controls
+   ============================================================================= */
+
+.dir-controls {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.search-box {
+/* -- Search input -- */
+
+.dir-search-wrap {
   position: relative;
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
-.search-input {
-  width: 100%;
-  padding: 15px 50px 15px 20px;
-  font-size: 1.1rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
-  transition: border-color 0.3s;
-  box-sizing: border-box;
-}
-
-.search-input:focus {
-  outline: none;
-  border-color: #3b82f6;
-}
-
-.search-icon {
+.dir-search-icon {
   position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.5rem;
+  left: 11px;
+  font-size: 18px;
+  color: #9ca3af;
   pointer-events: none;
+  line-height: 1;
 }
 
-.filter-row {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 15px;
-}
-
-.filter-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.filter-label {
-  font-weight: 600;
-  color: #475569;
-  font-size: 0.95rem;
-}
-
-.status-select {
-  padding: 10px 15px;
-  font-size: 0.95rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 6px;
-  background: white;
-  cursor: pointer;
-  min-width: 250px;
-}
-
-.status-select:focus {
+.dir-search-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 36px 0 36px;
+  font-size: 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  color: #1a1a1a;
+  background: #fafafa;
   outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.dir-search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+  background: #fff;
+}
+
+.dir-search-clear {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #9ca3af;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dir-search-clear:hover {
+  color: #4b5563;
+}
+
+/* -- Filter row -- */
+
+.dir-filters {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.dir-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Pushes the rows-per-page selector to the right end of the filter row */
+.dir-filter-group--right {
+  margin-left: auto;
+}
+
+.dir-filter-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.dir-select {
+  height: 34px;
+  padding: 0 0.6rem;
+  font-size: 0.85rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  color: #1a1a1a;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.dir-select:focus {
   border-color: #3b82f6;
 }
 
-.checkbox-label {
+/* Narrower variant used for the rows-per-page dropdown */
+.dir-select--sm {
+  width: 72px;
+}
+
+.dir-checkbox-label {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #374151;
   cursor: pointer;
-  font-size: 0.95rem;
-  color: #475569;
+  user-select: none;
 }
 
-.checkbox-label input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
+.dir-checkbox-label input[type='checkbox'] {
+  width: 15px;
+  height: 15px;
+  accent-color: #3b82f6;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
-.results-count {
-  font-size: 0.9rem;
-  color: #64748b;
-  font-weight: 600;
-}
+/* -- Results count bar -- */
 
-/* Sort Controls */
-.sort-controls {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.dir-meta {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 25px;
+  justify-content: space-between;
+  padding-top: 0.25rem;
+  border-top: 1px solid #f3f4f6;
+  font-size: 0.82rem;
+  color: #9ca3af;
 }
 
-/* Directory Legend */
-.directory-legend {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 25px;
+.dir-count strong {
+  color: #374151;
 }
 
-.directory-legend h4 {
-  margin: 0 0 15px 0;
-  color: #1e293b;
-  font-size: 1rem;
-  font-weight: 600;
+.dir-page-info {
+  color: #9ca3af;
+}
+
+/* =============================================================================
+   3. Legend panel
+   ============================================================================= */
+
+.legend-panel {
+  margin-bottom: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.legend-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: none;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.1s;
+}
+
+.legend-toggle:hover {
+  background: #f9fafb;
+}
+
+.legend-toggle-icon {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  width: 12px;
+}
+
+.legend-body {
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid #f3f4f6;
 }
 
 .legend-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 12px;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.6rem;
+  margin: 1rem 0;
 }
 
 .legend-item {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 0.6rem;
 }
 
-.legend-color {
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
+.legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
   flex-shrink: 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  margin-top: 2px;
+}
+
+/* Exceedance uses a text symbol rather than a color swatch */
+.legend-swatch--exc {
+  background: none;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .legend-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .legend-text strong {
-  font-size: 0.85rem;
-  color: #1e293b;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1f2937;
 }
 
 .legend-text span {
   font-size: 0.75rem;
-  color: #64748b;
+  color: #6b7280;
 }
 
-.progress-explainer {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #e2e8f0;
-}
-
-.progress-explainer h4 {
-  margin-bottom: 12px;
-}
-
-.formula-box {
-  background: #f1f5f9;
-  padding: 12px 16px;
+.legend-formula {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
-  margin-bottom: 12px;
-  border-left: 4px solid #3b82f6;
+  padding: 0.875rem 1rem;
+  margin-top: 0.5rem;
 }
 
-.formula-box code {
-  font-family: 'SF Mono', 'Consolas', monospace;
-  font-size: 0.9rem;
-  color: #1e293b;
-}
-
-.progress-explainer p {
-  font-size: 0.9rem;
-  color: #475569;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.progress-explainer p strong {
-  color: #1e293b;
-}
-
-.sort-label {
+.legend-formula-title {
+  font-size: 0.8rem;
   font-weight: 600;
-  color: #475569;
-  margin-right: 10px;
+  color: #1f2937;
+  margin: 0 0 0.4rem;
 }
 
-.sort-btn {
-  padding: 8px 16px;
-  border: 2px solid #e2e8f0;
-  background: white;
-  border-radius: 6px;
+.legend-formula-code {
+  display: block;
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.78rem;
+  color: #374151;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.legend-formula-note {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* =============================================================================
+   4. Table wrapper & column widths
+   ============================================================================= */
+
+.dir-table-wrap {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow-x: auto;   /* allows horizontal scroll on narrow viewports */
+  background: #fff;
+}
+
+.dir-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Column widths — adjust these if you add or remove columns */
+.col-name   { width: 20%; }
+.col-pop    { width: 10%; }
+.col-status { width: 22%; }
+.col-prog   { width: 14%; }
+.col-lead   { width: 9%;  }
+.col-pwsid  { width: 11%; }
+.col-exc    { width: 16%; }
+
+/* =============================================================================
+   5. Table header
+   ============================================================================= */
+
+.dir-table thead tr {
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dir-table th {
+  padding: 10px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-align: left;
   cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #475569;
-  transition: all 0.2s;
+  user-select: none;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
-.sort-btn:hover {
-  border-color: #3b82f6;
+.dir-table th:hover {
+  color: #374151;
+}
+
+/* Exceedance column is not sortable */
+.col-exc {
+  cursor: default;
+}
+
+.sort-icon {
+  margin-left: 4px;
+  font-size: 0.7rem;
+}
+
+.sort-icon--inactive { color: #d1d5db; }
+.sort-icon--active   { color: #3b82f6; }
+
+/* =============================================================================
+   6. Row status colors
+   Each status gets a background tint and a 4px left border in its brand color.
+   To change a color: update both the background values and the border-left color.
+   To add a new status: add a new block following the same pattern.
+   ============================================================================= */
+
+.dir-row {
+  cursor: pointer;
+  border-bottom: 1px solid #f3f4f6;
+  transition: filter 0.1s;
+}
+
+.dir-row:hover {
+  filter: brightness(0.97);
+}
+
+.dir-row--expanded {
+  border-bottom-color: transparent;
+}
+
+/* Not compliant — red */
+.dir-row--noncompliant                    { background: #fef2f2; border-left: 4px solid #dc2626; }
+.dir-row--noncompliant:hover              { background: #fee2e2; }
+.dir-row--noncompliant.dir-row--expanded  { background: #fee2e2; }
+
+/* Compliant — green */
+.dir-row--compliant                       { background: #f0fdf4; border-left: 4px solid #16a34a; }
+.dir-row--compliant:hover                 { background: #dcfce7; }
+.dir-row--compliant.dir-row--expanded     { background: #dcfce7; }
+
+/* 100% replaced — emerald */
+.dir-row--complete                        { background: #ecfdf5; border-left: 4px solid #059669; }
+.dir-row--complete:hover                  { background: #d1fae5; }
+.dir-row--complete.dir-row--expanded      { background: #d1fae5; }
+
+/* No lead lines — blue */
+.dir-row--nolead                          { background: #eff6ff; border-left: 4px solid #2563eb; }
+.dir-row--nolead:hover                    { background: #dbeafe; }
+.dir-row--nolead.dir-row--expanded        { background: #dbeafe; }
+
+/* Inventory incomplete — purple */
+.dir-row--incomplete                      { background: #faf5ff; border-left: 4px solid #7c3aed; }
+.dir-row--incomplete:hover                { background: #ede9fe; }
+.dir-row--incomplete.dir-row--expanded    { background: #ede9fe; }
+
+/* Wholesale only — gray */
+.dir-row--wholesale                       { background: #f9fafb; border-left: 4px solid #6b7280; }
+.dir-row--wholesale:hover                 { background: #f3f4f6; }
+.dir-row--wholesale.dir-row--expanded     { background: #f3f4f6; }
+
+/* =============================================================================
+   7. Table cells & name column
+   ============================================================================= */
+
+.dir-table td {
+  padding: 11px 14px;
+  font-size: 0.875rem;
+  color: #1f2937;
+  vertical-align: middle;
+}
+
+/* Expand chevron — small triangle before the system name */
+.dir-row-expand-icon {
+  font-size: 0.65rem;
+  color: #9ca3af;
+  margin-right: 8px;
+  flex-shrink: 0;
+  transition: color 0.1s;
+}
+
+.dir-row--expanded .dir-row-expand-icon {
   color: #3b82f6;
 }
 
-.sort-btn.active {
-  background: #3b82f6;
-  color: white;
-  border-color: #3b82f6;
-}
-
-/* Systems Grid */
-.systems-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  gap: 25px;
-  margin-bottom: 30px;
-}
-
-/* System Card */
-.system-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.system-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-/* Card Header - Status-based colors */
-.card-header {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.card-header h3 {
-  margin: 0;
-  color: white;
-  font-size: 1.1rem;
-  flex: 1;
-  line-height: 1.3;
-}
-
-/* Status-based header gradients */
-.card-header.status-incomplete {
-  background: linear-gradient(135deg, #7e22ce 0%, #9333ea 100%);
-}
-
-.card-header.status-noncompliant {
-  background: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%);
-}
-
-/* Compliant: Lighter green */
-.card-header.status-compliant {
-  background: linear-gradient(135deg, #16a34a 0%, #4ade80 100%);
-}
-
-/* 100% replaced: Darker emerald */
-.card-header.status-complete {
-  background: linear-gradient(135deg, #047857 0%, #059669 100%);
-}
-
-.card-header.status-nolead {
-  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
-}
-
-.card-header.status-wholesale {
-  background: linear-gradient(135deg, #4b5563 0%, #6b7280 100%);
-}
-
-/* Exceedance Badge */
-.header-badges {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  flex-shrink: 0;
-}
-
-.exceedance-badge {
-  background: #fef2f2;
-  color: #991b1b;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  white-space: nowrap;
-  border: 1px solid #fecaca;
-}
-
-.no-location-badge {
-  background: #fefce8;
-  color: #854d0e;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  white-space: nowrap;
-  border: 1px solid #fde047;
-}
-
-/* Card Body */
-.card-body {
-  padding: 20px;
-}
-
-/* Flint Special Note */
-.flint-note {
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  border-left: 4px solid #3b82f6;
-  border-radius: 6px;
-  padding: 12px 14px;
-  margin-bottom: 15px;
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-}
-
-.flint-note-icon {
-  font-size: 1.1rem;
-  flex-shrink: 0;
-  line-height: 1.4;
-}
-
-.flint-note p {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #1e40af;
-  line-height: 1.4;
+.dir-system-name {
   font-weight: 500;
+  color: #111827;
+  /* Allow name to wrap on narrow screens rather than overflow */
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
-.stat-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 0;
-  border-bottom: 1px solid #f1f5f9;
+/* Dash shown in the lead lines column when a system has zero lead lines */
+.dir-dash {
+  color: #d1d5db;
 }
 
-.stat-row:last-of-type {
-  border-bottom: none;
+/* Inline exceedance text shown directly in the table row */
+.exc-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #b91c1c;
+  white-space: nowrap;
 }
 
-.stat-row.highlight {
-  background: #fef2f2;
-  margin: 0 -20px;
-  padding: 15px 20px;
-  border-bottom: none;
-  border-top: 1px solid #fecaca;
-  border-bottom: 1px solid #fecaca;
+/* PWSID displayed in monospace for easy scanning */
+.dir-pwsid-cell {
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.75rem;
+  color: #6b7280;
 }
 
-.stat-label {
-  font-size: 0.9rem;
-  color: #64748b;
-  font-weight: 500;
-}
-
-.stat-value {
-  font-size: 1rem;
-  color: #1e293b;
-  font-weight: 700;
-}
-
-.stat-value.large {
-  font-size: 1.4rem;
-  color: #dc2626;
-}
-
-/* Status Section */
-.status-section {
-  margin: 15px 0;
-  padding: 15px;
-  background: #f8fafc;
-  border-radius: 8px;
-}
+/* =============================================================================
+   8. Status badges
+   Solid-colored pills with white text. One rule per status.
+   To change a badge color: update background here and the matching swatch
+   color in LEGEND_ITEMS in WaterSystemDirectory.js.
+   ============================================================================= */
 
 .status-badge {
   display: inline-block;
-  padding: 6px 14px;
+  padding: 3px 8px;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  border: 2px solid;
-  margin-bottom: 8px;
-}
-
-.status-explanation {
-  margin: 8px 0 0 0;
-  font-size: 0.85rem;
-  color: #64748b;
+  /* Allow long labels like '<20% average replacement' to wrap */
+  white-space: normal;
   line-height: 1.4;
+  max-width: 100%;
+  word-break: break-word;
 }
 
-/* Lead Details Section */
-.lead-details {
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 2px solid #e2e8f0;
-}
+.badge-noncompliant { background: #dc2626; color: #fff; }
+.badge-compliant    { background: #16a34a; color: #fff; }
+.badge-complete     { background: #059669; color: #fff; }
+.badge-nolead       { background: #2563eb; color: #fff; }
+.badge-incomplete   { background: #7c3aed; color: #fff; }
+.badge-wholesale    { background: #6b7280; color: #fff; }
+.badge-unknown      { background: #9ca3af; color: #fff; }
 
-.line-counts {
+/* =============================================================================
+   9. Progress bar (table row inline version)
+   ============================================================================= */
+
+.prog-bar-wrap {
   display: flex;
-  gap: 12px;
-  margin: 15px 0;
+  align-items: center;
+  gap: 8px;
+}
+
+.prog-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: #f3f4f6;
+  overflow: hidden;
+  min-width: 40px;
+}
+
+.prog-fill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+/* Color tiers — match getProgressColorClass() in WaterSystemDirectory.js */
+.prog-fill--good { background: #16a34a; }
+.prog-fill--mid  { background: #ea580c; }
+.prog-fill--low  { background: #dc2626; }
+
+.prog-val {
+  font-size: 0.78rem;
+  color: #6b7280;
+  min-width: 36px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Shown instead of a bar for systems where progress is not applicable */
+.prog-na {
+  font-size: 0.8rem;
+  color: #d1d5db;
+}
+
+/* =============================================================================
+   10. Expanded detail panel
+   ============================================================================= */
+
+.dir-expand-row {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Remove default td padding so expand-inner can manage its own */
+.dir-expand-cell {
+  padding: 0 !important;
+}
+
+.expand-inner {
+  padding: 1.25rem 1.75rem;
+  background: #f8faff;
+  border-top: 1px solid #dbeafe;
+}
+
+/* Info notice (used for the Flint data caveat) */
+.expand-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.6rem 0.875rem;
+  border-radius: 7px;
+  font-size: 0.82rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.expand-notice--info {
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+.expand-notice-icon {
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+/* =============================================================================
+   11. Narrative sentence
+   Color-coded block at the top of the expanded panel.
+   Tone is set by buildNarrative() in WaterSystemDirectory.js.
+   ============================================================================= */
+
+.expand-narrative {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 7px;
+  border-left: 4px solid;
+}
+
+.expand-narrative--good    { background: #f0fdf4; color: #166534; border-color: #4ade80; }
+.expand-narrative--bad     { background: #fef2f2; color: #991b1b; border-color: #dc2626; }
+.expand-narrative--warn    { background: #fffbeb; color: #78350f; border-color: #fbbf24; }
+.expand-narrative--neutral { background: #f9fafb; color: #374151; border-color: #d1d5db; }
+
+/* =============================================================================
+   12. Large progress bar (expanded panel)
+   Wider bar with a percentage label and a tick mark at the compliance threshold.
+   ============================================================================= */
+
+.expand-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.expand-progress-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+  min-width: 56px;
+}
+
+.expand-progress-pct {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1;
+}
+
+.expand-progress-sub {
+  font-size: 0.68rem;
+  color: #9ca3af;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.expand-progress-bar {
+  flex: 1;
+  height: 10px;
+  background: #f3f4f6;
+  border-radius: 5px;
+  position: relative;
+  overflow: visible; /* allows the threshold tick to extend above the bar */
+}
+
+.expand-progress-fill {
+  height: 100%;
+  border-radius: 5px;
+}
+
+/* Color tiers — must match getProgressColorClass() in WaterSystemDirectory.js */
+.expand-progress-fill--good { background: #16a34a; }
+.expand-progress-fill--mid  { background: #ea580c; }
+.expand-progress-fill--low  { background: #dc2626; }
+
+/* Vertical tick mark at the compliance threshold (default: 20%) */
+.expand-progress-threshold {
+  position: absolute;
+  top: -4px;
+  width: 2px;
+  height: 18px;
+  background: #6b7280;
+  border-radius: 1px;
+  transform: translateX(-50%);
+}
+
+/* "20%" label below the tick mark */
+.expand-progress-threshold::after {
+  content: '20%';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+/* =============================================================================
+   13. Stat cards grid
+   ============================================================================= */
+
+.expand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.expand-stat {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.expand-stat-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.expand-stat-val {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Colored value variants for specific stat types */
+.expand-stat-val--lead    { color: #b91c1c; } /* red — lead line count */
+.expand-stat-val--unknown { color: #92400e; } /* amber — unknown material count */
+.expand-stat-val--good    { color: #15803d; } /* green — lines replaced */
+.expand-stat-val--warn    { color: #b45309; } /* amber — exceedance year */
+
+/* =============================================================================
+   14. Sparkline bar chart
+   ============================================================================= */
+
+.spark-wrap {
+  margin-bottom: 1rem;
+}
+
+.spark-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin: 0 0 0.5rem;
+}
+
+.spark-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 60px;
+}
+
+.spark-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex: 1;
+  max-width: 60px;
+}
+
+.spark-count {
+  font-size: 0.7rem;
+  color: #6b7280;
+  line-height: 1;
+}
+
+.spark-bar {
+  width: 100%;
+  background: #16a34a;
+  border-radius: 3px 3px 0 0;
+  min-height: 2px;
+}
+
+.spark-year {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  line-height: 1;
+}
+
+/* =============================================================================
+   15. Expanded footer
+   ============================================================================= */
+
+.expand-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.expand-pwsid {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  font-family: 'SFMono-Regular', Consolas, monospace;
+}
+
+.expand-badge {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.expand-badge--exc   { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; }
+.expand-badge--noloc { background: #f9fafb; color: #6b7280; border: 1px solid #e5e7eb; }
+
+.expand-epa-link {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.expand-epa-link:hover {
+  text-decoration: underline;
+}
+
+/* =============================================================================
+   16. Empty state
+   ============================================================================= */
+
+.dir-no-results {
+  text-align: center;
+  padding: 3.5rem 1rem;
+  color: #6b7280;
+}
+
+.dir-no-results p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.dir-no-results-hint {
+  margin-top: 0.35rem !important;
+  font-size: 0.82rem !important;
+  color: #9ca3af !important;
+}
+
+/* =============================================================================
+   17. Pagination
+   ============================================================================= */
+
+.dir-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 1.25rem;
   flex-wrap: wrap;
 }
 
-.line-count-item {
-  flex: 1;
-  min-width: 90px;
-  padding: 12px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.line-count-item.lead {
-  background: #fef2f2;
-  border: 1px solid #fecaca;
-}
-
-.line-count-item.gpcl {
-  background: #fff7ed;
-  border: 1px solid #fed7aa;
-}
-
-.line-count-item.unknown {
-  background: #fefce8;
-  border: 1px solid #fde047;
-}
-
-.line-count-value {
-  display: block;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #1e293b;
-}
-
-.line-count-label {
-  display: block;
-  font-size: 0.75rem;
-  color: #64748b;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-top: 4px;
-}
-
-.line-count-item.lead .line-count-value {
-  color: #dc2626;
-}
-
-.line-count-item.gpcl .line-count-value {
-  color: #ea580c;
-}
-
-.line-count-item.unknown .line-count-value {
-  color: #ca8a04;
-}
-
-/* Card Footer */
-.card-footer {
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 1px solid #f1f5f9;
+.dir-pag-btn {
+  height: 34px;
+  min-width: 34px;
+  padding: 0 10px;
+  font-size: 0.82rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+  background: #fff;
+  color: #374151;
+  cursor: pointer;
   display: flex;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.1s, border-color 0.1s;
+}
+
+.dir-pag-btn:hover:not(:disabled) {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.dir-pag-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* Active (current) page button */
+.dir-pag-btn--active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+  font-weight: 600;
+}
+
+.dir-pag-btn--active:hover {
+  background: #1d4ed8 !important;
+}
+
+.dir-pag-ellipsis {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  padding: 0 4px;
+  display: flex;
   align-items: center;
 }
 
-.pwsid {
-  font-size: 0.8rem;
-  color: #94a3b8;
-  font-family: monospace;
-}
+/* =============================================================================
+   18. Responsive overrides
+   ============================================================================= */
 
-/* No Results */
-.no-results {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 60px 20px;
-  background: white;
-  border-radius: 12px;
-}
-
-.no-results p {
-  font-size: 1.2rem;
-  color: #64748b;
-  margin-bottom: 10px;
-}
-
-.no-results .hint {
-  font-size: 0.95rem;
-  color: #94a3b8;
-}
-
-/* Responsive Design */
+/* Tablet: hide the Status and Lead Lines columns to make room */
 @media (max-width: 768px) {
-  .directory-container {
-    padding: 20px 10px;
+  .dir-container {
+    padding: 1rem 0.75rem 3rem;
   }
-  
-  .directory-header h1 {
-    font-size: 1.8rem;
+
+  .col-status,
+  .col-lead,
+  .col-pwsid {
+    display: none;
   }
-  
-  .systems-grid {
-    grid-template-columns: 1fr;
+
+  /* Redistribute widths for the remaining columns */
+  .col-name { width: 42%; }
+  .col-pop  { width: 18%; }
+  .col-prog { width: 22%; }
+  .col-exc  { width: 18%; }
+
+  .dir-filters {
+    gap: 0.75rem;
   }
-  
-  .filter-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
+
+  /* Rows selector no longer needs to be pushed right on narrow screens */
+  .dir-filter-group--right {
+    margin-left: 0;
   }
-  
-  .status-select {
-    width: 100%;
+
+  .expand-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   }
-  
-  .sort-controls {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  .sort-btn {
-    width: 100%;
-  }
-  
-  .line-counts {
-    flex-direction: column;
-  }
-  
-  .line-count-item {
-    min-width: auto;
-  }
-  
-  .legend-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .formula-box code {
+}
+
+/* Mobile: tighten cell padding and font sizes */
+@media (max-width: 480px) {
+  .dir-table th,
+  .dir-table td {
+    padding: 9px 8px;
     font-size: 0.8rem;
+  }
+
+  .dir-system-name {
+    font-size: 0.82rem;
   }
 }
