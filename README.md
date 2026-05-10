@@ -6,7 +6,7 @@ An interactive data visualization tracking lead service line replacement progres
 
 ## Live Demo
 
-View the dashboard at: [https://ninaplanetdetroit.github.io/lead-dashboard](https://ninaplanetdetroit.github.io/lead-dashboard)
+View the dashboard at: [https://leadservicelines.planetdetroit.org](https://leadservicelines.planetdetroit.org)
 
 ## Overview
 
@@ -98,7 +98,7 @@ The dashboard uses raw data from EGLE's official reports, with replacement perce
 
 ```bash
 # Clone the repository
-git clone https://github.com/ninaplanetdetroit/lead-dashboard.git
+git clone https://github.com/Planet-Detroit/lead-dashboard.git
 cd lead-dashboard
 
 # Install dependencies
@@ -124,11 +124,7 @@ To update the dashboard with new EGLE data:
    ```bash
    npm start
    ```
-5. **Deploy** to GitHub Pages:
-   ```bash
-   npm run build
-   npm run deploy
-   ```
+5. **Deploy**: Push to `main` — GitHub Actions will build and deploy automatically.
 
 ### Build for Production
 
@@ -136,11 +132,11 @@ To update the dashboard with new EGLE data:
 npm run build
 ```
 
-### Deploy to GitHub Pages
+### Deployment
 
-```bash
-npm run deploy
-```
+Deploys are **automatic** via GitHub Actions. Every push to `main` triggers a build and deploys to GitHub Pages at [leadservicelines.planetdetroit.org](https://leadservicelines.planetdetroit.org).
+
+The workflow is defined in `.github/workflows/deploy.yml`. You can also trigger a deploy manually from the Actions tab on GitHub.
 
 ## Project Structure
 
@@ -203,7 +199,7 @@ To embed this dashboard on a website, use an iframe:
 
 ```html
 <iframe 
-  src="https://ninaplanetdetroit.github.io/lead-dashboard" 
+  src="https://leadservicelines.planetdetroit.org" 
   width="100%" 
   height="1600" 
   frameborder="0" 
@@ -223,7 +219,7 @@ To embed this dashboard on a website, use an iframe:
 
 This project is maintained by Planet Detroit. For questions, suggestions, or data corrections:
 
-* **Issues**: [GitHub Issues](https://github.com/ninaplanetdetroit/lead-dashboard/issues)
+* **Issues**: [GitHub Issues](https://github.com/Planet-Detroit/lead-dashboard/issues)
 * **Email**: [Contact Planet Detroit](https://planetdetroit.org/contact)
 
 ## License
@@ -270,4 +266,4 @@ This project is maintained by Planet Detroit. For questions, suggestions, or dat
 
 *Built with ❤️ by Planet Detroit for public information and advocacy*
 
-*Last updated: November 2025*
+*Last updated: May 2026*
