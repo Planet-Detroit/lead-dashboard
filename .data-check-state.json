@@ -6,9 +6,8 @@
     "url": "https://data.michigan.gov/dataset/Public-Water-Supply-90th-Percentiles/39ya-9txc"
   },
   "dsmi_page": {
-    "success": true,
-    "content_hash": "f83777b13bff63709f3f69f2c9c4caf8",
-    "data_links_count": 1,
+    "success": false,
+    "error": "HTTPSConnectionPool(host='www.michigan.gov', port=443): Read timed out. (read timeout=30)",
     "url": "https://www.michigan.gov/egle/about/organization/drinking-water-and-environmental-health/community-water-supply/lead-and-copper-rule/dsmi/dsmi-inventories"
   },
   "lcr_page": {
@@ -17,5 +16,5 @@
     "data_links_count": 0,
     "url": "https://www.michigan.gov/egle/about/organization/drinking-water-and-environmental-health/community-water-supply/lead-and-copper-rule"
   },
-  "last_check": "2026-05-18T16:41:59.905775"
+  "last_check": "2026-05-19T16:43:54.346610"
 }
