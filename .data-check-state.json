@@ -1,9 +1,7 @@
 {
   "socrata_api": {
-    "success": true,
-    "record_count": 1386,
-    "content_hash": "3977ae6f4435224fbbcd58745c2b4eaa",
-    "url": "https://data.michigan.gov/dataset/Public-Water-Supply-90th-Percentiles/39ya-9txc"
+    "success": false,
+    "error": "HTTPSConnectionPool(host='data.michigan.gov', port=443): Read timed out. (read timeout=30)"
   },
   "dsmi_page": {
     "success": true,
@@ -17,5 +15,5 @@
     "data_links_count": 0,
     "url": "https://www.michigan.gov/egle/about/organization/drinking-water-and-environmental-health/community-water-supply/lead-and-copper-rule"
   },
-  "last_check": "2026-07-06T16:46:20.367723"
+  "last_check": "2026-07-07T16:16:18.445757"
 }
