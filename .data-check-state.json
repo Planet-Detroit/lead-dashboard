@@ -9,13 +9,22 @@
     "success": true,
     "content_hash": "f83777b13bff63709f3f69f2c9c4caf8",
     "data_links_count": 1,
+    "files_hash": "e7aad6925d6302c69b6eb923060a797b",
     "url": "https://www.michigan.gov/egle/about/organization/drinking-water-and-environmental-health/community-water-supply/lead-and-copper-rule/dsmi/dsmi-inventories"
   },
   "lcr_page": {
     "success": true,
     "content_hash": "fc80aac75a94c225b5ff9227c33ebb9c",
     "data_links_count": 0,
+    "files_hash": "d41d8cd98f00b204e9800998ecf8427e",
     "url": "https://www.michigan.gov/egle/about/organization/drinking-water-and-environmental-health/community-water-supply/lead-and-copper-rule"
   },
-  "last_check": "2026-08-30T17:48:57.314569"
+  "lslr_page": {
+    "success": true,
+    "content_hash": "b85674a5f3b84703ef8c64e12b278bd8",
+    "data_links_count": 1,
+    "files_hash": "26135192db74a5ab0abac79e9ca104f7",
+    "url": "https://www.michigan.gov/egle/about/organization/drinking-water-and-environmental-health/community-water-supply/lead-and-copper-rule/lslr-progress"
+  },
+  "last_check": "2026-08-31T18:42:56.382203"
 }
