@@ -61,8 +61,8 @@ const STATUS_CONFIG = {
  * these labels match the original dashboard wording shown to users.
  */
 const STATUS_DISPLAY_LABEL = {
-  'Not compliant':                        '<20% average replacement, 2021–2024',
-  'Compliant':                            '≥20% average replacement, 2021–2024',
+  'Not compliant':                        '<25% average replacement, 2021–2025',
+  'Compliant':                            '≥25% average replacement, 2021–2025',
   '100% replaced':                        '100% replaced',
   'No lead lines':                        'No lead lines',
   'Inventory not received or incomplete': 'Inventory not received or incomplete',
@@ -94,13 +94,13 @@ const LEGEND_ITEMS = [
   },
   {
     badgeClass:  'badge-noncompliant',
-    label:       '<20% average replacement, 2021–2024',
+    label:       '<25% average replacement, 2021–2025',
     description: 'Not meeting state replacement requirements',
     colorStyle:  { background: '#dc2626' },
   },
   {
     badgeClass:  'badge-compliant',
-    label:       '≥20% average replacement, 2021–2024',
+    label:       '≥25% average replacement, 2021–2025',
     description: 'Meeting state replacement requirements',
     colorStyle:  { background: '#16a34a' },
   },

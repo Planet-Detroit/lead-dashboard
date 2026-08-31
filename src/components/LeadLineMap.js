@@ -7,16 +7,16 @@ import './LeadLineMap.css';
 
 const STATUS_CONFIG = {
   'No lead lines': { color: '#3b82f6', description: 'Inventory completed, no lead lines identified' },
-  'Not compliant': { color: '#dc2626', description: '<20% average replacement, 2021–2024' },
-  'Compliant': { color: '#4ade80', description: '≥20% average replacement, 2021–2024' },
+  'Not compliant': { color: '#dc2626', description: '<25% average replacement, 2021–2025' },
+  'Compliant': { color: '#4ade80', description: '≥25% average replacement, 2021–2025' },
   'Inventory not received or incomplete': { color: '#9333ea', description: 'No complete inventory filed' },
   '100% replaced': { color: '#047857', description: 'All lead lines replaced' },
   'Unknown': { color: '#9ca3af', description: 'Status unknown' }
 };
 
 const STATUS_DISPLAY_LABEL = {
-  'Not compliant':                        '<20% average replacement, 2021–2024',
-  'Compliant':                            '≥20% average replacement, 2021–2024',
+  'Not compliant':                        '<25% average replacement, 2021–2025',
+  'Compliant':                            '≥25% average replacement, 2021–2025',
   '100% replaced':                        '100% replaced',
   'No lead lines':                        'No lead lines',
   'Inventory not received or incomplete': 'Inventory not received or incomplete',

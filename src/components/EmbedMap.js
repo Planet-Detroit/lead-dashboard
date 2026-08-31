@@ -12,11 +12,11 @@ const STATUS_CONFIG = {
   },
   'Not compliant': {
     color: '#dc2626',
-    description: '<20% average replacement, 2021–2024'
+    description: '<25% average replacement, 2021–2025'
   },
   'Compliant': {
     color: '#16a34a',
-    description: '≥20% average replacement, 2021–2024'
+    description: '≥25% average replacement, 2021–2025'
   },
   'Inventory not received or incomplete': {
     color: '#9333ea',

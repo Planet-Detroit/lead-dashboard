@@ -43,8 +43,21 @@ the site deploys automatically when the changes are pushed to `main`
      ```
      python3 scripts/update_replacements_from_lslr.py
      node scripts/convertMergedCsv.js
+     node scripts/recompute_status.js
      node scripts/convertCsv.js
      ```
+     Before running `recompute_status.js`, edit its `THRESHOLD_PCT` and
+     `WINDOW_LABEL` lines for the new year (the rule is 5% per year since
+     2021, so 2021–2026 = 30%). It refreshes each system's
+     Compliant / Not compliant status against the new threshold — skip
+     this and the progress bars will disagree with the categories (this
+     is what happened with Athens in 2026). It writes the list of systems
+     whose status changed to `scripts/status_change_review.csv`; send
+     that list to Elin for review. Then update the threshold text where
+     it appears on the site: `src/components/About.js`,
+     `ComplianceStatusChart.js`, `RankingTable.js`,
+     `WaterSystemDirectory.js`, `LeadLineMap.js`, `EmbedMap.js`
+     (search for the old percentage, e.g. "25%").
   3. Add the new year in the components (each has a comment showing how):
      `LSLR_YEARS` in `src/components/SystemTrendPanel.js` and
      `ReplacementTrendChart.js`; the `SparkBars` year lists in

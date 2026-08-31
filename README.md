@@ -78,14 +78,14 @@ Michigan Department of Environment, Great Lakes, and Energy (EGLE):
 * **Total to Replace** = Lead lines + GPCL (Galvanized Previously Connected to Lead) + Unknown material lines
 * **% Replaced** = (Lines Replaced / Total to Replace) × 100
 * **Compliance Status**: 
-  - **Compliant**: ≥20% replacement progress (meets regulatory requirement)
-  - **Not in compliance**: <20% replacement progress
+  - **Compliant**: ≥25% replacement progress over 2021–2025 (meets regulatory requirement)
+  - **Not in compliance**: <25% replacement progress over 2021–2025
 
 The dashboard uses raw data from EGLE's official reports, with replacement percentages and compliance assessments calculated by Planet Detroit to provide comprehensive analysis of statewide progress toward eliminating lead service lines.
 
 ### Regulatory Context
 
-* **20% Compliance Threshold**: Michigan's regulatory framework establishes 20% replacement progress as a key benchmark for water system compliance
+* **25% Compliance Threshold**: Michigan's regulatory framework requires an average of 5% replacement per year starting in 2021 — 25% cumulative through 2025. The threshold rises each year as a new replacement year is reported.
 * **Lead and Copper Rule (LCR)**: Revised in 2018 to strengthen protections and accelerate lead service line replacement
 * **Action Level Exceedances**: Water systems that exceed the lead action level (15 parts per billion) face additional monitoring and replacement requirements
 
@@ -192,7 +192,7 @@ For each water system, the dashboard displays:
 * **Progress Acceleration**: Replacement rates more than doubled from 2021 to 2024, showing increasing momentum
 * **Population Impact**: 52.8% of Michigan's population is served by water systems with known lead lines
 * **Unknown Materials**: 315,372 service lines still need material identification - representing a critical data gap
-* **Compliance Landscape**: The 20% replacement threshold provides a clear benchmark for evaluating system progress
+* **Compliance Landscape**: The 25% replacement threshold (through 2025) provides a clear benchmark for evaluating system progress
 * **LCR Impact**: Michigan's 2018 Lead and Copper Rule revision established stricter requirements driving replacement efforts
 
 ## Embedding

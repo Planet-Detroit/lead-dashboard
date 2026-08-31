@@ -69,7 +69,7 @@ export const waterSystemsData = [
     "longitude": -88.6653503,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000020&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000030",
@@ -117,7 +117,7 @@ export const waterSystemsData = [
     "longitude": -84.04586038,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000040&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001352",
@@ -165,7 +165,7 @@ export const waterSystemsData = [
     "longitude": -88.38142499,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000050&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000070",
@@ -381,7 +381,7 @@ export const waterSystemsData = [
     "longitude": -84.75480233,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000100&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040259",
@@ -429,7 +429,7 @@ export const waterSystemsData = [
     "longitude": -82.53261813,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000110&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000120",
@@ -453,7 +453,7 @@ export const waterSystemsData = [
     "longitude": -85.85095054,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000120&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000125",
@@ -501,7 +501,7 @@ export const waterSystemsData = [
     "longitude": -85.82368521,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0040002&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000130",
@@ -525,7 +525,7 @@ export const waterSystemsData = [
     "longitude": -83.21058889,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000130&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000127",
@@ -573,7 +573,7 @@ export const waterSystemsData = [
     "longitude": -84.65527638,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000140&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000150",
@@ -597,7 +597,7 @@ export const waterSystemsData = [
     "longitude": -83.03962119,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000150&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000160",
@@ -621,7 +621,7 @@ export const waterSystemsData = [
     "longitude": -83.454121,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000160&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000180",
@@ -645,7 +645,7 @@ export const waterSystemsData = [
     "longitude": -88.3775196,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000180&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040681",
@@ -789,7 +789,7 @@ export const waterSystemsData = [
     "longitude": -83.73111038,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000220&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000221",
@@ -981,7 +981,7 @@ export const waterSystemsData = [
     "longitude": -83.84156973,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0066355&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040356",
@@ -1029,7 +1029,7 @@ export const waterSystemsData = [
     "longitude": -82.89857401,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000240&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000242",
@@ -1077,7 +1077,7 @@ export const waterSystemsData = [
     "longitude": -83.37073586,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000245&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000250",
@@ -1124,8 +1124,8 @@ export const waterSystemsData = [
     "latitude": 42.09309742,
     "longitude": -85.26368723,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000260&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000285",
@@ -1221,7 +1221,7 @@ export const waterSystemsData = [
     "longitude": -84.09276037,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000300&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005450",
@@ -1269,7 +1269,7 @@ export const waterSystemsData = [
     "longitude": -85.35162608,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000320&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000321",
@@ -1437,7 +1437,7 @@ export const waterSystemsData = [
     "longitude": null,
     "epaLink": "",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000355",
@@ -1485,7 +1485,7 @@ export const waterSystemsData = [
     "longitude": -85.83492661,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000350&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040041",
@@ -1533,7 +1533,7 @@ export const waterSystemsData = [
     "longitude": -84.06235926,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000370&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000380",
@@ -1557,7 +1557,7 @@ export const waterSystemsData = [
     "longitude": -86.10967661,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000380&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000390",
@@ -1581,7 +1581,7 @@ export const waterSystemsData = [
     "longitude": -83.8845006,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000390&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000400",
@@ -1605,7 +1605,7 @@ export const waterSystemsData = [
     "longitude": -83.96739918,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000400&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000410",
@@ -1629,7 +1629,7 @@ export const waterSystemsData = [
     "longitude": -88.49504248,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000410&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000418",
@@ -1677,7 +1677,7 @@ export const waterSystemsData = [
     "longitude": -86.48731269,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000420&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040092",
@@ -1773,7 +1773,7 @@ export const waterSystemsData = [
     "longitude": -83.76338999,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000430&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040005",
@@ -1845,7 +1845,7 @@ export const waterSystemsData = [
     "longitude": -85.22937542,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000450&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006077",
@@ -1917,7 +1917,7 @@ export const waterSystemsData = [
     "longitude": -83.89720103,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000470&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000485",
@@ -1941,7 +1941,7 @@ export const waterSystemsData = [
     "longitude": -83.88176549,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000485&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000487",
@@ -2181,7 +2181,7 @@ export const waterSystemsData = [
     "longitude": -86.15437887,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000510&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000514",
@@ -2301,7 +2301,7 @@ export const waterSystemsData = [
     "longitude": -84.49206397,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000520&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040080",
@@ -2421,7 +2421,7 @@ export const waterSystemsData = [
     "longitude": -85.22904784,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000560&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000570",
@@ -2445,7 +2445,7 @@ export const waterSystemsData = [
     "longitude": -85.20770362,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000570&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000580",
@@ -2517,7 +2517,7 @@ export const waterSystemsData = [
     "longitude": -85.01852963,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000590&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000605",
@@ -2540,8 +2540,8 @@ export const waterSystemsData = [
     "latitude": 42.13794017,
     "longitude": -86.45282372,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000605&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000600",
@@ -2589,7 +2589,7 @@ export const waterSystemsData = [
     "longitude": -86.0984494,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000610&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000620",
@@ -2613,7 +2613,7 @@ export const waterSystemsData = [
     "longitude": -89.56864215,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000620&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000630",
@@ -2637,7 +2637,7 @@ export const waterSystemsData = [
     "longitude": -83.1894626,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000630&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000635",
@@ -2685,7 +2685,7 @@ export const waterSystemsData = [
     "longitude": -86.33042848,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000650&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000660",
@@ -2709,7 +2709,7 @@ export const waterSystemsData = [
     "longitude": -90.06112078,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000660&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005600",
@@ -2733,7 +2733,7 @@ export const waterSystemsData = [
     "longitude": -89.99618298,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005600&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000680",
@@ -2781,7 +2781,7 @@ export const waterSystemsData = [
     "longitude": -83.24035257,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000690&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000705",
@@ -2829,7 +2829,7 @@ export const waterSystemsData = [
     "longitude": -85.48697236,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000710&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000715",
@@ -2997,7 +2997,7 @@ export const waterSystemsData = [
     "longitude": -83.21697719,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000730&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000731",
@@ -3117,7 +3117,7 @@ export const waterSystemsData = [
     "longitude": -83.86548822,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000750&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000775",
@@ -3309,7 +3309,7 @@ export const waterSystemsData = [
     "longitude": -85.0065004,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000800&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000810",
@@ -3381,7 +3381,7 @@ export const waterSystemsData = [
     "longitude": -84.47745503,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000820&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001980",
@@ -3405,7 +3405,7 @@ export const waterSystemsData = [
     "longitude": -87.96193454,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001980&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002450",
@@ -3573,7 +3573,7 @@ export const waterSystemsData = [
     "longitude": -85.19421716,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000910&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000894",
@@ -3669,7 +3669,7 @@ export const waterSystemsData = [
     "longitude": -84.97703984,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0040218&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000930",
@@ -3693,7 +3693,7 @@ export const waterSystemsData = [
     "longitude": -82.98842243,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000930&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000940",
@@ -3717,7 +3717,7 @@ export const waterSystemsData = [
     "longitude": -83.26435283,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000940&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000951",
@@ -3765,7 +3765,7 @@ export const waterSystemsData = [
     "longitude": -86.36436436,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000960&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000970",
@@ -3837,7 +3837,7 @@ export const waterSystemsData = [
     "longitude": -83.89121064,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000980&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001000",
@@ -3861,7 +3861,7 @@ export const waterSystemsData = [
     "longitude": -85.32278922,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001000&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002780",
@@ -4053,7 +4053,7 @@ export const waterSystemsData = [
     "longitude": -83.93295151,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001020&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001023",
@@ -4149,7 +4149,7 @@ export const waterSystemsData = [
     "longitude": -85.41206068,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001030&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001037",
@@ -4221,7 +4221,7 @@ export const waterSystemsData = [
     "longitude": -88.45188268,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001040&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001046",
@@ -4245,7 +4245,7 @@ export const waterSystemsData = [
     "longitude": -88.52171687,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001046&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040068",
@@ -4485,7 +4485,7 @@ export const waterSystemsData = [
     "longitude": -83.40309751,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001130&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001160",
@@ -4509,7 +4509,7 @@ export const waterSystemsData = [
     "longitude": -83.94381805,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001160&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001170",
@@ -4533,7 +4533,7 @@ export const waterSystemsData = [
     "longitude": -84.85026501,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001170&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001180",
@@ -4653,7 +4653,7 @@ export const waterSystemsData = [
     "longitude": -83.17593829,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001220&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005234",
@@ -4701,7 +4701,7 @@ export const waterSystemsData = [
     "longitude": -83.3860709,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001230&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001250",
@@ -4725,7 +4725,7 @@ export const waterSystemsData = [
     "longitude": -86.00526477,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001250&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001256",
@@ -4917,7 +4917,7 @@ export const waterSystemsData = [
     "longitude": -82.92269844,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001290&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001300",
@@ -4941,7 +4941,7 @@ export const waterSystemsData = [
     "longitude": -85.26065258,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001300&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001310",
@@ -5061,7 +5061,7 @@ export const waterSystemsData = [
     "longitude": -85.27168591,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001330&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001335",
@@ -5085,7 +5085,7 @@ export const waterSystemsData = [
     "longitude": -85.24224332,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001335&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001340",
@@ -5109,7 +5109,7 @@ export const waterSystemsData = [
     "longitude": -84.83461775,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001340&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000170",
@@ -5181,7 +5181,7 @@ export const waterSystemsData = [
     "longitude": -83.63210915,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002745&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001350",
@@ -5277,7 +5277,7 @@ export const waterSystemsData = [
     "longitude": -84.47934407,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001360&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001370",
@@ -5301,7 +5301,7 @@ export const waterSystemsData = [
     "longitude": -84.02050551,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001370&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001371",
@@ -5349,7 +5349,7 @@ export const waterSystemsData = [
     "longitude": -84.11817102,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001380&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001390",
@@ -5517,7 +5517,7 @@ export const waterSystemsData = [
     "longitude": null,
     "epaLink": "",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001420",
@@ -5589,7 +5589,7 @@ export const waterSystemsData = [
     "longitude": -83.15236588,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001440&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001450",
@@ -5733,7 +5733,7 @@ export const waterSystemsData = [
     "longitude": -83.96569391,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001470&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040305",
@@ -5781,7 +5781,7 @@ export const waterSystemsData = [
     "longitude": -82.91853419,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001480&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001490",
@@ -5805,7 +5805,7 @@ export const waterSystemsData = [
     "longitude": -83.74254325,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001490&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001493",
@@ -5877,7 +5877,7 @@ export const waterSystemsData = [
     "longitude": -84.99929729,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001500&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001520",
@@ -5901,7 +5901,7 @@ export const waterSystemsData = [
     "longitude": -84.5891815,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001520&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040379",
@@ -6189,7 +6189,7 @@ export const waterSystemsData = [
     "longitude": -85.66438647,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001600&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040126",
@@ -6237,7 +6237,7 @@ export const waterSystemsData = [
     "longitude": -85.94084467,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001610&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001620",
@@ -6477,7 +6477,7 @@ export const waterSystemsData = [
     "longitude": -86.12642204,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0040006&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004045",
@@ -6813,7 +6813,7 @@ export const waterSystemsData = [
     "longitude": -84.08361392,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0040306&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040418",
@@ -7125,7 +7125,7 @@ export const waterSystemsData = [
     "longitude": -86.07291217,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001664&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001666",
@@ -7197,7 +7197,7 @@ export const waterSystemsData = [
     "longitude": -82.61996391,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001690&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040357",
@@ -7245,7 +7245,7 @@ export const waterSystemsData = [
     "longitude": -88.33401053,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001700&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003880",
@@ -7269,7 +7269,7 @@ export const waterSystemsData = [
     "longitude": -88.41904047,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003880&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006630",
@@ -7293,7 +7293,7 @@ export const waterSystemsData = [
     "longitude": -88.43833649,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006630&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001715",
@@ -7461,7 +7461,7 @@ export const waterSystemsData = [
     "longitude": -83.21663898,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001730&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001740",
@@ -7509,7 +7509,7 @@ export const waterSystemsData = [
     "longitude": -85.97450184,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001750&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001760",
@@ -7605,7 +7605,7 @@ export const waterSystemsData = [
     "longitude": -83.77792592,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001770&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040644",
@@ -7677,7 +7677,7 @@ export const waterSystemsData = [
     "longitude": -83.41601946,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001773&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001795",
@@ -7725,7 +7725,7 @@ export const waterSystemsData = [
     "longitude": -83.1077142,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001800&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001798",
@@ -7773,7 +7773,7 @@ export const waterSystemsData = [
     "longitude": -83.88276255,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001810&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0063477",
@@ -7869,7 +7869,7 @@ export const waterSystemsData = [
     "longitude": -86.10617235,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001860&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001865",
@@ -7917,7 +7917,7 @@ export const waterSystemsData = [
     "longitude": -83.12399111,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001870&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040563",
@@ -7965,7 +7965,7 @@ export const waterSystemsData = [
     "longitude": -83.66414684,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001880&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040045",
@@ -8037,7 +8037,7 @@ export const waterSystemsData = [
     "longitude": -83.99236287,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001900&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040116",
@@ -8300,8 +8300,8 @@ export const waterSystemsData = [
     "latitude": 42.9552854,
     "longitude": -85.58176872,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001960&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001970",
@@ -8325,7 +8325,7 @@ export const waterSystemsData = [
     "longitude": -85.13007622,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001970&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001995",
@@ -8373,7 +8373,7 @@ export const waterSystemsData = [
     "longitude": -84.48143804,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001990&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002010",
@@ -8445,7 +8445,7 @@ export const waterSystemsData = [
     "longitude": -82.94452315,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001950&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002025",
@@ -8493,7 +8493,7 @@ export const waterSystemsData = [
     "longitude": -84.65032519,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002020&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002030",
@@ -8541,7 +8541,7 @@ export const waterSystemsData = [
     "longitude": -83.15129948,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002050&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002055",
@@ -8613,7 +8613,7 @@ export const waterSystemsData = [
     "longitude": -85.04180267,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002070&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002077",
@@ -8709,7 +8709,7 @@ export const waterSystemsData = [
     "longitude": -86.23156196,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002080&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002090",
@@ -8733,7 +8733,7 @@ export const waterSystemsData = [
     "longitude": -85.40225742,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002090&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002100",
@@ -8757,7 +8757,7 @@ export const waterSystemsData = [
     "longitude": -83.159951,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002100&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002110",
@@ -8853,7 +8853,7 @@ export const waterSystemsData = [
     "longitude": -84.38950868,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002120&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001820",
@@ -8949,7 +8949,7 @@ export const waterSystemsData = [
     "longitude": -85.15530926,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002125&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002130",
@@ -8973,7 +8973,7 @@ export const waterSystemsData = [
     "longitude": -86.05786451,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002130&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002170",
@@ -8997,7 +8997,7 @@ export const waterSystemsData = [
     "longitude": -87.07603121,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002170&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002180",
@@ -9021,7 +9021,7 @@ export const waterSystemsData = [
     "longitude": -83.83875357,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002180&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002190",
@@ -9045,7 +9045,7 @@ export const waterSystemsData = [
     "longitude": -85.28916946,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002190&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040484",
@@ -9285,7 +9285,7 @@ export const waterSystemsData = [
     "longitude": -83.40422254,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002230&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002250",
@@ -9309,7 +9309,7 @@ export const waterSystemsData = [
     "longitude": -84.86272164,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002250&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002260",
@@ -9333,7 +9333,7 @@ export const waterSystemsData = [
     "longitude": -86.08007899,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002260&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002273",
@@ -9405,7 +9405,7 @@ export const waterSystemsData = [
     "longitude": -83.72996205,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002270&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002280",
@@ -9429,7 +9429,7 @@ export const waterSystemsData = [
     "longitude": -83.13134293,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002280&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002285",
@@ -9573,7 +9573,7 @@ export const waterSystemsData = [
     "longitude": -83.27724523,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002300&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002310",
@@ -9597,7 +9597,7 @@ export const waterSystemsData = [
     "longitude": -83.68745504,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002310&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002340",
@@ -9620,8 +9620,8 @@ export const waterSystemsData = [
     "latitude": 43.0698587,
     "longitude": -83.84147408,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002340&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002347",
@@ -9693,7 +9693,7 @@ export const waterSystemsData = [
     "longitude": -87.14523061,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002350&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002356",
@@ -9765,7 +9765,7 @@ export const waterSystemsData = [
     "longitude": -87.44289129,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002370&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002385",
@@ -9837,7 +9837,7 @@ export const waterSystemsData = [
     "longitude": -84.07268975,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002400&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002403",
@@ -9957,7 +9957,7 @@ export const waterSystemsData = [
     "longitude": -86.2325175,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002430&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002440",
@@ -10077,7 +10077,7 @@ export const waterSystemsData = [
     "longitude": -82.94962084,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002460&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040438",
@@ -10125,7 +10125,7 @@ export const waterSystemsData = [
     "longitude": -85.31392957,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002480&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002490",
@@ -10149,7 +10149,7 @@ export const waterSystemsData = [
     "longitude": -85.94949676,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002490&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002500",
@@ -10221,7 +10221,7 @@ export const waterSystemsData = [
     "longitude": -88.59850136,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002510&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002520",
@@ -10245,7 +10245,7 @@ export const waterSystemsData = [
     "longitude": -83.24449113,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002520&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002530",
@@ -10269,7 +10269,7 @@ export const waterSystemsData = [
     "longitude": -85.41820841,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002530&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002540",
@@ -10293,7 +10293,7 @@ export const waterSystemsData = [
     "longitude": -86.57597041,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002540&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002550",
@@ -10317,7 +10317,7 @@ export const waterSystemsData = [
     "longitude": -83.33936987,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002550&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002565",
@@ -10413,7 +10413,7 @@ export const waterSystemsData = [
     "longitude": -84.68142767,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002600&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000796",
@@ -10556,8 +10556,8 @@ export const waterSystemsData = [
     "latitude": 42.0878008,
     "longitude": -83.2059344,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002630&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002640",
@@ -10581,7 +10581,7 @@ export const waterSystemsData = [
     "longitude": -87.05429499,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002640&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0062653",
@@ -10629,7 +10629,7 @@ export const waterSystemsData = [
     "longitude": -84.48747598,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002650&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002654",
@@ -10773,7 +10773,7 @@ export const waterSystemsData = [
     "longitude": -85.74441809,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0040566&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002680",
@@ -10941,7 +10941,7 @@ export const waterSystemsData = [
     "longitude": -86.21851431,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002750&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002760",
@@ -10965,7 +10965,7 @@ export const waterSystemsData = [
     "longitude": -86.18936176,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002760&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002770",
@@ -10989,7 +10989,7 @@ export const waterSystemsData = [
     "longitude": -84.75009624,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002770&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002785",
@@ -11037,7 +11037,7 @@ export const waterSystemsData = [
     "longitude": -85.63455377,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002790&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002805",
@@ -11133,7 +11133,7 @@ export const waterSystemsData = [
     "longitude": -85.75990451,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002820&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002823",
@@ -11205,7 +11205,7 @@ export const waterSystemsData = [
     "longitude": -84.20433638,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002830&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002836",
@@ -11253,7 +11253,7 @@ export const waterSystemsData = [
     "longitude": -84.70834005,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002840&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002839",
@@ -11541,7 +11541,7 @@ export const waterSystemsData = [
     "longitude": -85.25760856,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002850&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002845",
@@ -11589,7 +11589,7 @@ export const waterSystemsData = [
     "longitude": -83.15562186,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002870&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002890",
@@ -11612,8 +11612,8 @@ export const waterSystemsData = [
     "latitude": 42.40730501,
     "longitude": -82.89926314,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002890&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002900",
@@ -11637,7 +11637,7 @@ export const waterSystemsData = [
     "longitude": -82.9297176,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002900&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002910",
@@ -11661,7 +11661,7 @@ export const waterSystemsData = [
     "longitude": -82.87846703,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002910&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002920",
@@ -11685,7 +11685,7 @@ export const waterSystemsData = [
     "longitude": -82.89740983,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002920&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002880",
@@ -11709,7 +11709,7 @@ export const waterSystemsData = [
     "longitude": -82.90697014,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002880&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040384",
@@ -11973,7 +11973,7 @@ export const waterSystemsData = [
     "longitude": -84.90368111,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002944&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002945",
@@ -11997,7 +11997,7 @@ export const waterSystemsData = [
     "longitude": -84.91736324,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002945&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040194",
@@ -12045,7 +12045,7 @@ export const waterSystemsData = [
     "longitude": -83.81712394,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002960&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002970",
@@ -12069,7 +12069,7 @@ export const waterSystemsData = [
     "longitude": -83.05572626,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002970&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002980",
@@ -12093,7 +12093,7 @@ export const waterSystemsData = [
     "longitude": -88.59169746,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002980&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002982",
@@ -12141,7 +12141,7 @@ export const waterSystemsData = [
     "longitude": -82.65157825,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003000&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003001",
@@ -12189,7 +12189,7 @@ export const waterSystemsData = [
     "longitude": null,
     "epaLink": "",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003015",
@@ -12260,8 +12260,8 @@ export const waterSystemsData = [
     "latitude": 43.45584435,
     "longitude": -85.65419236,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0040369&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003018",
@@ -12309,7 +12309,7 @@ export const waterSystemsData = [
     "longitude": -82.9318358,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003020&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003040",
@@ -12357,7 +12357,7 @@ export const waterSystemsData = [
     "longitude": -84.80401365,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003030&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003050",
@@ -12381,7 +12381,7 @@ export const waterSystemsData = [
     "longitude": -83.29966422,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003050&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003060",
@@ -12405,7 +12405,7 @@ export const waterSystemsData = [
     "longitude": -86.36894323,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003060&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003070",
@@ -12429,7 +12429,7 @@ export const waterSystemsData = [
     "longitude": -86.16440387,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003070&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003073",
@@ -12573,7 +12573,7 @@ export const waterSystemsData = [
     "longitude": -85.2910326,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003090&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040343",
@@ -12621,7 +12621,7 @@ export const waterSystemsData = [
     "longitude": -83.09754109,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003100&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040680",
@@ -12836,8 +12836,8 @@ export const waterSystemsData = [
     "latitude": 43.56913125,
     "longitude": -86.03424435,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003130&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040587",
@@ -13245,7 +13245,7 @@ export const waterSystemsData = [
     "longitude": -83.09761986,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003140&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003312",
@@ -13389,7 +13389,7 @@ export const waterSystemsData = [
     "longitude": -85.03432427,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003165&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003170",
@@ -13413,7 +13413,7 @@ export const waterSystemsData = [
     "longitude": -84.63604665,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003170&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040180",
@@ -13461,7 +13461,7 @@ export const waterSystemsData = [
     "longitude": -83.33449133,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003175&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040122",
@@ -13557,7 +13557,7 @@ export const waterSystemsData = [
     "longitude": -86.11328337,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003190&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003195",
@@ -13989,7 +13989,7 @@ export const waterSystemsData = [
     "longitude": -85.46923139,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003240&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003250",
@@ -14013,7 +14013,7 @@ export const waterSystemsData = [
     "longitude": -83.94875581,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003250&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003280",
@@ -14037,7 +14037,7 @@ export const waterSystemsData = [
     "longitude": -84.34600653,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003280&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003290",
@@ -14085,7 +14085,7 @@ export const waterSystemsData = [
     "longitude": -85.32234544,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0040342&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040660",
@@ -14301,7 +14301,7 @@ export const waterSystemsData = [
     "longitude": -83.36005866,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003320&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040520",
@@ -14325,7 +14325,7 @@ export const waterSystemsData = [
     "longitude": null,
     "epaLink": "",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040406",
@@ -14421,7 +14421,7 @@ export const waterSystemsData = [
     "longitude": -83.07681971,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003340&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003342",
@@ -14445,7 +14445,7 @@ export const waterSystemsData = [
     "longitude": -83.389787,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003342&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040015",
@@ -14541,7 +14541,7 @@ export const waterSystemsData = [
     "longitude": -83.31525439,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003360&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003362",
@@ -14637,7 +14637,7 @@ export const waterSystemsData = [
     "longitude": -85.07363857,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003370&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003390",
@@ -14661,7 +14661,7 @@ export const waterSystemsData = [
     "longitude": -82.66922623,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003390&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003400",
@@ -14685,7 +14685,7 @@ export const waterSystemsData = [
     "longitude": -88.06307913,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003400&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003410",
@@ -14805,7 +14805,7 @@ export const waterSystemsData = [
     "longitude": -90.15312204,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003420&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003430",
@@ -14829,7 +14829,7 @@ export const waterSystemsData = [
     "longitude": -90.15400041,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003430&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003440",
@@ -14853,7 +14853,7 @@ export const waterSystemsData = [
     "longitude": -87.67429253,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003440&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004775",
@@ -14901,7 +14901,7 @@ export const waterSystemsData = [
     "longitude": -87.72598894,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003450&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003942",
@@ -14973,7 +14973,7 @@ export const waterSystemsData = [
     "longitude": -84.60027267,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003460&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003470",
@@ -14997,7 +14997,7 @@ export const waterSystemsData = [
     "longitude": -84.3993578,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003470&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003475",
@@ -15117,7 +15117,7 @@ export const waterSystemsData = [
     "longitude": -84.66439467,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003490&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003505",
@@ -15164,8 +15164,8 @@ export const waterSystemsData = [
     "latitude": 46.32681412,
     "longitude": -87.37767517,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003510&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003520",
@@ -15189,7 +15189,7 @@ export const waterSystemsData = [
     "longitude": -85.58000849,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003520&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003525",
@@ -15260,8 +15260,8 @@ export const waterSystemsData = [
     "latitude": 44.36976344,
     "longitude": -86.01178811,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003550&sys=SDWIS",
-    "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "status": "Not compliant",
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003560",
@@ -15285,7 +15285,7 @@ export const waterSystemsData = [
     "longitude": -85.17836901,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003560&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040580",
@@ -15644,8 +15644,8 @@ export const waterSystemsData = [
     "latitude": 45.80122406,
     "longitude": -88.08870427,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003640&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003650",
@@ -15717,7 +15717,7 @@ export const waterSystemsData = [
     "longitude": -83.18660343,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003660&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003630",
@@ -15885,7 +15885,7 @@ export const waterSystemsData = [
     "longitude": -84.90707879,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003685&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040277",
@@ -16124,8 +16124,8 @@ export const waterSystemsData = [
     "latitude": 44.33089686,
     "longitude": -85.21356923,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003700&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002925",
@@ -16197,7 +16197,7 @@ export const waterSystemsData = [
     "longitude": -85.77508136,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0040368&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003435",
@@ -16221,7 +16221,7 @@ export const waterSystemsData = [
     "longitude": -85.00962029,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003435&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003720",
@@ -16245,7 +16245,7 @@ export const waterSystemsData = [
     "longitude": -88.41637135,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003720&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005549",
@@ -16293,7 +16293,7 @@ export const waterSystemsData = [
     "longitude": -85.1263277,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0040106&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003730",
@@ -16341,7 +16341,7 @@ export const waterSystemsData = [
     "longitude": -83.24232543,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003740&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002277",
@@ -16725,7 +16725,7 @@ export const waterSystemsData = [
     "longitude": -85.27468006,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003750&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003755",
@@ -17013,7 +17013,7 @@ export const waterSystemsData = [
     "longitude": -83.32512259,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003780&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003794",
@@ -17061,7 +17061,7 @@ export const waterSystemsData = [
     "longitude": -83.22722338,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003800&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003810",
@@ -17085,7 +17085,7 @@ export const waterSystemsData = [
     "longitude": -88.43183298,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003810&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003820",
@@ -17133,7 +17133,7 @@ export const waterSystemsData = [
     "longitude": -85.84365167,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003830&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040308",
@@ -17301,7 +17301,7 @@ export const waterSystemsData = [
     "longitude": -84.43008281,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003840&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003850",
@@ -17444,8 +17444,8 @@ export const waterSystemsData = [
     "latitude": 42.24323348,
     "longitude": -83.18122206,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003870&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040586",
@@ -17661,7 +17661,7 @@ export const waterSystemsData = [
     "longitude": -83.37020576,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003930&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003940",
@@ -17685,7 +17685,7 @@ export const waterSystemsData = [
     "longitude": -83.82603375,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003940&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003943",
@@ -17829,7 +17829,7 @@ export const waterSystemsData = [
     "longitude": -85.35064088,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003950&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003955",
@@ -17877,7 +17877,7 @@ export const waterSystemsData = [
     "longitude": -86.43670166,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003960&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003966",
@@ -17925,7 +17925,7 @@ export const waterSystemsData = [
     "longitude": -83.59358297,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003968&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003967",
@@ -18021,7 +18021,7 @@ export const waterSystemsData = [
     "longitude": -84.63188855,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003970&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003980",
@@ -18045,7 +18045,7 @@ export const waterSystemsData = [
     "longitude": -84.73207385,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003980&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003990",
@@ -18093,7 +18093,7 @@ export const waterSystemsData = [
     "longitude": -83.10372348,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004000&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004006",
@@ -18189,7 +18189,7 @@ export const waterSystemsData = [
     "longitude": -83.9652744,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005180&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004010",
@@ -18213,7 +18213,7 @@ export const waterSystemsData = [
     "longitude": -85.07020047,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004010&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006568",
@@ -18261,7 +18261,7 @@ export const waterSystemsData = [
     "longitude": -84.03553306,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004020&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040332",
@@ -18309,7 +18309,7 @@ export const waterSystemsData = [
     "longitude": -86.3126597,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004030&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004040",
@@ -18333,7 +18333,7 @@ export const waterSystemsData = [
     "longitude": -86.26088794,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004040&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004042",
@@ -18381,7 +18381,7 @@ export const waterSystemsData = [
     "longitude": -85.3979619,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004050&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004053",
@@ -18525,7 +18525,7 @@ export const waterSystemsData = [
     "longitude": -84.68920923,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004060&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004063",
@@ -18789,7 +18789,7 @@ export const waterSystemsData = [
     "longitude": -82.50095539,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004090&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004100",
@@ -18813,7 +18813,7 @@ export const waterSystemsData = [
     "longitude": -85.14808533,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004100&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004110",
@@ -18837,7 +18837,7 @@ export const waterSystemsData = [
     "longitude": -83.08016198,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004110&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040100",
@@ -18885,7 +18885,7 @@ export const waterSystemsData = [
     "longitude": -87.40781033,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004120&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004025",
@@ -18957,7 +18957,7 @@ export const waterSystemsData = [
     "longitude": -84.98306272,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004150&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004155",
@@ -19005,7 +19005,7 @@ export const waterSystemsData = [
     "longitude": -82.48266638,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004160&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040197",
@@ -19077,7 +19077,7 @@ export const waterSystemsData = [
     "longitude": -84.44274564,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004170&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004173",
@@ -19173,7 +19173,7 @@ export const waterSystemsData = [
     "longitude": -83.35417928,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004180&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004190",
@@ -19221,7 +19221,7 @@ export const waterSystemsData = [
     "longitude": -89.25976188,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002200&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006375",
@@ -19461,7 +19461,7 @@ export const waterSystemsData = [
     "longitude": -83.17823645,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004220&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040470",
@@ -19533,7 +19533,7 @@ export const waterSystemsData = [
     "longitude": -85.45327264,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004240&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004250",
@@ -19556,8 +19556,8 @@ export const waterSystemsData = [
     "latitude": 45.12262876,
     "longitude": -87.61885731,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004250&sys=SDWIS",
-    "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "status": "Not compliant",
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004260",
@@ -19653,7 +19653,7 @@ export const waterSystemsData = [
     "longitude": -85.71426808,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004310&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004312",
@@ -19821,7 +19821,7 @@ export const waterSystemsData = [
     "longitude": -85.46928917,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004360&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004377",
@@ -19893,7 +19893,7 @@ export const waterSystemsData = [
     "longitude": -84.23583097,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004370&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0007015",
@@ -19941,7 +19941,7 @@ export const waterSystemsData = [
     "longitude": -83.68051523,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004380&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004390",
@@ -19965,7 +19965,7 @@ export const waterSystemsData = [
     "longitude": -83.58188861,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004390&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006631",
@@ -20037,7 +20037,7 @@ export const waterSystemsData = [
     "longitude": -83.52798129,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004400&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004403",
@@ -20253,7 +20253,7 @@ export const waterSystemsData = [
     "longitude": -83.4794457,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004450&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004455",
@@ -20301,7 +20301,7 @@ export const waterSystemsData = [
     "longitude": -86.36489523,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004470&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040152",
@@ -20397,7 +20397,7 @@ export const waterSystemsData = [
     "longitude": -84.21519707,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004490&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040643",
@@ -20469,7 +20469,7 @@ export const waterSystemsData = [
     "longitude": -82.87947478,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004510&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004520",
@@ -20493,7 +20493,7 @@ export const waterSystemsData = [
     "longitude": -83.69653627,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004520&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004530",
@@ -20517,7 +20517,7 @@ export const waterSystemsData = [
     "longitude": -84.77462573,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004530&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004550",
@@ -20541,7 +20541,7 @@ export const waterSystemsData = [
     "longitude": -84.93647555,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004550&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004560",
@@ -20565,7 +20565,7 @@ export const waterSystemsData = [
     "longitude": -86.65006598,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004560&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004561",
@@ -20637,7 +20637,7 @@ export const waterSystemsData = [
     "longitude": -86.23004483,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004570&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004590",
@@ -20661,7 +20661,7 @@ export const waterSystemsData = [
     "longitude": -86.21887478,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004590&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004580",
@@ -20684,8 +20684,8 @@ export const waterSystemsData = [
     "latitude": 43.20668062,
     "longitude": -86.26150838,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004580&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040241",
@@ -20901,7 +20901,7 @@ export const waterSystemsData = [
     "longitude": -85.09260045,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004620&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004647",
@@ -20949,7 +20949,7 @@ export const waterSystemsData = [
     "longitude": -87.60169826,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004650&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004655",
@@ -21045,7 +21045,7 @@ export const waterSystemsData = [
     "longitude": -82.73906261,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004670&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004680",
@@ -21092,8 +21092,8 @@ export const waterSystemsData = [
     "latitude": 41.79973263,
     "longitude": -86.73643707,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004685&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004690",
@@ -21141,7 +21141,7 @@ export const waterSystemsData = [
     "longitude": -83.97169951,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004700&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004710",
@@ -21165,7 +21165,7 @@ export const waterSystemsData = [
     "longitude": -85.8054929,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004710&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004730",
@@ -21213,7 +21213,7 @@ export const waterSystemsData = [
     "longitude": -85.51153849,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004720&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004740",
@@ -21237,7 +21237,7 @@ export const waterSystemsData = [
     "longitude": -86.24615895,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004740&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004750",
@@ -21333,7 +21333,7 @@ export const waterSystemsData = [
     "longitude": -83.19192735,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004770&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040154",
@@ -21381,7 +21381,7 @@ export const waterSystemsData = [
     "longitude": -83.690692,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0040155&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004780",
@@ -21405,7 +21405,7 @@ export const waterSystemsData = [
     "longitude": -86.26201662,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004780&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040432",
@@ -21573,7 +21573,7 @@ export const waterSystemsData = [
     "longitude": -85.6172549,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004810&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004830",
@@ -21597,7 +21597,7 @@ export const waterSystemsData = [
     "longitude": -83.48681585,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004830&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040657",
@@ -21716,8 +21716,8 @@ export const waterSystemsData = [
     "latitude": 43.16211496,
     "longitude": -86.25394212,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004850&sys=SDWIS",
-    "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "status": "Not compliant",
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004860",
@@ -21741,7 +21741,7 @@ export const waterSystemsData = [
     "longitude": -87.89989713,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004860&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040414",
@@ -21789,7 +21789,7 @@ export const waterSystemsData = [
     "longitude": -83.47671391,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004870&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040655",
@@ -21957,7 +21957,7 @@ export const waterSystemsData = [
     "longitude": -83.18231682,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004880&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0001002",
@@ -22149,7 +22149,7 @@ export const waterSystemsData = [
     "longitude": null,
     "epaLink": "",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040156",
@@ -22197,7 +22197,7 @@ export const waterSystemsData = [
     "longitude": -86.10647623,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004989&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004990",
@@ -22221,7 +22221,7 @@ export const waterSystemsData = [
     "longitude": -84.92461832,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004990&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005005",
@@ -22269,7 +22269,7 @@ export const waterSystemsData = [
     "longitude": -84.22434047,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005010&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005020",
@@ -22293,7 +22293,7 @@ export const waterSystemsData = [
     "longitude": -84.18661583,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005020&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040067",
@@ -22485,7 +22485,7 @@ export const waterSystemsData = [
     "longitude": -83.27516329,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005035&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005034",
@@ -22509,7 +22509,7 @@ export const waterSystemsData = [
     "longitude": -86.35423314,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005034&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005037",
@@ -22557,7 +22557,7 @@ export const waterSystemsData = [
     "longitude": -88.50615464,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0001840&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005040",
@@ -22581,7 +22581,7 @@ export const waterSystemsData = [
     "longitude": -83.3368673,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005040&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005050",
@@ -22629,7 +22629,7 @@ export const waterSystemsData = [
     "longitude": -85.69378409,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005060&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005065",
@@ -22677,7 +22677,7 @@ export const waterSystemsData = [
     "longitude": -84.37441132,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005100&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005110",
@@ -22724,8 +22724,8 @@ export const waterSystemsData = [
     "latitude": 42.99955752,
     "longitude": -84.17368724,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005120&sys=SDWIS",
-    "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "status": "Not compliant",
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005138",
@@ -22797,7 +22797,7 @@ export const waterSystemsData = [
     "longitude": -83.25700266,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005130&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005150",
@@ -22893,7 +22893,7 @@ export const waterSystemsData = [
     "longitude": -83.95494879,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0040441&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040284",
@@ -22989,7 +22989,7 @@ export const waterSystemsData = [
     "longitude": -85.88935081,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005210&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005209",
@@ -23109,7 +23109,7 @@ export const waterSystemsData = [
     "longitude": -85.13852036,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004760&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005232",
@@ -23133,7 +23133,7 @@ export const waterSystemsData = [
     "longitude": -85.17740092,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005232&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005235",
@@ -23181,7 +23181,7 @@ export const waterSystemsData = [
     "longitude": -85.49512428,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005240&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005260",
@@ -23204,8 +23204,8 @@ export const waterSystemsData = [
     "latitude": 43.77448223,
     "longitude": -86.42540141,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005260&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005267",
@@ -23229,7 +23229,7 @@ export const waterSystemsData = [
     "longitude": -86.41221265,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005267&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005268",
@@ -23277,7 +23277,7 @@ export const waterSystemsData = [
     "longitude": -84.68232793,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005270&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005280",
@@ -23301,7 +23301,7 @@ export const waterSystemsData = [
     "longitude": -84.21765901,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005280&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005290",
@@ -23373,7 +23373,7 @@ export const waterSystemsData = [
     "longitude": -84.98421784,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005300&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005310",
@@ -23397,7 +23397,7 @@ export const waterSystemsData = [
     "longitude": -84.85005373,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005310&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005315",
@@ -23493,7 +23493,7 @@ export const waterSystemsData = [
     "longitude": -83.27097068,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005320&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005322",
@@ -23565,7 +23565,7 @@ export const waterSystemsData = [
     "longitude": -83.96322743,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005330&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040525",
@@ -24117,7 +24117,7 @@ export const waterSystemsData = [
     "longitude": -83.14449109,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005390&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005397",
@@ -24165,7 +24165,7 @@ export const waterSystemsData = [
     "longitude": -83.52708101,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005400&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005420",
@@ -24189,7 +24189,7 @@ export const waterSystemsData = [
     "longitude": -83.46569016,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005420&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005425",
@@ -24261,7 +24261,7 @@ export const waterSystemsData = [
     "longitude": null,
     "epaLink": "",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005440",
@@ -24285,7 +24285,7 @@ export const waterSystemsData = [
     "longitude": -83.28889453,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005440&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005460",
@@ -24357,7 +24357,7 @@ export const waterSystemsData = [
     "longitude": -82.49386054,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005490&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005480",
@@ -24381,7 +24381,7 @@ export const waterSystemsData = [
     "longitude": -82.45040432,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005480&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040491",
@@ -24453,7 +24453,7 @@ export const waterSystemsData = [
     "longitude": null,
     "epaLink": "",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005520",
@@ -24549,7 +24549,7 @@ export const waterSystemsData = [
     "longitude": -88.59548469,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003330&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005530",
@@ -24573,7 +24573,7 @@ export const waterSystemsData = [
     "longitude": -84.90560197,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005530&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005540",
@@ -24669,7 +24669,7 @@ export const waterSystemsData = [
     "longitude": -87.73134256,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0000700&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005563",
@@ -24789,7 +24789,7 @@ export const waterSystemsData = [
     "longitude": -83.49642958,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005575&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040490",
@@ -24861,7 +24861,7 @@ export const waterSystemsData = [
     "longitude": -84.88351236,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005580&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005590",
@@ -24885,7 +24885,7 @@ export const waterSystemsData = [
     "longitude": -87.99569932,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005590&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040021",
@@ -24980,8 +24980,8 @@ export const waterSystemsData = [
     "latitude": 41.84031923,
     "longitude": -84.7447699,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005620&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005640",
@@ -25005,7 +25005,7 @@ export const waterSystemsData = [
     "longitude": -83.29256899,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005640&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005650",
@@ -25029,7 +25029,7 @@ export const waterSystemsData = [
     "longitude": -85.5102875,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005650&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0067101",
@@ -25101,7 +25101,7 @@ export const waterSystemsData = [
     "longitude": -87.97596504,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005660&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000048",
@@ -25173,7 +25173,7 @@ export const waterSystemsData = [
     "longitude": -82.75356279,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005670&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000838",
@@ -25317,7 +25317,7 @@ export const waterSystemsData = [
     "longitude": -83.13998586,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005690&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005692",
@@ -25461,7 +25461,7 @@ export const waterSystemsData = [
     "longitude": -83.19108868,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005710&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040191",
@@ -25557,7 +25557,7 @@ export const waterSystemsData = [
     "longitude": -83.13388892,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005720&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005723",
@@ -25628,8 +25628,8 @@ export const waterSystemsData = [
     "latitude": 43.12375207,
     "longitude": -85.55772765,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005730&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005740",
@@ -25653,7 +25653,7 @@ export const waterSystemsData = [
     "longitude": -89.18146916,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005740&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005750",
@@ -25677,7 +25677,7 @@ export const waterSystemsData = [
     "longitude": -83.24661634,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005750&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005770",
@@ -25749,7 +25749,7 @@ export const waterSystemsData = [
     "longitude": -83.01411142,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005780&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005785",
@@ -25773,7 +25773,7 @@ export const waterSystemsData = [
     "longitude": -83.36991421,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005785&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005800",
@@ -25797,7 +25797,7 @@ export const waterSystemsData = [
     "longitude": -86.27335155,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005800&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005810",
@@ -25821,7 +25821,7 @@ export const waterSystemsData = [
     "longitude": -84.59218732,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005810&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005815",
@@ -25965,7 +25965,7 @@ export const waterSystemsData = [
     "longitude": -82.93503697,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005820&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040307",
@@ -26036,8 +26036,8 @@ export const waterSystemsData = [
     "latitude": 42.44997409,
     "longitude": -83.16220964,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005840&sys=SDWIS",
-    "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "status": "Not compliant",
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005830",
@@ -26061,7 +26061,7 @@ export const waterSystemsData = [
     "longitude": -83.15439366,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005830&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005841",
@@ -26133,7 +26133,7 @@ export const waterSystemsData = [
     "longitude": -84.17463055,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0040345&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040495",
@@ -26253,7 +26253,7 @@ export const waterSystemsData = [
     "longitude": -83.96700714,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005850&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005880",
@@ -26301,7 +26301,7 @@ export const waterSystemsData = [
     "longitude": -83.77193186,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005900&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005901",
@@ -26565,7 +26565,7 @@ export const waterSystemsData = [
     "longitude": -85.20768911,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005930&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040575",
@@ -26613,7 +26613,7 @@ export const waterSystemsData = [
     "longitude": -84.37694434,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005950&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005970",
@@ -26637,7 +26637,7 @@ export const waterSystemsData = [
     "longitude": -85.63475781,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005970&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005977",
@@ -26684,8 +26684,8 @@ export const waterSystemsData = [
     "latitude": 43.95516439,
     "longitude": -86.27866383,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0005980&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0005990",
@@ -26949,7 +26949,7 @@ export const waterSystemsData = [
     "longitude": -86.36446663,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006000&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006010",
@@ -26997,7 +26997,7 @@ export const waterSystemsData = [
     "longitude": -86.21278135,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006025&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006030",
@@ -27045,7 +27045,7 @@ export const waterSystemsData = [
     "longitude": -85.07289686,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006040&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040351",
@@ -27117,7 +27117,7 @@ export const waterSystemsData = [
     "longitude": -88.22278301,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002590&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006042",
@@ -27165,7 +27165,7 @@ export const waterSystemsData = [
     "longitude": -83.32489786,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006070&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040519",
@@ -27477,7 +27477,7 @@ export const waterSystemsData = [
     "longitude": -83.25971812,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006080&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006101",
@@ -27500,8 +27500,8 @@ export const waterSystemsData = [
     "latitude": 42.40061451,
     "longitude": -86.26570449,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006101&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006110",
@@ -27525,7 +27525,7 @@ export const waterSystemsData = [
     "longitude": -83.65184481,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006110&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006115",
@@ -27669,7 +27669,7 @@ export const waterSystemsData = [
     "longitude": -84.18093182,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004890&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004877",
@@ -27741,7 +27741,7 @@ export const waterSystemsData = [
     "longitude": -83.25732149,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006160&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006170",
@@ -27765,7 +27765,7 @@ export const waterSystemsData = [
     "longitude": -83.20732678,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006170&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040060",
@@ -27813,7 +27813,7 @@ export const waterSystemsData = [
     "longitude": -86.49694879,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003726&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004878",
@@ -27861,7 +27861,7 @@ export const waterSystemsData = [
     "longitude": -85.71006947,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006200&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006210",
@@ -27909,7 +27909,7 @@ export const waterSystemsData = [
     "longitude": -86.17653586,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006230&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006232",
@@ -27981,7 +27981,7 @@ export const waterSystemsData = [
     "longitude": -84.55229821,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0040230&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040327",
@@ -28029,7 +28029,7 @@ export const waterSystemsData = [
     "longitude": -85.23794099,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006240&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006250",
@@ -28149,7 +28149,7 @@ export const waterSystemsData = [
     "longitude": -84.72880364,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006290&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006310",
@@ -28173,7 +28173,7 @@ export const waterSystemsData = [
     "longitude": -86.4819405,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006310&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006260",
@@ -28197,7 +28197,7 @@ export const waterSystemsData = [
     "longitude": -84.15219885,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006260&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006280",
@@ -28221,7 +28221,7 @@ export const waterSystemsData = [
     "longitude": -82.89595281,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006280&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006282",
@@ -28245,7 +28245,7 @@ export const waterSystemsData = [
     "longitude": -82.55779297,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006282&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006284",
@@ -28269,7 +28269,7 @@ export const waterSystemsData = [
     "longitude": -82.4909246,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006284&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006270",
@@ -28293,7 +28293,7 @@ export const waterSystemsData = [
     "longitude": -82.49424139,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006270&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006300",
@@ -28317,7 +28317,7 @@ export const waterSystemsData = [
     "longitude": -84.55590906,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006300&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006325",
@@ -28365,7 +28365,7 @@ export const waterSystemsData = [
     "longitude": -84.60802482,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006320&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0003350",
@@ -28389,7 +28389,7 @@ export const waterSystemsData = [
     "longitude": -88.51153439,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003350&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006090",
@@ -28413,7 +28413,7 @@ export const waterSystemsData = [
     "longitude": -88.69551149,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006090&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0002940",
@@ -28437,7 +28437,7 @@ export const waterSystemsData = [
     "longitude": -88.73415157,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0002940&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006350",
@@ -28461,7 +28461,7 @@ export const waterSystemsData = [
     "longitude": -83.9623959,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006350&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006360",
@@ -28485,7 +28485,7 @@ export const waterSystemsData = [
     "longitude": -85.08574221,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006360&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040323",
@@ -28557,7 +28557,7 @@ export const waterSystemsData = [
     "longitude": -83.03043236,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006385&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006420",
@@ -28581,7 +28581,7 @@ export const waterSystemsData = [
     "longitude": -84.19295581,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006420&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040443",
@@ -28701,7 +28701,7 @@ export const waterSystemsData = [
     "longitude": -85.41630606,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006440&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040177",
@@ -29157,7 +29157,7 @@ export const waterSystemsData = [
     "longitude": -85.28427685,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006485&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0000880",
@@ -29229,7 +29229,7 @@ export const waterSystemsData = [
     "longitude": -85.64905745,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006500&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006502",
@@ -29421,7 +29421,7 @@ export const waterSystemsData = [
     "longitude": -83.33297701,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006530&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006531",
@@ -29589,7 +29589,7 @@ export const waterSystemsData = [
     "longitude": -83.52018685,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006540&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006545",
@@ -29613,7 +29613,7 @@ export const waterSystemsData = [
     "longitude": -83.26903385,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006545&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006552",
@@ -29661,7 +29661,7 @@ export const waterSystemsData = [
     "longitude": -83.94804736,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006560&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006562",
@@ -29973,7 +29973,7 @@ export const waterSystemsData = [
     "longitude": -85.9416212,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006590&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006592",
@@ -30117,7 +30117,7 @@ export const waterSystemsData = [
     "longitude": -86.61244077,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006600&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006610",
@@ -30141,7 +30141,7 @@ export const waterSystemsData = [
     "longitude": -85.62827844,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006610&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0004640",
@@ -30165,7 +30165,7 @@ export const waterSystemsData = [
     "longitude": -87.73015129,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004640&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006624",
@@ -30309,7 +30309,7 @@ export const waterSystemsData = [
     "longitude": -88.454385,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0003270&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040110",
@@ -30381,7 +30381,7 @@ export const waterSystemsData = [
     "longitude": -85.6030966,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006640&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006647",
@@ -30428,8 +30428,8 @@ export const waterSystemsData = [
     "latitude": 42.13807779,
     "longitude": -83.18377766,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006650&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006682",
@@ -30621,7 +30621,7 @@ export const waterSystemsData = [
     "longitude": -82.93466738,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006710&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006720",
@@ -30669,7 +30669,7 @@ export const waterSystemsData = [
     "longitude": -84.74285125,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006725&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006730",
@@ -30740,8 +30740,8 @@ export const waterSystemsData = [
     "latitude": 47.23843958,
     "longitude": -88.44940295,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0004800&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006760",
@@ -30765,7 +30765,7 @@ export const waterSystemsData = [
     "longitude": -83.02942375,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006760&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006792",
@@ -30861,7 +30861,7 @@ export const waterSystemsData = [
     "longitude": -83.46163074,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006770&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006780",
@@ -30885,7 +30885,7 @@ export const waterSystemsData = [
     "longitude": -83.58000588,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006780&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006790",
@@ -30956,8 +30956,8 @@ export const waterSystemsData = [
     "latitude": 42.12364974,
     "longitude": -85.54064704,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006800&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040498",
@@ -31077,7 +31077,7 @@ export const waterSystemsData = [
     "longitude": -85.82271938,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0040028&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006830",
@@ -31101,7 +31101,7 @@ export const waterSystemsData = [
     "longitude": -89.93970073,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006830&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006850",
@@ -31125,7 +31125,7 @@ export const waterSystemsData = [
     "longitude": -84.41884517,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006850&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006875",
@@ -31221,7 +31221,7 @@ export const waterSystemsData = [
     "longitude": -83.02735394,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006900&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040477",
@@ -31317,7 +31317,7 @@ export const waterSystemsData = [
     "longitude": -83.38599146,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006910&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040673",
@@ -31365,7 +31365,7 @@ export const waterSystemsData = [
     "longitude": -89.26496459,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006920&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006930",
@@ -31389,7 +31389,7 @@ export const waterSystemsData = [
     "longitude": -86.26037917,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006930&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006940",
@@ -31413,7 +31413,7 @@ export const waterSystemsData = [
     "longitude": -85.6402534,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006940&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006950",
@@ -31437,7 +31437,7 @@ export const waterSystemsData = [
     "longitude": -83.38580385,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006950&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006960",
@@ -31485,7 +31485,7 @@ export const waterSystemsData = [
     "longitude": -84.18240977,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006970&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0006971",
@@ -31557,7 +31557,7 @@ export const waterSystemsData = [
     "longitude": -83.40505954,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0006975&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0007012",
@@ -31605,7 +31605,7 @@ export const waterSystemsData = [
     "longitude": -84.23128824,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0007010&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0067020",
@@ -31821,7 +31821,7 @@ export const waterSystemsData = [
     "longitude": -83.37945763,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0007040&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0007050",
@@ -32013,7 +32013,7 @@ export const waterSystemsData = [
     "longitude": -85.77244794,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0007060&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040294",
@@ -32180,8 +32180,8 @@ export const waterSystemsData = [
     "latitude": 41.79597458,
     "longitude": -85.64459734,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0007070&sys=SDWIS",
-    "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "status": "Compliant",
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040105",
@@ -32253,7 +32253,7 @@ export const waterSystemsData = [
     "longitude": -86.34250758,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0007100&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0007101",
@@ -32325,7 +32325,7 @@ export const waterSystemsData = [
     "longitude": -84.99080612,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0007105&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0007125",
@@ -32517,7 +32517,7 @@ export const waterSystemsData = [
     "longitude": null,
     "epaLink": "",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0007134",
@@ -32565,7 +32565,7 @@ export const waterSystemsData = [
     "longitude": -83.54003386,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0007135&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040501",
@@ -32637,7 +32637,7 @@ export const waterSystemsData = [
     "longitude": -83.32871116,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0007160&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0007180",
@@ -32949,7 +32949,7 @@ export const waterSystemsData = [
     "longitude": -83.15856914,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0007210&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0007217",
@@ -33021,7 +33021,7 @@ export const waterSystemsData = [
     "longitude": -82.79731487,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0007230&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0040585",
@@ -33141,7 +33141,7 @@ export const waterSystemsData = [
     "longitude": -83.60282211,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0007260&sys=SDWIS",
     "status": "Not compliant",
-    "statusExplanation": "Not Compliant (<20% average replacement, 2021–2024)"
+    "statusExplanation": "Not Compliant (<25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0007270",
@@ -33165,7 +33165,7 @@ export const waterSystemsData = [
     "longitude": -86.01285657,
     "epaLink": "https://echo.epa.gov/detailed-facility-report?fid=MI0007270&sys=SDWIS",
     "status": "Compliant",
-    "statusExplanation": "Compliant (≥20% average replacement, 2021–2024)"
+    "statusExplanation": "Compliant (≥25% average replacement, 2021–2025)"
   },
   {
     "pwsid": "MI0007280",

@@ -37,10 +37,10 @@ function About() {
             <dd>The sum of known lead lines, GPCL, and unknown material lines.</dd>
             
             <dt>Compliant</dt>
-            <dd>Systems with identified lead lines that have replaced an average of at least 20% of required lines during the reporting period from 2021–2025.</dd>
+            <dd>Systems with identified lead lines that have replaced at least 25% of required lines during the reporting period from 2021–2025 (an average of 5% per year).</dd>
             
             <dt>Non-Compliant</dt>
-            <dd>Systems that have replaced less than 20% of required lines over the past 4 years, or did not submit a service line inventory.</dd>
+            <dd>Systems that have replaced less than 25% of required lines over the past 5 years, or did not submit a service line inventory.</dd>
 
             <dt>No Lead Lines Identified</dt>
             <dd>Systems that have completed inventories and found no lead service lines requiring replacement</dd>

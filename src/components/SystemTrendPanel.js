@@ -2,7 +2,7 @@
  * SystemTrendPanel.js
  *
  * Combined panel showing two stacked charts for a single selected water system:
- *   1. Annual Replacement Trend — lines replaced per year (2021–2024)
+ *   1. Annual Replacement Trend — lines replaced per year (2021–2025)
  *   2. Lead Levels Over Time — 90th percentile lead (ppb) across all monitoring years
  *
  * A single system dropdown at the top controls both charts simultaneously,
@@ -503,7 +503,7 @@ function SystemTrendPanel({ data = mergedData, selectedPwsid: controlledPwsid, o
         Annual Replacement Trend
       </p>
       <p style={{ margin: '0 0 0.5rem', fontSize: '0.75rem', color: '#9ca3af' }}>
-        Lead and GPCL service lines replaced per year (2021–2024)
+        Lead and GPCL service lines replaced per year (2021–2025)
       </p>
 
       <ResponsiveContainer width="100%" style={{ flex: 1 }} height="100%" minHeight={160}>

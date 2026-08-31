@@ -56,8 +56,8 @@ const STATUS_CONFIG = {
  * what users see, matching the original dashboard wording.
  */
 const STATUS_DISPLAY_LABEL = {
-  'Not compliant':                        '<20% average replacement, 2021–2024',
-  'Compliant':                            '≥20% average replacement, 2021–2024',
+  'Not compliant':                        '<25% average replacement, 2021–2025',
+  'Compliant':                            '≥25% average replacement, 2021–2025',
   '100% replaced':                        '100% replaced',
   'No lead lines':                        'No lead lines',
   'Inventory not received or incomplete': 'Inventory not received or incomplete',
@@ -73,8 +73,8 @@ const getStatusLabel = (status) => STATUS_DISPLAY_LABEL[status] || status;
  */
 const LEGEND_ITEMS = [
   { color: '#7c3aed', label: 'Inventory not received or incomplete', description: 'No complete inventory filed' },
-  { color: '#dc2626', label: '<20% average replacement, 2021–2024',  description: 'Not meeting state replacement requirements' },
-  { color: '#16a34a', label: '≥20% average replacement, 2021–2024',  description: 'Meeting state replacement requirements' },
+  { color: '#dc2626', label: '<25% average replacement, 2021–2025',  description: 'Not meeting state replacement requirements' },
+  { color: '#16a34a', label: '≥25% average replacement, 2021–2025',  description: 'Meeting state replacement requirements' },
   { color: '#059669', label: '100% replaced',                        description: 'All identified lead lines replaced' },
   { color: '#2563eb', label: 'No lead lines',                        description: 'Inventory completed, no lead lines identified' },
 ];
@@ -397,8 +397,8 @@ function RankingTable({ data = waterSystemsData }) {
         <span className="filter-explanation">
           {viewMode === 'most-lead'      && 'Systems with identified lead service lines.'}
           {viewMode === 'most-unknown'   && 'Systems with service lines of unknown material still needing identification.'}
-          {viewMode === 'best-progress'  && 'Systems actively replacing lead lines (≥20% replaced, <20% replaced, or 100% Replaced).'}
-          {viewMode === 'worst-progress' && 'Non-compliant systems (<20% replacement), sorted by lowest progress first.'}
+          {viewMode === 'best-progress'  && 'Systems actively replacing lead lines (≥25% replaced, <25% replaced, or 100% Replaced).'}
+          {viewMode === 'worst-progress' && 'Non-compliant systems (<25% replacement), sorted by lowest progress first.'}
         </span>
       </div>
 
