@@ -301,7 +301,7 @@ function ProgressBar({ percentReplaced, status }) {
 }
 
 /**
- * Small bar chart showing lines replaced per year (2021-2024).
+ * Small bar chart showing lines replaced per year (2021-2025).
  * Bars are scaled relative to the highest single-year value.
  *
  * To add a new year (e.g. 2025):
@@ -309,9 +309,9 @@ function ProgressBar({ percentReplaced, status }) {
  *  2. Add the y2025 prop to all SparkBars usages
  *  3. Add y2025 to waterSystemsData.js
  */
-function SparkBars({ y2021, y2022, y2023, y2024 }) {
-  const vals  = [y2021, y2022, y2023, y2024];
-  const years = ['2021', '2022', '2023', '2024'];
+function SparkBars({ y2021, y2022, y2023, y2024, y2025 }) {
+  const vals  = [y2021, y2022, y2023, y2024, y2025];
+  const years = ['2021', '2022', '2023', '2024', '2025'];
   const max   = Math.max(...vals, 1); // avoid division by zero
 
   return (
@@ -428,7 +428,8 @@ function ExpandedDetail({ system }) {
 
   // Only show the sparkline if at least one year has replacement data
   const hasYearlyData = showLeadDetails && (
-    system.y2021 > 0 || system.y2022 > 0 || system.y2023 > 0 || system.y2024 > 0
+    system.y2021 > 0 || system.y2022 > 0 || system.y2023 > 0 || system.y2024 > 0 ||
+    system.y2025 > 0
   );
 
   return (
@@ -453,7 +454,7 @@ function ExpandedDetail({ system }) {
         <div className="expand-progress-row">
           <div className="expand-progress-label">
             <span className="expand-progress-pct">{system.percentReplaced.toFixed(1)}%</span>
-            <span className="expand-progress-sub">replaced (2021-2024)</span>
+            <span className="expand-progress-sub">replaced (2021-2025)</span>
           </div>
           <div className="expand-progress-bar">
             <div
@@ -511,7 +512,7 @@ function ExpandedDetail({ system }) {
             )}
             {system.totalReplaced > 0 && (
               <div className="expand-stat">
-                <span className="expand-stat-label">Total replaced (2021-2024)</span>
+                <span className="expand-stat-label">Total replaced (2021-2025)</span>
                 <span className="expand-stat-val expand-stat-val--good">
                   {system.totalReplaced.toLocaleString()}
                 </span>
@@ -539,6 +540,7 @@ function ExpandedDetail({ system }) {
           y2022={system.y2022}
           y2023={system.y2023}
           y2024={system.y2024}
+          y2025={system.y2025}
         />
       )}
 

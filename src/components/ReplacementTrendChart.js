@@ -1,7 +1,7 @@
 /**
  * ReplacementTrendChart.js
  *
- * Line chart showing annual lead service line replacements (2021–2024)
+ * Line chart showing annual lead service line replacements (2021–2025)
  * for a selected water system.
  *
  * Data source: src/data/mergedData.js (converted from the pipeline CSV).
@@ -12,8 +12,7 @@
  *                  lines_replaced (number|null), year (number).
  *
  * Data notes:
- *   - Only rows with year 2021–2024 and non-null lines_replaced are shown,
- *     because 2025 is inventory-only (no LSLR replacement data).
+ *   - Only rows within LSLR_YEARS and non-null lines_replaced are shown.
  *   - The system dropdown is derived dynamically from rows that have at
  *     least one year of lines_replaced data.
  *   - The insight box calculates % change from 2021 to 2024 automatically.
@@ -35,7 +34,7 @@ import {
 import mergedData from '../data/mergedData';
 
 // Years covered by LSLR data — update when new years are added
-const LSLR_YEARS = [2021, 2022, 2023, 2024];
+const LSLR_YEARS = [2021, 2022, 2023, 2024, 2025];
 
 // =============================================================================
 // HELPER FUNCTIONS
@@ -170,7 +169,7 @@ function ReplacementTrendChart({ data = mergedData }) {
     (s) => s.resolved_pwsid === selectedPwsid
   )?.display_name ?? '';
 
-  // Auto-calculate insight: % change from 2021 to 2024
+  // Auto-calculate insight: % change from first to last LSLR year
   const pctChange     = calcPctChange(chartData);
   const insightText   = pctChange != null
     ? `${pctChange > 0 ? '+' : ''}${pctChange}% change from ${LSLR_YEARS[0]} to ${LSLR_YEARS[LSLR_YEARS.length - 1]}`
@@ -261,8 +260,7 @@ function ReplacementTrendChart({ data = mergedData }) {
 
           {/* Data note */}
           <p style={{ fontSize: '0.72rem', color: '#9ca3af', margin: '0.5rem 0 0', lineHeight: 1.4 }}>
-            2021–2024 data from EGLE Lead Service Line Replacement Reports.
-            2025 inventory data is not shown here as it does not include replacement counts.
+            2021–2025 data from EGLE Lead Service Line Replacement Reports.
           </p>
         </>
       )}

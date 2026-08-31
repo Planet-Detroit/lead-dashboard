@@ -42,7 +42,7 @@ import mergedData from '../data/mergedData';
 // =============================================================================
 
 /** Years covered by LSLR replacement data. Update when new years are added. */
-const LSLR_YEARS = [2021, 2022, 2023, 2024];
+const LSLR_YEARS = [2021, 2022, 2023, 2024, 2025];
 
 /**
  * Lead action level thresholds:

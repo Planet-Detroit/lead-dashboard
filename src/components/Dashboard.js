@@ -13,8 +13,8 @@ function Dashboard() {
   const [animatedReplaced, setAnimatedReplaced] = useState(0);
   
   const totalToReplace = 580030;
-  const totalReplaced = 69891;
-  const actualProgress = 12.0;
+  const totalReplaced = 98253;
+  const actualProgress = 16.9;
   
   const compositionData = [
     { name: 'Known Lead Lines', value: 203050, color: '#dc2626' },
@@ -58,7 +58,7 @@ function Dashboard() {
           <div className="stat-card blue">
             <div className="stat-label">REPLACED TO DATE</div>
             <div className="stat-value">{animatedReplaced.toLocaleString()}</div>
-            <div className="stat-desc">lines removed (2021-2024)</div>
+            <div className="stat-desc">lines removed (2021-2025)</div>
           </div>
           
           <div className="stat-card green">

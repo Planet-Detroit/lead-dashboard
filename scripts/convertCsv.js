@@ -50,6 +50,7 @@ const jsData = parsed.data.map(row => {
     y2022: clean(row['2022']),
     y2023: clean(row['2023']),
     y2024: clean(row['2024']),
+    y2025: clean(row['2025']),
     leadLines: leadLines,
     gpcl: gpcl,
     unknown: unknown,

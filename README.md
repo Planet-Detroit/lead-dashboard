@@ -1,6 +1,6 @@
 # Michigan Lead Service Line Replacement Dashboard
 
-An interactive data visualization tracking lead service line replacement progress across Michigan water systems (2021-2024).
+An interactive data visualization tracking lead service line replacement progress across Michigan water systems (2021-2025).
 
 **A collaboration between [Planet Detroit](https://planetdetroit.org) and [Safe Water Engineering](https://safewaterengineering.com)**
 
@@ -12,9 +12,9 @@ View the dashboard at: [https://leadservicelines.planetdetroit.org](https://lead
 
 This dashboard visualizes data from Michigan's Department of Environment, Great Lakes, and Energy (EGLE) showing:
 * **580,030** total lead service lines requiring replacement
-* **69,891** lines replaced (12% progress) from 2021-2024
+* **98,253** lines replaced (16.9% progress) from 2021-2025
 * **3.9 million** Michigan residents served by systems with known lead lines
-* **138% increase** in replacement rates from 2021 to 2024
+* **175% increase** in replacement rates from 2021 to 2025
 
 ## Key Features
 
@@ -66,7 +66,7 @@ This dashboard visualizes data from Michigan's Department of Environment, Great 
 ### Source Data
 Michigan Department of Environment, Great Lakes, and Energy (EGLE):
 * Community Drinking Supply Monitoring Inventory (CDSMI)
-* Lead Service Line Replacement Reports (2021-2024)
+* Lead Service Line Replacement Reports (2021-2025)
 * Lead Action Level Exceedance data
 
 ### Data Processing & Calculations
@@ -180,7 +180,7 @@ For each water system, the dashboard displays:
 * **GPCL in CDSMI** - Galvanized Previously Connected to Lead lines
 * **Unknown in CDSMI** - Lines with unknown material composition
 * **Total to Replace** - Sum of lead + GPCL + unknown lines
-* **Grand Total of Lead Service Lines Replaced** - Lines replaced (2021-2024)
+* **Grand Total of Lead Service Lines Replaced** - Lines replaced (2021-2025)
 * **% Replaced to Date** - Calculated replacement progress (by Planet Detroit)
 * **Most Recent Lead Action Level Exceedance** - Year of most recent exceedance (if any)
 
