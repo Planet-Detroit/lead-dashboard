@@ -8,6 +8,8 @@ An interactive data visualization tracking lead service line replacement progres
 
 View the dashboard at: [https://leadservicelines.planetdetroit.org](https://leadservicelines.planetdetroit.org)
 
+> **Updating the data?** See [DATA-UPDATES.md](DATA-UPDATES.md). Recent changes are logged in [CHANGELOG.md](CHANGELOG.md).
+
 ## Overview
 
 This dashboard visualizes data from Michigan's Department of Environment, Great Lakes, and Energy (EGLE) showing:
