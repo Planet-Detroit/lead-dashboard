@@ -204,6 +204,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0000013",
+    "resolved_pwsid": "MI0000013",
+    "system_name": "LOCHENHEATH",
+    "display_name": "LOCHENHEATH",
+    "county": "GRAND TRAVERSE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0000020",
     "resolved_pwsid": "MI0000020",
     "system_name": "ADAMS TOWNSHIP",
@@ -7667,6 +7684,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0000605",
+    "resolved_pwsid": "MI0000605",
+    "system_name": "BENTON CHARTER TOWNSHIP",
+    "display_name": "BENTON CHARTER TOWNSHIP",
+    "county": "BERRIEN",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0000610",
     "resolved_pwsid": "MI0000610",
     "system_name": "BENZONIA VILLAGE OF",
@@ -13566,6 +13600,40 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0001039",
+    "resolved_pwsid": "MI0001039-a",
+    "system_name": "CALEDONIA TOWNSHIP (DS002)",
+    "display_name": "CALEDONIA TOWNSHIP (DS002)",
+    "county": "KENT",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
+    "base_pwsid": "MI0001039",
+    "resolved_pwsid": "MI0001039-b",
+    "system_name": "CALEDONIA TOWNSHIP (DS003)",
+    "display_name": "CALEDONIA TOWNSHIP (DS003)",
+    "county": "KENT",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0001040",
     "resolved_pwsid": "MI0001040",
     "system_name": "CALUMET",
@@ -14839,6 +14907,23 @@ export const mergedData = [
     "inventory_unknown": 48,
     "total_to_identify_or_replace": 63,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0001230",
+    "resolved_pwsid": "MI0001230",
+    "system_name": "CASS LAKESIDE SUBDIVISION",
+    "display_name": "CASS LAKESIDE SUBDIVISION",
+    "county": "OAKLAND",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 1,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0001250",
@@ -16267,6 +16352,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 0,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0001353",
+    "resolved_pwsid": "MI0001353",
+    "system_name": "CHATEAUX DU LAC CONDOMINIUMS",
+    "display_name": "CHATEAUX DU LAC CONDOMINIUMS",
+    "county": "GENESEE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 16,
+    "above_action_level": true,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0001355",
@@ -18613,6 +18715,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 0,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0001552",
+    "resolved_pwsid": "MI0001552",
+    "system_name": "COLONY BAY CONDOMINIUMS",
+    "display_name": "COLONY BAY CONDOMINIUMS",
+    "county": "CASS",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 1,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0001565",
@@ -22848,6 +22967,40 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0001820",
+    "resolved_pwsid": "MI0001820",
+    "system_name": "ELY TOWNSHIP-DIORITE",
+    "display_name": "ELY TOWNSHIP-DIORITE",
+    "county": "MARQUETTE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 1,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
+    "base_pwsid": "MI0001825",
+    "resolved_pwsid": "MI0001825",
+    "system_name": "DJW PROPERTIES MI LLC",
+    "display_name": "DJW PROPERTIES MI LLC",
+    "county": "LENAWEE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0001840",
     "resolved_pwsid": "MI0001840-a",
     "system_name": "OSCEOLA TOWNSHIP",
@@ -23288,6 +23441,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 1456,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0001860",
+    "resolved_pwsid": "MI0001860",
+    "system_name": "DOWAGIAC",
+    "display_name": "DOWAGIAC",
+    "county": "CASS",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 6,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0001865",
@@ -24121,6 +24291,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 0,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0001932",
+    "resolved_pwsid": "MI0001932",
+    "system_name": "EAGLE VILLAGE, INC.",
+    "display_name": "EAGLE VILLAGE, INC.",
+    "county": "OSCEOLA",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0001935",
@@ -25092,6 +25279,23 @@ export const mergedData = [
     "inventory_complete_flag": false
   },
   {
+    "base_pwsid": "MI0002000",
+    "resolved_pwsid": "MI0002000-e",
+    "system_name": "PINE KNOLL APARTMENTS, LLC (DS002)",
+    "display_name": "PINE KNOLL APARTMENTS, LLC (DS002)",
+    "county": "LIVINGSTON",
+    "monitoring_end_date": "2025-09-30",
+    "year": 2025,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0002010",
     "resolved_pwsid": "MI0002010",
     "system_name": "EAST TAWAS, CITY OF",
@@ -25711,7 +25915,7 @@ export const mergedData = [
     "county": "MONTCALM",
     "monitoring_end_date": "2023-12-31",
     "year": 2023,
-    "lead_90th_ppb": 2,
+    "lead_90th_ppb": 1,
     "above_action_level": false,
     "lines_replaced": null,
     "inventory_lead": null,
@@ -27591,6 +27795,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0002260",
+    "resolved_pwsid": "MI0002260",
+    "system_name": "FENNVILLE",
+    "display_name": "FENNVILLE",
+    "county": "ALLEGAN",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 2,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0002270",
     "resolved_pwsid": "MI0002270",
     "system_name": "FENTON, CITY OF",
@@ -28779,6 +29000,23 @@ export const mergedData = [
     "inventory_unknown": 3283,
     "total_to_identify_or_replace": 4125,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0002310",
+    "resolved_pwsid": "MI0002310",
+    "system_name": "FLINT, CITY OF",
+    "display_name": "FLINT, CITY OF",
+    "county": "GENESEE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 3,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0002340",
@@ -30991,6 +31229,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0002550",
+    "resolved_pwsid": "MI0002550",
+    "system_name": "GARDEN CITY",
+    "display_name": "GARDEN CITY",
+    "county": "WAYNE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 16,
+    "above_action_level": true,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0002565",
     "resolved_pwsid": "MI0002565",
     "system_name": "GARFIELD CHARTER TOWNSHIP",
@@ -31329,6 +31584,23 @@ export const mergedData = [
     "inventory_unknown": 60,
     "total_to_identify_or_replace": 60,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0002590",
+    "resolved_pwsid": "MI0002590",
+    "system_name": "SHERMAN TOWNSHIP",
+    "display_name": "SHERMAN TOWNSHIP",
+    "county": "KEWEENAW",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 1,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0002600",
@@ -32640,6 +32912,23 @@ export const mergedData = [
     "inventory_complete_flag": false
   },
   {
+    "base_pwsid": "MI0002657",
+    "resolved_pwsid": "MI0002657-f",
+    "system_name": "GLEN OAKS COMMUNITY COLLEGE (DS001)",
+    "display_name": "GLEN OAKS COMMUNITY COLLEGE (DS001)",
+    "county": "ST. JOSEPH",
+    "monitoring_end_date": "2024-09-30",
+    "year": 2024,
+    "lead_90th_ppb": 1,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0002659",
     "resolved_pwsid": "MI0002659",
     "system_name": "GLENNWOODS SUBDIVISION",
@@ -33811,6 +34100,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 0,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0002785",
+    "resolved_pwsid": "MI0002785",
+    "system_name": "GRAND POINTE SUBDIVISION",
+    "display_name": "GRAND POINTE SUBDIVISION",
+    "county": "EATON",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 3,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0002790",
@@ -35207,6 +35513,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0002870",
+    "resolved_pwsid": "MI0002870",
+    "system_name": "GROSSE ILE TOWNSHIP",
+    "display_name": "GROSSE ILE TOWNSHIP",
+    "county": "WAYNE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 4,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0002880",
     "resolved_pwsid": "MI0002880",
     "system_name": "GROSSE POINTE, CITY OF",
@@ -35904,6 +36227,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0002920",
+    "resolved_pwsid": "MI0002920",
+    "system_name": "GROSSE POINTE WOODS",
+    "display_name": "GROSSE POINTE WOODS",
+    "county": "WAYNE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 11,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0002925",
     "resolved_pwsid": "MI0002925",
     "system_name": "LAKE DOSTER",
@@ -36210,6 +36550,23 @@ export const mergedData = [
     "inventory_complete_flag": false
   },
   {
+    "base_pwsid": "MI0002943",
+    "resolved_pwsid": "MI0002943",
+    "system_name": "HALE HOMESTEAD APARTMENTS",
+    "display_name": "HALE HOMESTEAD APARTMENTS",
+    "county": "IOSCO",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 1,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0002944",
     "resolved_pwsid": "MI0002944",
     "system_name": "HAMLET VILLAGE CONDOMINIUMS ASSOCIATION",
@@ -36276,6 +36633,23 @@ export const mergedData = [
     "inventory_unknown": 45,
     "total_to_identify_or_replace": 45,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0002944",
+    "resolved_pwsid": "MI0002944",
+    "system_name": "HAMLET VILLAGE CONDOMINIUMS ASSOCIATION",
+    "display_name": "HAMLET VILLAGE CONDOMINIUMS ASSOCIATION",
+    "county": "EMMET",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 5,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0002945",
@@ -36701,6 +37075,23 @@ export const mergedData = [
     "inventory_unknown": 4551,
     "total_to_identify_or_replace": 5385,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0002970",
+    "resolved_pwsid": "MI0002970",
+    "system_name": "HAMTRAMCK",
+    "display_name": "HAMTRAMCK",
+    "county": "WAYNE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 12,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0002980",
@@ -37381,6 +37772,23 @@ export const mergedData = [
     "inventory_unknown": 1597,
     "total_to_identify_or_replace": 2469,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0003020",
+    "resolved_pwsid": "MI0003020",
+    "system_name": "HARPER WOODS",
+    "display_name": "HARPER WOODS",
+    "county": "WAYNE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 3,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0003030",
@@ -38845,6 +39253,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0003120",
+    "resolved_pwsid": "MI0003120",
+    "system_name": "HERMANSVILLE HOUSING COMM.",
+    "display_name": "HERMANSVILLE HOUSING COMM.",
+    "county": "MENOMINEE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 29,
+    "above_action_level": true,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0003130",
     "resolved_pwsid": "MI0003130",
     "system_name": "HESPERIA",
@@ -38906,6 +39331,23 @@ export const mergedData = [
     "lead_90th_ppb": 4,
     "above_action_level": false,
     "lines_replaced": 7,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
+    "base_pwsid": "MI0003130",
+    "resolved_pwsid": "MI0003130",
+    "system_name": "HESPERIA",
+    "display_name": "HESPERIA",
+    "county": "NEWAYGO",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 5,
+    "above_action_level": false,
+    "lines_replaced": null,
     "inventory_lead": null,
     "inventory_gpcl": null,
     "inventory_unknown": null,
@@ -42823,6 +43265,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0003360",
+    "resolved_pwsid": "MI0003360",
+    "system_name": "INKSTER",
+    "display_name": "INKSTER",
+    "county": "WAYNE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 2,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0003362",
     "resolved_pwsid": "MI0003362",
     "system_name": "INLAND HOUSE CONDOMINIUM ASSOCIATION",
@@ -43809,6 +44268,23 @@ export const mergedData = [
     "inventory_complete_flag": false
   },
   {
+    "base_pwsid": "MI0003460",
+    "resolved_pwsid": "MI0003460",
+    "system_name": "ITHACA, CITY OF",
+    "display_name": "ITHACA, CITY OF",
+    "county": "GRATIOT",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 1,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0003470",
     "resolved_pwsid": "MI0003470",
     "system_name": "JACKSON",
@@ -44319,6 +44795,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0003510",
+    "resolved_pwsid": "MI0003510",
+    "system_name": "K I SAWYER",
+    "display_name": "K I SAWYER",
+    "county": "MARQUETTE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 4,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0003520",
     "resolved_pwsid": "MI0003520",
     "system_name": "KALAMAZOO",
@@ -44555,6 +45048,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 4614,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0003520",
+    "resolved_pwsid": "MI0003520",
+    "system_name": "KALAMAZOO",
+    "display_name": "KALAMAZOO",
+    "county": "KALAMAZOO",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 4,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0003525",
@@ -46750,6 +47260,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0003693",
+    "resolved_pwsid": "MI0003693",
+    "system_name": "LAKE ANGELA CONDO APTS #5",
+    "display_name": "LAKE ANGELA CONDO APTS #5",
+    "county": "OAKLAND",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 3,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0003694",
     "resolved_pwsid": "MI0003694",
     "system_name": "LAKE ANGELA CONDO APTS #4",
@@ -46911,6 +47438,23 @@ export const mergedData = [
     "monitoring_end_date": "2023-12-31",
     "year": 2023,
     "lead_90th_ppb": 3,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
+    "base_pwsid": "MI0003697",
+    "resolved_pwsid": "MI0003697",
+    "system_name": "LAKE CHEMUNG OUTDOOR RESORT",
+    "display_name": "LAKE CHEMUNG OUTDOOR RESORT",
+    "county": "LIVINGSTON",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 1,
     "above_action_level": false,
     "lines_replaced": null,
     "inventory_lead": null,
@@ -47241,6 +47785,23 @@ export const mergedData = [
     "inventory_unknown": 7864,
     "total_to_identify_or_replace": 7884,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0003728",
+    "resolved_pwsid": "MI0003728",
+    "system_name": "LAKE MITCHELL CONDOMINIUM ASSOCIATION",
+    "display_name": "LAKE MITCHELL CONDOMINIUM ASSOCIATION",
+    "county": "WEXFORD",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0003730",
@@ -48994,6 +49555,23 @@ export const mergedData = [
     "inventory_complete_flag": false
   },
   {
+    "base_pwsid": "MI0003820",
+    "resolved_pwsid": "MI0003820",
+    "system_name": "LAWRENCE",
+    "display_name": "LAWRENCE",
+    "county": "VAN BUREN",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0003829",
     "resolved_pwsid": "MI0003829",
     "system_name": "LEELANAU CO LAW ENFORCEMENT CENTER",
@@ -49434,6 +50012,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 0,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0003837",
+    "resolved_pwsid": "MI0003837",
+    "system_name": "LEONI TOWNSHIP",
+    "display_name": "LEONI TOWNSHIP",
+    "county": "JACKSON",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 3,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0003838",
@@ -50184,6 +50779,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0003880",
+    "resolved_pwsid": "MI0003880",
+    "system_name": "CRYSTAL FALLS TOWNSHIP - LIND",
+    "display_name": "CRYSTAL FALLS TOWNSHIP - LIND",
+    "county": "IRON",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 4,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0003890",
     "resolved_pwsid": "MI0003890",
     "system_name": "LINDEN, CITY OF",
@@ -50267,6 +50879,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 0,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0003890",
+    "resolved_pwsid": "MI0003890",
+    "system_name": "LINDEN, CITY OF",
+    "display_name": "LINDEN, CITY OF",
+    "county": "GENESEE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 1,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0003910",
@@ -50762,6 +51391,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0003930",
+    "resolved_pwsid": "MI0003930",
+    "system_name": "LIVONIA",
+    "display_name": "LIVONIA",
+    "county": "WAYNE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0003940",
     "resolved_pwsid": "MI0003940",
     "system_name": "LOCH ALPINE SANITARY AUTHORITY",
@@ -51034,6 +51680,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0003942",
+    "resolved_pwsid": "MI0003942",
+    "system_name": "ISLAND LAKE APARTMENTS",
+    "display_name": "ISLAND LAKE APARTMENTS",
+    "county": "LIVINGSTON",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 3,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0003943",
     "resolved_pwsid": "MI0003943",
     "system_name": "LOCKPORT TOWNSHIP",
@@ -51253,6 +51916,23 @@ export const mergedData = [
     "inventory_unknown": 509,
     "total_to_identify_or_replace": 589,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0003950",
+    "resolved_pwsid": "MI0003950",
+    "system_name": "LOWELL",
+    "display_name": "LOWELL",
+    "county": "KENT",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0003955",
@@ -51967,6 +52647,23 @@ export const mergedData = [
     "inventory_unknown": 15,
     "total_to_identify_or_replace": 247,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0004000",
+    "resolved_pwsid": "MI0004000",
+    "system_name": "MADISON HEIGHTS",
+    "display_name": "MADISON HEIGHTS",
+    "county": "OAKLAND",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 7,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0004006",
@@ -53176,6 +53873,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0004070",
+    "resolved_pwsid": "MI0004070",
+    "system_name": "MARCELLUS",
+    "display_name": "MARCELLUS",
+    "county": "CASS",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 2,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0004080",
     "resolved_pwsid": "MI0004080",
     "system_name": "MARENISCO TOWNSHIP",
@@ -53686,6 +54400,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0004120",
+    "resolved_pwsid": "MI0004120",
+    "system_name": "MARQUETTE",
+    "display_name": "MARQUETTE",
+    "county": "MARQUETTE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 2,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0004140",
     "resolved_pwsid": "MI0004140-a",
     "system_name": "MARQUETTE TOWNSHIP",
@@ -54041,6 +54772,23 @@ export const mergedData = [
     "inventory_unknown": 177,
     "total_to_identify_or_replace": 260,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0004150",
+    "resolved_pwsid": "MI0004150-b",
+    "system_name": "MARSHALL (DS002)",
+    "display_name": "MARSHALL (DS002)",
+    "county": "CALHOUN",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 2,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0004152",
@@ -56727,6 +57475,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 0,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0004375",
+    "resolved_pwsid": "MI0004375",
+    "system_name": "MIDLAND CO., WATER DIST. NO. 1 OF",
+    "display_name": "MIDLAND CO., WATER DIST. NO. 1 OF",
+    "county": "MIDLAND",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 3,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0004377",
@@ -59954,6 +60719,23 @@ export const mergedData = [
     "lines_replaced": null,
     "inventory_lead": 6,
     "inventory_gpcl": 13,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
+    "base_pwsid": "MI0004670",
+    "resolved_pwsid": "MI0004670",
+    "system_name": "NEW BALTIMORE, CITY OF",
+    "display_name": "NEW BALTIMORE, CITY OF",
+    "county": "MACOMB",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
     "inventory_unknown": null,
     "total_to_identify_or_replace": null,
     "inventory_complete_flag": false
@@ -63546,6 +64328,23 @@ export const mergedData = [
     "inventory_complete_flag": false
   },
   {
+    "base_pwsid": "MI0005033",
+    "resolved_pwsid": "MI0005033",
+    "system_name": "HUNTMORE ESTATES",
+    "display_name": "HUNTMORE ESTATES",
+    "county": "LIVINGSTON",
+    "monitoring_end_date": "2025-09-30",
+    "year": 2025,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0005034",
     "resolved_pwsid": "MI0005034",
     "system_name": "ORONOKO TOWNSHIP",
@@ -66262,6 +67061,23 @@ export const mergedData = [
     "inventory_lead": null,
     "inventory_gpcl": 137,
     "inventory_unknown": 8,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
+    "base_pwsid": "MI0005280",
+    "resolved_pwsid": "MI0005280",
+    "system_name": "PERRY, CITY OF",
+    "display_name": "PERRY, CITY OF",
+    "county": "SHIAWASSEE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 5,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
     "total_to_identify_or_replace": null,
     "inventory_complete_flag": false
   },
@@ -69139,6 +69955,23 @@ export const mergedData = [
     "inventory_complete_flag": false
   },
   {
+    "base_pwsid": "MI0005500",
+    "resolved_pwsid": "MI0005500",
+    "system_name": "PORT SANILAC, VILLAGE OF",
+    "display_name": "PORT SANILAC, VILLAGE OF",
+    "county": "SANILAC",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 4,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0005520",
     "resolved_pwsid": "MI0005520",
     "system_name": "PORTAGE",
@@ -70771,6 +71604,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0005640",
+    "resolved_pwsid": "MI0005640",
+    "system_name": "REDFORD TOWNSHIP",
+    "display_name": "REDFORD TOWNSHIP",
+    "county": "WAYNE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 8,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0005650",
     "resolved_pwsid": "MI0005650",
     "system_name": "REED CITY, CITY OF",
@@ -70832,6 +71682,23 @@ export const mergedData = [
     "lead_90th_ppb": 4,
     "above_action_level": false,
     "lines_replaced": 100,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
+    "base_pwsid": "MI0005650",
+    "resolved_pwsid": "MI0005650",
+    "system_name": "REED CITY, CITY OF",
+    "display_name": "REED CITY, CITY OF",
+    "county": "OSCEOLA",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 2,
+    "above_action_level": false,
+    "lines_replaced": null,
     "inventory_lead": null,
     "inventory_gpcl": null,
     "inventory_unknown": null,
@@ -71449,6 +72316,23 @@ export const mergedData = [
     "inventory_unknown": 2481,
     "total_to_identify_or_replace": 2636,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0005690",
+    "resolved_pwsid": "MI0005690",
+    "system_name": "RIVER ROUGE",
+    "display_name": "RIVER ROUGE",
+    "county": "WAYNE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 6,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0005692",
@@ -73421,6 +74305,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 0,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0005823",
+    "resolved_pwsid": "MI0005823",
+    "system_name": "ROSEBUSH ESTATES APARTMENTS",
+    "display_name": "ROSEBUSH ESTATES APARTMENTS",
+    "county": "ISABELLA",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0005824",
@@ -75633,6 +76534,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0005995",
+    "resolved_pwsid": "MI0005995",
+    "system_name": "SHANTY CREEK - WATARS ASSOCIATION",
+    "display_name": "SHANTY CREEK - WATARS ASSOCIATION",
+    "county": "ANTRIM",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 2,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0006000",
     "resolved_pwsid": "MI0006000",
     "system_name": "SHELBY",
@@ -76464,6 +77382,23 @@ export const mergedData = [
     "inventory_unknown": 13,
     "total_to_identify_or_replace": 13,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0006070",
+    "resolved_pwsid": "MI0006070",
+    "system_name": "SHOREWOOD HILLS SUBDIVISION",
+    "display_name": "SHOREWOOD HILLS SUBDIVISION",
+    "county": "OAKLAND",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 10,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0006071",
@@ -78929,6 +79864,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 0,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0006250",
+    "resolved_pwsid": "MI0006250",
+    "system_name": "SPRINGPORT",
+    "display_name": "SPRINGPORT",
+    "county": "JACKSON",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 1,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0006260",
@@ -83011,6 +83963,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0006545",
+    "resolved_pwsid": "MI0006545",
+    "system_name": "TAYLOR",
+    "display_name": "TAYLOR",
+    "county": "WAYNE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 11,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0006552",
     "resolved_pwsid": "MI0006552",
     "system_name": "TAYMOUTH TOWNSHIP",
@@ -83487,6 +84456,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0006575",
+    "resolved_pwsid": "MI0006575",
+    "system_name": "SUGARTREE APARTMENTS",
+    "display_name": "SUGARTREE APARTMENTS",
+    "county": "GENESEE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 7,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0006580",
     "resolved_pwsid": "MI0006580",
     "system_name": "THOMAS TOWNSHIP",
@@ -83733,6 +84719,23 @@ export const mergedData = [
     "monitoring_end_date": "2023-12-31",
     "year": 2023,
     "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
+    "base_pwsid": "MI0006590",
+    "resolved_pwsid": "MI0006590",
+    "system_name": "THOMPSONVILLE, VILLAGE OF",
+    "display_name": "THOMPSONVILLE, VILLAGE OF",
+    "county": "BENZIE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 3,
     "above_action_level": false,
     "lines_replaced": null,
     "inventory_lead": null,
@@ -84029,6 +85032,23 @@ export const mergedData = [
     "inventory_unknown": 39,
     "total_to_identify_or_replace": 1542,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0006610",
+    "resolved_pwsid": "MI0006610",
+    "system_name": "THREE RIVERS",
+    "display_name": "THREE RIVERS",
+    "county": "ST. JOSEPH",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 4,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0006624",
@@ -85969,6 +86989,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0006790",
+    "resolved_pwsid": "MI0006790",
+    "system_name": "VERMONTVILLE, VILLAGE OF",
+    "display_name": "VERMONTVILLE, VILLAGE OF",
+    "county": "EATON",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0006792",
     "resolved_pwsid": "MI0006792",
     "system_name": "V F W NATIONAL HOME",
@@ -86715,6 +87752,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 0,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0006885",
+    "resolved_pwsid": "MI0006885",
+    "system_name": "WALNUT LANE APARTMENTS",
+    "display_name": "WALNUT LANE APARTMENTS",
+    "county": "ALLEGAN",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 2,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0006900",
@@ -87701,6 +88755,23 @@ export const mergedData = [
     "inventory_unknown": 4117,
     "total_to_identify_or_replace": 4411,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0006950",
+    "resolved_pwsid": "MI0006950",
+    "system_name": "WAYNE",
+    "display_name": "WAYNE",
+    "county": "WAYNE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 1,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0006960",
@@ -94741,6 +95812,23 @@ export const mergedData = [
     "inventory_complete_flag": false
   },
   {
+    "base_pwsid": "MI0040081",
+    "resolved_pwsid": "MI0040081",
+    "system_name": "BELLEVUE MOBILE HOME PARK",
+    "display_name": "BELLEVUE MOBILE HOME PARK",
+    "county": "CALHOUN",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0040082",
     "resolved_pwsid": "MI0040082",
     "system_name": "BIRCHWOOD ESTATES",
@@ -98277,6 +99365,23 @@ export const mergedData = [
     "inventory_complete_flag": false
   },
   {
+    "base_pwsid": "MI0040197",
+    "resolved_pwsid": "MI0040197",
+    "system_name": "MASON MANOR",
+    "display_name": "MASON MANOR",
+    "county": "INGHAM",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0040199",
     "resolved_pwsid": "MI0040199",
     "system_name": "STONEGATE MOBILE HOME COMMUNITY",
@@ -98838,6 +99943,23 @@ export const mergedData = [
     "inventory_complete_flag": false
   },
   {
+    "base_pwsid": "MI0040212",
+    "resolved_pwsid": "MI0040212",
+    "system_name": "NORTHERN PINES",
+    "display_name": "NORTHERN PINES",
+    "county": "IOSCO",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0040213",
     "resolved_pwsid": "MI0040213",
     "system_name": "WHISPERING WOODS-WHITE PINE RIDGE OSCOD",
@@ -99377,6 +100499,23 @@ export const mergedData = [
     "lines_replaced": null,
     "inventory_lead": 0,
     "inventory_gpcl": 0,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
+    "base_pwsid": "MI0040223",
+    "resolved_pwsid": "MI0040223",
+    "system_name": "ARBOR VILLAGE",
+    "display_name": "ARBOR VILLAGE",
+    "county": "JACKSON",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 2,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
     "inventory_unknown": null,
     "total_to_identify_or_replace": null,
     "inventory_complete_flag": false
@@ -105893,6 +107032,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0040455",
+    "resolved_pwsid": "MI0040455",
+    "system_name": "WOODS AND FIELDS COMMUNITIES WEST",
+    "display_name": "WOODS AND FIELDS COMMUNITIES WEST",
+    "county": "SHIAWASSEE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 2,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0040456",
     "resolved_pwsid": "MI0040456",
     "system_name": "QUIET COVE TRAILER PARK",
@@ -107610,6 +108766,23 @@ export const mergedData = [
     "inventory_complete_flag": false
   },
   {
+    "base_pwsid": "MI0040504",
+    "resolved_pwsid": "MI0040504-b",
+    "system_name": "PLEASANT LAKE PARK LLC",
+    "display_name": "PLEASANT LAKE PARK LLC",
+    "county": "WASHTENAW",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0040515",
     "resolved_pwsid": "MI0040515",
     "system_name": "RIVERSBEND MOBILE HOME PARK",
@@ -108628,6 +109801,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 0,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0040586",
+    "resolved_pwsid": "MI0040586",
+    "system_name": "LINCOLN PINES",
+    "display_name": "LINCOLN PINES",
+    "county": "KENT",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0040587",
@@ -110413,6 +111603,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 0,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0040649",
+    "resolved_pwsid": "MI0040649",
+    "system_name": "COVENTRY WOODS MHC",
+    "display_name": "COVENTRY WOODS MHC",
+    "county": "LIVINGSTON",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 4,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0040650",
@@ -112302,6 +113509,23 @@ export const mergedData = [
     "inventory_complete_flag": false
   },
   {
+    "base_pwsid": "MI0060640",
+    "resolved_pwsid": "MI0060640-a",
+    "system_name": "COREWELL HEALTH-BERRIEN CNTR",
+    "display_name": "COREWELL HEALTH-BERRIEN CNTR",
+    "county": "BERRIEN",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 18,
+    "above_action_level": true,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0060675",
     "resolved_pwsid": "MI0060675",
     "system_name": "MEADOW WOODS N/R CENTER",
@@ -112572,6 +113796,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 0,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0060792",
+    "resolved_pwsid": "MI0060792",
+    "system_name": "VILLA AT GREEN LAKE ESTATES",
+    "display_name": "VILLA AT GREEN LAKE ESTATES",
+    "county": "OAKLAND",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 5,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   },
   {
     "base_pwsid": "MI0060937",
@@ -112974,6 +114215,23 @@ export const mergedData = [
     "year": 2025,
     "lead_90th_ppb": 888,
     "above_action_level": true,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
+    "base_pwsid": "MI0062841",
+    "resolved_pwsid": "MI0062841",
+    "system_name": "MEDILODGE OF STERLING",
+    "display_name": "MEDILODGE OF STERLING",
+    "county": "ARENAC",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 1,
+    "above_action_level": false,
     "lines_replaced": null,
     "inventory_lead": null,
     "inventory_gpcl": null,
@@ -114019,6 +115277,23 @@ export const mergedData = [
     "inventory_complete_flag": true
   },
   {
+    "base_pwsid": "MI0066695",
+    "resolved_pwsid": "MI0066695-a",
+    "system_name": "THE PINES OF GOODRICH",
+    "display_name": "THE PINES OF GOODRICH",
+    "county": "GENESEE",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
+  },
+  {
     "base_pwsid": "MI0066700",
     "resolved_pwsid": "MI0066700",
     "system_name": "THE PORCHES",
@@ -114391,6 +115666,23 @@ export const mergedData = [
     "inventory_unknown": 0,
     "total_to_identify_or_replace": 0,
     "inventory_complete_flag": true
+  },
+  {
+    "base_pwsid": "MI0070017",
+    "resolved_pwsid": "MI0070017",
+    "system_name": "COREWELLHEALTH GR KALAMAZOO",
+    "display_name": "COREWELLHEALTH GR KALAMAZOO",
+    "county": "KENT",
+    "monitoring_end_date": "2026-06-30",
+    "year": 2026,
+    "lead_90th_ppb": 0,
+    "above_action_level": false,
+    "lines_replaced": null,
+    "inventory_lead": null,
+    "inventory_gpcl": null,
+    "inventory_unknown": null,
+    "total_to_identify_or_replace": null,
+    "inventory_complete_flag": false
   }
 ];
 

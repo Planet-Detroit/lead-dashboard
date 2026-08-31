@@ -313,12 +313,13 @@ jobs:
             }
             
             body += `---\n\n`;
+            body += `cc @ninaplanetdetroit\n\n`;
             body += `### Recommended Actions\n\n`;
             body += `1. Review the changed data source(s)\n`;
-            body += `2. Download updated data if applicable\n`;
-            body += `3. Run the conversion script: \`node scripts/convertCsv.js\`\n`;
+            body += `2. For 90th percentile (Socrata) changes, run: \`python3 scripts/update_history_from_socrata.py\` then \`cd scripts && node convertMergedCsv.js\`\n`;
+            body += `3. For EGLE inventory/LSLR changes, see \`data_cleaning_pipeline/README.md\`\n`;
             body += `4. Test locally: \`npm start\`\n`;
-            body += `5. Deploy: \`npm run deploy\`\n\n`;
+            body += `5. Deploy by pushing to main (GitHub Actions deploys automatically)\n\n`;
             body += `*This issue was automatically created by the data monitoring workflow.*`;
             
             await github.rest.issues.create({

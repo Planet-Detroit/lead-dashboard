@@ -447,9 +447,9 @@ function SystemTrendPanel({ data = mergedData }) {
   // All systems — union of monitoring and replacement data
   const allSystems = useMemo(() => getAllSystems(data), [data]);
 
-  // Default to the first system
+  // Default to City of Detroit, falling back to the first system
   const [selectedPwsid, setSelectedPwsid] = useState(
-    () => allSystems[0]?.base_pwsid ?? null
+    () => (allSystems.find(s => s.base_pwsid === 'MI0001800') ?? allSystems[0])?.base_pwsid ?? null
   );
 
   // Replacement data for selected system
