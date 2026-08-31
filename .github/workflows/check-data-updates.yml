@@ -7,6 +7,7 @@
 # 1. Michigan 90th Percentile API (Socrata)
 # 2. EGLE DSMI Inventories page
 # 3. EGLE Lead & Copper Rule page
+# 4. EGLE LSLR Progress page (annual replacement data)
 #
 # Runs daily at 9 AM Eastern (14:00 UTC)
 
@@ -148,7 +149,7 @@ jobs:
               changes = []
               
               # 1. Check Socrata API (90th Percentile data)
-              print("\n[1/3] Checking Michigan 90th Percentile API...")
+              print("\n[1/4] Checking Michigan 90th Percentile API...")
               api_result = check_socrata_api()
               current_state['socrata_api'] = api_result
               
@@ -184,7 +185,7 @@ jobs:
                       })
               
               # 2. Check DSMI Inventories page
-              print("\n[2/3] Checking EGLE DSMI Inventories page...")
+              print("\n[2/4] Checking EGLE DSMI Inventories page...")
               dsmi_url = "https://www.michigan.gov/egle/about/organization/drinking-water-and-environmental-health/community-water-supply/lead-and-copper-rule/dsmi/dsmi-inventories"
               dsmi_result = check_webpage(dsmi_url, "DSMI Inventories")
               current_state['dsmi_page'] = dsmi_result
@@ -213,7 +214,7 @@ jobs:
                       })
               
               # 3. Check Lead & Copper Rule page
-              print("\n[3/3] Checking EGLE Lead & Copper Rule page...")
+              print("\n[3/4] Checking EGLE Lead & Copper Rule page...")
               lcr_url = "https://www.michigan.gov/egle/about/organization/drinking-water-and-environmental-health/community-water-supply/lead-and-copper-rule"
               lcr_result = check_webpage(lcr_url, "Lead & Copper Rule")
               current_state['lcr_page'] = lcr_result
@@ -241,6 +242,35 @@ jobs:
                           'url': lcr_url
                       })
               
+              # 4. Check LSLR Progress page (annual replacement data,
+              # typically posted late June / early July for the prior year)
+              print("\n[4/4] Checking EGLE LSLR Progress page...")
+              lslr_url = "https://www.michigan.gov/egle/about/organization/drinking-water-and-environmental-health/community-water-supply/lead-and-copper-rule/lslr-progress"
+              lslr_result = check_webpage(lslr_url, "LSLR Progress")
+              current_state['lslr_page'] = lslr_result
+
+              if lslr_result['success']:
+                  print(f"  ✓ Content hash: {lslr_result['content_hash'][:12]}...")
+
+                  prev_lslr = prev_state.get('lslr_page', {})
+                  if prev_lslr.get('content_hash') and prev_lslr['content_hash'] != lslr_result['content_hash']:
+                      changes.append({
+                          'source': 'EGLE LSLR Progress Page',
+                          'type': 'Page content changed',
+                          'details': 'The LSLR progress page has been updated - new annual replacement data may be available. See scripts/update_replacements_from_lslr.py',
+                          'url': lslr_url
+                      })
+              else:
+                  print(f"  ✗ Error: {lslr_result.get('error')}")
+                  prev_lslr = prev_state.get('lslr_page', {})
+                  if prev_lslr.get('success'):
+                      changes.append({
+                          'source': 'EGLE LSLR Progress Page',
+                          'type': 'Source now failing',
+                          'details': f"Was working, now returning error: {lslr_result.get('error')}",
+                          'url': lslr_url
+                      })
+
               # Save current state
               current_state['last_check'] = datetime.now().isoformat()
               save_state(current_state)
