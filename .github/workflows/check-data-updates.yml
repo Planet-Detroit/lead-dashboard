@@ -9,6 +9,10 @@
 # 3. EGLE Lead & Copper Rule page
 # 4. EGLE LSLR Progress page (annual replacement data)
 #
+# Page checks also fingerprint the linked data files (HEAD request:
+# size / last-modified / ETag), so a file quietly swapped behind an
+# unchanged link still triggers an alert.
+#
 # Runs daily at 9 AM Eastern (14:00 UTC)
 
 name: Check for Data Updates
@@ -42,6 +46,7 @@ jobs:
           python << 'EOF'
           import requests
           import hashlib
+          from urllib.parse import urljoin
           import json
           import os
           from datetime import datetime
@@ -129,10 +134,29 @@ jobs:
                       if any(ext in href for ext in ['.csv', '.xlsx', '.xls', '.zip', '.pdf']):
                           data_links.append(link['href'])
                   
+                  # Fingerprint the linked data files themselves (size /
+                  # last-modified / ETag from a HEAD request) so a quietly
+                  # swapped file behind an unchanged link is still detected
+                  file_stamps = []
+                  for href in sorted(set(data_links))[:30]:
+                      file_url = urljoin(url, href)
+                      try:
+                          h = requests.head(file_url, headers=headers, timeout=30, allow_redirects=True)
+                          if h.status_code >= 400:
+                              # some servers reject HEAD; read headers via GET without downloading the body
+                              h = requests.get(file_url, headers=headers, timeout=30, allow_redirects=True, stream=True)
+                              h.close()
+                          stamp = f"{file_url}|{h.headers.get('Content-Length', '?')}|{h.headers.get('Last-Modified', '?')}|{h.headers.get('ETag', '?')}"
+                      except Exception:
+                          stamp = f"{file_url}|unreachable"
+                      file_stamps.append(stamp)
+                  files_hash = get_content_hash('\n'.join(file_stamps))
+
                   return {
                       'success': True,
                       'content_hash': content_hash,
                       'data_links_count': len(data_links),
+                      'files_hash': files_hash,
                       'url': url
                   }
               except Exception as e:
@@ -195,6 +219,13 @@ jobs:
                   print(f"  ✓ Data file links found: {dsmi_result['data_links_count']}")
 
                   prev_dsmi = prev_state.get('dsmi_page', {})
+                  if prev_dsmi.get('files_hash') and prev_dsmi['files_hash'] != dsmi_result.get('files_hash'):
+                      changes.append({
+                          'source': 'EGLE DSMI Inventories Page',
+                          'type': 'Linked data file changed',
+                          'details': 'A data file linked from the DSMI inventories page changed size or timestamp - likely a new or reposted inventory file',
+                          'url': dsmi_url
+                      })
                   if prev_dsmi.get('content_hash') and prev_dsmi['content_hash'] != dsmi_result['content_hash']:
                       changes.append({
                           'source': 'EGLE DSMI Inventories Page',
@@ -224,6 +255,13 @@ jobs:
                   print(f"  ✓ Data file links found: {lcr_result['data_links_count']}")
 
                   prev_lcr = prev_state.get('lcr_page', {})
+                  if prev_lcr.get('files_hash') and prev_lcr['files_hash'] != lcr_result.get('files_hash'):
+                      changes.append({
+                          'source': 'EGLE Lead & Copper Rule Page',
+                          'type': 'Linked data file changed',
+                          'details': 'A data file linked from the Lead & Copper Rule page changed size or timestamp - likely a reposted file',
+                          'url': lcr_url
+                      })
                   if prev_lcr.get('content_hash') and prev_lcr['content_hash'] != lcr_result['content_hash']:
                       changes.append({
                           'source': 'EGLE Lead & Copper Rule Page',
@@ -253,6 +291,13 @@ jobs:
                   print(f"  ✓ Content hash: {lslr_result['content_hash'][:12]}...")
 
                   prev_lslr = prev_state.get('lslr_page', {})
+                  if prev_lslr.get('files_hash') and prev_lslr['files_hash'] != lslr_result.get('files_hash'):
+                      changes.append({
+                          'source': 'EGLE LSLR Progress Page',
+                          'type': 'Linked data file changed',
+                          'details': 'A data file linked from the LSLR progress page changed size or timestamp - likely new or corrected replacement data. See scripts/update_replacements_from_lslr.py',
+                          'url': lslr_url
+                      })
                   if prev_lslr.get('content_hash') and prev_lslr['content_hash'] != lslr_result['content_hash']:
                       changes.append({
                           'source': 'EGLE LSLR Progress Page',
