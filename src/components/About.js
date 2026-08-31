@@ -60,7 +60,7 @@ function About() {
           </p>
          <ul className="data-dates">
             <li>Inventory data published by <a href="https://www.michigan.gov/egle/about/organization/drinking-water-and-environmental-health/community-water-supply/lead-and-copper-rule/dsmi-inventories" target="_blank" rel="noopener noreferrer">EGLE</a>, March 2025</li>
-            <li>Replacement data published by <a href="https://www.michigan.gov/egle/about/organization/drinking-water-and-environmental-health/community-water-supply/lead-and-copper-rule/lslr-progress" target="_blank" rel="noopener noreferrer">EGLE</a>, August 2025</li>
+            <li>Replacement data published by <a href="https://www.michigan.gov/egle/about/organization/drinking-water-and-environmental-health/community-water-supply/lead-and-copper-rule/lslr-progress" target="_blank" rel="noopener noreferrer">EGLE</a>, July 2026</li>
             <li><a href="https://data.michigan.gov/Health/Public-Water-Supply-90th-Percentiles/39ya-9txc/about_data" target="_blank" rel="noopener noreferrer">Public Water Supply 90th Percentiles</a>, August 30, 2026</li>
         </ul>
         </section>
