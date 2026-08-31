@@ -3,10 +3,13 @@ import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
 import './Dashboard.css';
 import SystemTrendPanel from './SystemTrendPanel';
 import ComplianceStatusChart from './ComplianceStatusChart';
+import CurrentExceedances from './CurrentExceedances';
 
 
 function Dashboard() {
   const [animatedProgress, setAnimatedProgress] = useState(0);
+  // System Trends selection, lifted here so the exceedance table can drive it
+  const [trendPwsid, setTrendPwsid] = useState('MI0001800'); // City of Detroit
   const [animatedReplaced, setAnimatedReplaced] = useState(0);
   
   const totalToReplace = 580030;
@@ -83,7 +86,7 @@ function Dashboard() {
           {/* Combined system trend panel — one dropdown controls both
               Annual Replacement Trend and Lead Levels Over Time charts.
               Spans the full left column height. */}
-          <SystemTrendPanel />
+          <SystemTrendPanel selectedPwsid={trendPwsid} onSelect={setTrendPwsid} />
 
           {/* Right column: composition pie chart + compliance breakdown stacked */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', minWidth: 0 }}>
@@ -129,6 +132,13 @@ function Dashboard() {
           <ComplianceStatusChart />
           </div> {/* end right column wrapper */}
         </div> {/* end charts-grid */}
+
+        <CurrentExceedances
+          onSelect={(pwsid) => {
+            setTrendPwsid(pwsid);
+            document.getElementById('system-trends')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }}
+        />
         
         <div className="footer">
           <p>Data source: Michigan EGLE Community Drinking Supply Monitoring Inventory (CDSMI) and Lead Service Line Replacement Reports</p>

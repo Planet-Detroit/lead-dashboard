@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import waterSystemsData from '../data/waterSystemsData';
+import { getExceedanceYear } from '../data/exceedanceUtils';
 import './LeadLineMap.css';
 
 const STATUS_CONFIG = {
@@ -174,8 +175,8 @@ function LeadLineMap() {
                     </span>
                   </p>
 
-                  {system.exceedance && system.exceedance !== '-' && system.exceedance !== '' && (
-                    <p><strong>LCR Exceedance:</strong> {system.exceedance}</p>
+                  {getExceedanceYear(system) != null && (
+                    <p><strong>LCR Exceedance:</strong> {getExceedanceYear(system)}</p>
                   )}
                 </div>
               </div>

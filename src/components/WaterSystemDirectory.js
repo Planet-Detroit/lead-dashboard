@@ -28,6 +28,7 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import './WaterSystemDirectory.css';
 import waterSystemsData from '../data/waterSystemsData';
+import { getExceedanceYear } from '../data/exceedanceUtils';
 
 // =============================================================================
 // CONFIGURATION — edit these objects to change status labels, colors, or legend
@@ -148,12 +149,10 @@ const getRowClass = (status) => STATUS_ROW_CLASS[status] || '';
 
 /**
  * Returns true if the system has a recorded lead action level exceedance.
- * Raw data uses empty string or '-' to mean no exceedance.
+ * Derived from the auto-updatable monitoring history (see exceedanceUtils),
+ * with the static workbook field as a fallback for pre-history records.
  */
-const hasExceedance = (system) =>
-  system.exceedance &&
-  system.exceedance !== '' &&
-  system.exceedance !== '-';
+const hasExceedance = (system) => getExceedanceYear(system) != null;
 
 /** Returns true if the system is missing map coordinates. */
 const hasNoLocation = (system) =>
@@ -168,12 +167,6 @@ const shouldShowLeadDetails = (system) =>
   system.status !== 'No lead lines' &&
   system.status !== '100% replaced' &&
   system.status !== 'No service lines; wholesale only';
-
-/**
- * Formats an exceedance year for display.
- * Raw data sometimes stores years as floats (e.g. 2022.0) — strips the decimal.
- */
-const formatExceedance = (val) => String(val).replace('.0', '');
 
 /**
  * Returns true if this system is the City of Flint.
@@ -223,7 +216,7 @@ function buildNarrative(system) {
   const pct  = system.percentReplaced.toFixed(1);
 
   // Append exceedance year as a short factual note when present
-  const excYear   = hasExceedance(system) ? formatExceedance(system.exceedance) : null;
+  const excYear   = getExceedanceYear(system);
   const excSuffix = excYear ? ` Most recent lead action level exceedance: ${excYear}.` : '';
 
   switch (system.status) {
@@ -532,7 +525,7 @@ function ExpandedDetail({ system }) {
           <div className="expand-stat">
             <span className="expand-stat-label">LCR exceedance year</span>
             <span className="expand-stat-val expand-stat-val--warn">
-              {formatExceedance(system.exceedance)}
+              {getExceedanceYear(system)}
             </span>
           </div>
         )}
@@ -557,7 +550,7 @@ function ExpandedDetail({ system }) {
         )}
         {exceedance && (
           <span className="expand-badge expand-badge--exc">
-            ⚠️ LCR Exceedance {formatExceedance(system.exceedance)}
+            ⚠️ LCR Exceedance {getExceedanceYear(system)}
           </span>
         )}
         {system.epaLink && (
@@ -875,7 +868,7 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
                       </td>
                       <td className="col-exc">
                         {exceedance
-                          ? <span className="exc-text">⚠️ LCR {formatExceedance(system.exceedance)}</span>
+                          ? <span className="exc-text">⚠️ LCR {getExceedanceYear(system)}</span>
                           : <span className="dir-dash">—</span>
                         }
                       </td>

@@ -442,15 +442,19 @@ function SystemSearch({ systems, selectedPwsid, onSelect }) {
  *
  * Both charts always reflect the same selected system.
  */
-function SystemTrendPanel({ data = mergedData }) {
+function SystemTrendPanel({ data = mergedData, selectedPwsid: controlledPwsid, onSelect }) {
 
   // All systems — union of monitoring and replacement data
   const allSystems = useMemo(() => getAllSystems(data), [data]);
 
-  // Default to City of Detroit, falling back to the first system
-  const [selectedPwsid, setSelectedPwsid] = useState(
+  // Selection is controlled by the parent when props are provided (Dashboard
+  // drives it from the exceedance table); otherwise falls back to internal
+  // state defaulting to City of Detroit, then the first system.
+  const [internalPwsid, setInternalPwsid] = useState(
     () => (allSystems.find(s => s.base_pwsid === 'MI0001800') ?? allSystems[0])?.base_pwsid ?? null
   );
+  const selectedPwsid = controlledPwsid ?? internalPwsid;
+  const setSelectedPwsid = onSelect ?? setInternalPwsid;
 
   // Replacement data for selected system
   const replacementData = useMemo(
@@ -478,7 +482,7 @@ function SystemTrendPanel({ data = mergedData }) {
   const totalReplaced = replacementData.reduce((sum, d) => sum + d.replacements, 0); // eslint-disable-line no-unused-vars
 
   return (
-    <div className="chart-card" style={{ display: 'flex', flexDirection: 'column' }}>
+    <div id="system-trends" className="chart-card" style={{ display: 'flex', flexDirection: 'column' }}>
 
       {/* ── Shared header: title + single system selector ── */}
       <div style={{
