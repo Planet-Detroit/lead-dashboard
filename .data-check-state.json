@@ -1,7 +1,9 @@
 {
   "socrata_api": {
-    "success": false,
-    "error": "HTTPSConnectionPool(host='data.michigan.gov', port=443): Read timed out. (read timeout=30)"
+    "success": true,
+    "record_count": 1389,
+    "content_hash": "e76cb270abc82e5690773f3560226bd3",
+    "url": "https://data.michigan.gov/dataset/Public-Water-Supply-90th-Percentiles/39ya-9txc"
   },
   "dsmi_page": {
     "success": true,
@@ -24,5 +26,5 @@
     "files_hash": "26135192db74a5ab0abac79e9ca104f7",
     "url": "https://www.michigan.gov/egle/about/organization/drinking-water-and-environmental-health/community-water-supply/lead-and-copper-rule/lslr-progress"
   },
-  "last_check": "2026-10-05T21:21:52.718583"
+  "last_check": "2026-10-06T19:11:37.328289"
 }
