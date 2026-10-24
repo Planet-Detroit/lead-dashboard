@@ -3,6 +3,13 @@
 Plain-language log of significant changes to the dashboard. Newest first.
 (Every individual change is also recorded in the git commit history.)
 
+## October 24, 2026
+
+No dashboard changes. The state deleted the open data portal dataset that
+feeds lead 90th percentile results, so automatic lead-test updates are
+paused until EGLE replies or we build a fallback. Full notes and next steps
+in `docs/session-log.md`. Five noisy monitor alerts closed on GitHub.
+
 ## August 31, 2026
 
 Work session with Claude Code (Nina), following the Aug 31 call with Elin.
