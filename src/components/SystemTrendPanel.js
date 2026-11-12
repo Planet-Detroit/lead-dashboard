@@ -12,10 +12,11 @@
  * Those files are kept as standalone exports in case they are needed elsewhere,
  * but their individual dropdowns are no longer used here.
  *
- * Where it is used (Nov 2026): the Search Systems tab (WaterSystemDirectory.js)
- * renders it above the results table whenever a row is selected, in the
- * side-by-side "row" layout with the built-in selector hidden. It was
- * previously on the Overview tab; the Overview now keeps only statewide charts.
+ * Where it is used (Nov 2026): at the top of the Search Systems tab
+ * (WaterSystemDirectory.js) in the side-by-side "row" layout, with the
+ * exceedances table below it. Clicking a table row or an exceedance entry
+ * switches the selected system. It was previously on the Overview tab; the
+ * Overview now keeps only statewide charts.
  *
  * Data source: src/data/mergedData.js
  *

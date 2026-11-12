@@ -36,13 +36,16 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Wrapper for the selected system's trend charts (SystemTrendPanel), shown
-   above the results table. scroll-margin keeps it clear of the top edge when
-   scrolled into view. */
+/* System Trends panel and exceedances table at the top of the page.
+   scroll-margin keeps the panel clear of the top edge when scrolled into view. */
 .dir-trend-panel {
-  margin-bottom: 1.25rem;
   scroll-margin-top: 1rem;
 }
+
+.dir-exceedances {
+  margin-bottom: 1.75rem;
+}
+/* CurrentExceedances carries its own 30px top margin (from the Overview layout) */
 
 .dir-header {
   margin-bottom: 1.75rem;

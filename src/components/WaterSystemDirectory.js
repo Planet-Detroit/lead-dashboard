@@ -10,9 +10,11 @@
  *  - Filter by compliance status, LCR exceedance, or missing map location
  *  - Sort by any column (click column header)
  *  - Click any row to expand and see full details + yearly sparkline
- *  - Selecting a row also shows that system's trend charts (annual
- *    replacements + 90th percentile lead levels) in a panel directly above
- *    the results table, so they are visible without scrolling (SystemTrendPanel)
+ *  - System Trends panel at the top of the page (annual replacements +
+ *    90th percentile lead levels for one system, chosen from its dropdown);
+ *    clicking a table row also switches the panel to that system
+ *  - Current Lead Action Level Exceedances table below the trends panel;
+ *    clicking a system there switches the trends panel to it
  *  - Paginated (25 / 50 / 100 rows per page)
  *  - Color-coded rows match the original card header colors
  *
@@ -28,11 +30,12 @@
  *  3. Update the hasYearlyData check in ExpandedDetail
  */
 
-import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
+import React, { useState, useMemo, useCallback, useRef } from 'react';
 import './WaterSystemDirectory.css';
 import waterSystemsData from '../data/waterSystemsData';
 import { getExceedanceYear } from '../data/exceedanceUtils';
 import SystemTrendPanel from './SystemTrendPanel';
+import CurrentExceedances from './CurrentExceedances';
 
 // =============================================================================
 // CONFIGURATION — edit these objects to change status labels, colors, or legend
@@ -606,15 +609,8 @@ function buildPageItems(totalPages, currentPage) {
  * Top-level component for the "Search Systems" tab.
  * Accepts an optional `data` prop for testing; defaults to the full dataset.
  *
- * Props:
- *   data       - system list (default: waterSystemsData)
- *   focusPwsid - optional PWSID to open on arrival (set by App.js when a
- *                system is clicked on the Overview exceedances table):
- *                fills the search box with it and expands its row
- *   focusKey   - counter that changes with every new focus request, so the
- *                same PWSID can be requested twice in a row
- *
  * State summary:
+ *   trendPwsid        - System shown in the System Trends panel (default Detroit)
  *   searchTerm        - Text input filtering by name or PWSID
  *   filterStatus      - Dropdown filtering by compliance status
  *   filterExceedances - Checkbox: show only systems with LCR exceedances
@@ -625,7 +621,17 @@ function buildPageItems(totalPages, currentPage) {
  *   pageSize          - Rows per page (25 / 50 / 100)
  *   expandedId        - PWSID of the currently open row, or null
  */
-function WaterSystemDirectory({ data = waterSystemsData, focusPwsid = null, focusKey = 0 }) {
+function WaterSystemDirectory({ data = waterSystemsData }) {
+
+  // System shown in the System Trends panel at the top of the page.
+  // Defaults to City of Detroit; row clicks and the exceedances table change it.
+  const [trendPwsid, setTrendPwsid] = useState('MI0001800');
+  const trendPanelRef = useRef(null);
+
+  const showTrendsFor = useCallback((pwsid) => {
+    setTrendPwsid(pwsid);
+    trendPanelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, []);
 
   // Filter state
   const [searchTerm,        setSearchTerm]        = useState('');
@@ -718,30 +724,13 @@ function WaterSystemDirectory({ data = waterSystemsData, focusPwsid = null, focu
     resetPage();
   };
 
-  // Toggle a row open; clicking the same row again closes it
+  // Toggle a row open; clicking the same row again closes it.
+  // Opening a row also points the System Trends panel at that system.
   const toggleExpand = (pwsid) => {
-    setExpandedId((prev) => (prev === pwsid ? null : pwsid));
+    const opening = expandedId !== pwsid;
+    setExpandedId(opening ? pwsid : null);
+    if (opening) showTrendsFor(pwsid);
   };
-
-  // Hand-off from the Overview tab: show just that system and open it
-  useEffect(() => {
-    if (!focusPwsid) return;
-    setSearchTerm(focusPwsid);
-    setFilterStatus('all');
-    setFilterExceedances(false);
-    setFilterNoLocation(false);
-    setCurrentPage(0);
-    setExpandedId(focusPwsid);
-  }, [focusPwsid, focusKey]);
-
-  // The trend panel sits above the table. When a row is selected, bring the
-  // panel into view so the charts are seen without scrolling back up.
-  const trendPanelRef = useRef(null);
-  useEffect(() => {
-    if (expandedId && trendPanelRef.current) {
-      trendPanelRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  }, [expandedId]);
 
   // ---------------------------------------------------------------------------
   // RENDER
@@ -754,6 +743,18 @@ function WaterSystemDirectory({ data = waterSystemsData, focusPwsid = null, focu
       <div className="dir-header">
         <h1>Michigan Water System Directory</h1>
         <p>Search and explore lead service line data for water systems across Michigan</p>
+      </div>
+
+      {/* System Trends — annual replacements + 90th percentile lead levels for
+          one system. Pick a system from its dropdown, click a row in the table
+          below, or click a system in the exceedances table. */}
+      <div ref={trendPanelRef} className="dir-trend-panel">
+        <SystemTrendPanel selectedPwsid={trendPwsid} onSelect={setTrendPwsid} layout="row" />
+      </div>
+
+      {/* Current Lead Action Level Exceedances — click a system to see its trends above */}
+      <div className="dir-exceedances">
+        <CurrentExceedances onSelect={showTrendsFor} />
       </div>
 
       {/* Search input, filter controls, and results count */}
@@ -831,19 +832,6 @@ function WaterSystemDirectory({ data = waterSystemsData, focusPwsid = null, focu
 
       {/* Collapsible status legend */}
       <Legend />
-
-      {/* Selected system's trend charts — replacement progress and 90th
-          percentile lead levels — shown above the table once a row is picked */}
-      {expandedId && (
-        <div ref={trendPanelRef} className="dir-trend-panel">
-          <SystemTrendPanel
-            selectedPwsid={expandedId}
-            showSelector={false}
-            layout="row"
-            onClose={() => setExpandedId(null)}
-          />
-        </div>
-      )}
 
       {/* Data table */}
       <div className="dir-table-wrap">

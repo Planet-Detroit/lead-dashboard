@@ -6,15 +6,15 @@ import {
 } from '../data/exceedanceUtils';
 
 /**
- * Current Exceedances — Overview card listing every water system whose most
+ * Current Exceedances — card (Search Systems tab) listing every water system whose most
  * recent 90th percentile lead result is above the action level in effect for
  * that monitoring period. Derived from the auto-updatable monitoring history,
  * so new state data surfaces here without a manual re-import.
  *
  * Props:
  *   onSelect {function} — optional; called with a base_pwsid when a system
- *                         name is clicked. App.js uses it to open that system
- *                         on the Search Systems tab, where its trend charts live.
+ *                         name is clicked (used to drive the System Trends
+ *                         panel above it on the Search Systems tab).
  */
 function CurrentExceedances({ onSelect }) {
   const exceedances = getCurrentExceedances();
@@ -43,8 +43,7 @@ function CurrentExceedances({ onSelect }) {
       <p style={{ margin: '0.4rem 0 0.9rem', fontSize: '0.85rem', color: '#6b7280' }}>
         Systems whose most recent 90th percentile lead result is above
         Michigan&rsquo;s {ACTION_LEVEL_NEW} ppb action level. Click a system to
-        see its replacement progress and lead levels over time on the Search
-        Systems page.
+        see its trend above.
       </p>
 
       {exceedances.length === 0 ? (

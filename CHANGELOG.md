@@ -6,15 +6,14 @@ Plain-language log of significant changes to the dashboard. Newest first.
 ## November 12, 2026
 
 **Layout**
-- The two system-specific charts (annual lead service line replacements and
-  90th percentile lead levels over time) moved from the Overview tab to the
-  Search Systems tab. They now appear directly above the results table as
-  soon as a system's row is selected, side by side on wide screens, with a
-  close button. Overview keeps the statewide service line composition pie,
-  the compliance breakdown, and the current exceedances table.
-- Clicking a system in the Overview exceedances table now opens that system
-  on Search Systems (search box pre-filled, row expanded, charts showing)
-  instead of scrolling to a chart on the Overview.
+- The System Trends panel (annual lead service line replacements and 90th
+  percentile lead levels over time for one system, chosen from its dropdown)
+  and the Current Lead Action Level Exceedances table moved from the
+  Overview tab to the top of the Search Systems tab. The two charts now sit
+  side by side on wide screens. Clicking a row in the directory table, or a
+  system in the exceedances table, switches the panel to that system.
+- Overview keeps the statewide totals, the service line composition pie,
+  and the compliance breakdown.
 
 ## October 24, 2026
 
