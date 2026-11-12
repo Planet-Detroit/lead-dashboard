@@ -28,11 +28,14 @@ This dashboard visualizes data from Michigan's Department of Environment, Great 
 * Real-time progress bar animations
 
 ### 🔍 Search Systems
-* Search by water system name or PWSID
+* One search box runs the page: type a water system name or PWSID, pick a suggestion (or click a row) to select it
+* Selecting a system shows its System Trends charts above the table: annual lead line replacements (2021–2025) and 90th-percentile lead levels over time (City of Detroit is shown until a system is selected)
+* The table filters to the search, with the selected row highlighted and expanded
+* Direct links to a system: `?system=MI0002310`
 * Filter systems with lead action level exceedances
 * Filter systems with **LCR exceedances since 2018** (Michigan's Lead and Copper Rule revision year)
 * Sort by name, lead lines, population, or compliance progress
-* System Trends panel at the top of the page: annual lead line replacements (2021–2025) and 90th-percentile lead levels over time for one system (pick it from the dropdown, or click any row)
+* "Legend and definitions" popover (status colors + progress formula) instead of a large legend block
 * Detailed system cards displaying:
   - Population served
   - Known lead lines, GPCL (Galvanized Previously Connected to Lead), and unknown materials

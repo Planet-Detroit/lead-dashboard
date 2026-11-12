@@ -6,15 +6,20 @@
  * with a table that is faster to scan and lighter on the DOM.
  *
  * Key features:
- *  - Search by system name or PWSID
+ *  - ONE search box drives the whole page: typing filters the table and
+ *    offers suggestions; picking a suggestion (or clicking a row) selects
+ *    that system — the System Trends charts switch to it, its row is
+ *    highlighted and expanded, and the table stays filtered to the search
+ *  - System Trends panel (annual replacements + 90th percentile lead levels)
+ *    sits between the search controls and the table; shows City of Detroit
+ *    until a system is selected
  *  - Filter by compliance status, LCR exceedance, or missing map location
  *  - Sort by any column (click column header)
- *  - Click any row to expand and see full details + yearly sparkline
- *  - System Trends panel at the top of the page (annual replacements +
- *    90th percentile lead levels for one system, chosen from its dropdown);
- *    clicking a table row also switches the panel to that system
- *  - The Overview tab's exceedances table can open this tab with a given
- *    system preselected in the trends panel (initialTrendPwsid prop)
+ *  - "Legend and definitions" link opens a popover (status colors + progress
+ *    formula) instead of a large always-open legend block
+ *  - Selection is mirrored in the URL (?system=PWSID) so a system's charts
+ *    can be linked to directly; the Overview exceedances table uses the same
+ *    hand-off (initialTrendPwsid prop)
  *  - Paginated (25 / 50 / 100 rows per page)
  *  - Color-coded rows match the original card header colors
  *
@@ -355,27 +360,49 @@ function SortIcon({ field, sortField, sortDirection }) {
   );
 }
 
+/** Progress formula text — shown in the legend popover and the Progress column tooltip. */
+const PROGRESS_FORMULA =
+  '% Replaced = (Lines Replaced / (Total to Identify and/or Replace + Lines Replaced)) x 100';
+
 /**
- * Collapsible legend explaining status categories and the progress formula.
- * Collapsed by default to keep the page uncluttered.
- * Toggle state is local — it does not affect the table.
+ * Small "Legend and definitions" link that opens a popover with the status
+ * colors and the progress formula. Closes on outside click or Escape.
+ * Replaces the former always-open legend block, which pushed the table down.
  */
-function Legend() {
-  const [isOpen, setIsOpen] = useState(true);
+function LegendPopover() {
+  const [isOpen, setIsOpen] = useState(false);
+  const wrapRef = useRef(null);
+
+  useEffect(() => {
+    if (!isOpen) return undefined;
+    const onDown = (e) => { if (wrapRef.current && !wrapRef.current.contains(e.target)) setIsOpen(false); };
+    const onKey  = (e) => { if (e.key === 'Escape') setIsOpen(false); };
+    document.addEventListener('mousedown', onDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [isOpen]);
 
   return (
-    <div className="legend-panel">
+    <span className="dir-legend-wrap" ref={wrapRef}>
       <button
-        className="legend-toggle"
-        onClick={() => setIsOpen((prev) => !prev)}
+        type="button"
+        className="dir-legend-link"
+        onClick={() => setIsOpen((v) => !v)}
         aria-expanded={isOpen}
+        aria-haspopup="dialog"
       >
-        <span className="legend-toggle-icon">{isOpen ? '▾' : '▸'}</span>
-        Status legend &amp; progress formula
+        Legend and definitions <span aria-hidden="true">ⓘ</span>
       </button>
 
       {isOpen && (
-        <div className="legend-body">
+        <div className="dir-legend-pop" role="dialog" aria-label="Legend and definitions">
+          <div className="dir-legend-pop-head">
+            <strong>Status colors</strong>
+            <button type="button" className="dir-legend-close" onClick={() => setIsOpen(false)} aria-label="Close">×</button>
+          </div>
           <div className="legend-grid">
             {LEGEND_ITEMS.map((item) => (
               <div key={item.label} className="legend-item">
@@ -398,9 +425,7 @@ function Legend() {
 
           <div className="legend-formula">
             <p className="legend-formula-title">Understanding "Progress"</p>
-            <code className="legend-formula-code">
-              % Replaced = (Lines Replaced / (Total to Identify and/or Replace + Lines Replaced)) x 100
-            </code>
+            <code className="legend-formula-code">{PROGRESS_FORMULA}</code>
             <p className="legend-formula-note">
               <strong>Note:</strong> Systems with many "Unknown" lines may show low progress
               even if they have replaced all known lead lines. Unknown lines still need to be
@@ -409,7 +434,7 @@ function Legend() {
           </div>
         </div>
       )}
-    </div>
+    </span>
   );
 }
 
@@ -602,6 +627,33 @@ function buildPageItems(totalPages, currentPage) {
 // MAIN COMPONENT
 // =============================================================================
 
+/** System shown in the trends panel before anyone picks one: City of Detroit. */
+const DEFAULT_TREND_PWSID = 'MI0001800';
+
+/** Maximum suggestions shown under the search box. */
+const MAX_SUGGESTIONS = 8;
+
+/** Read ?system=PWSID from the page address (used for direct links). */
+function getPwsidFromUrl() {
+  try {
+    return new URLSearchParams(window.location.search).get('system') || null;
+  } catch {
+    return null;
+  }
+}
+
+/** Mirror the selected system in the page address without reloading. */
+function writePwsidToUrl(pwsid) {
+  try {
+    const url = new URL(window.location.href);
+    if (pwsid) url.searchParams.set('system', pwsid);
+    else url.searchParams.delete('system');
+    window.history.replaceState(null, '', url);
+  } catch {
+    /* ignore — URL sync is a convenience only */
+  }
+}
+
 /**
  * WaterSystemDirectory
  *
@@ -609,14 +661,19 @@ function buildPageItems(totalPages, currentPage) {
  * Accepts an optional `data` prop for testing; defaults to the full dataset.
  *
  * Props:
- *   data             - system list (default: waterSystemsData)
- *   initialTrendPwsid - optional PWSID to preselect in the System Trends panel
- *                      (set by App.js when a system is clicked on the Overview
- *                      exceedances table); defaults to City of Detroit
+ *   data              - system list (default: waterSystemsData)
+ *   initialTrendPwsid - optional PWSID to select on arrival (set by App.js
+ *                       when a system is clicked on the Overview exceedances
+ *                       table, or taken from ?system= in the address)
  *
  * State summary:
- *   trendPwsid        - System shown in the System Trends panel
- *   searchTerm        - Text input filtering by name or PWSID
+ *   selectedPwsid     - The selected system: drives the trends charts, the
+ *                       highlighted row and the URL. null = nothing selected
+ *                       (charts fall back to City of Detroit)
+ *   expandedId        - PWSID of the row whose detail panel is open, or null
+ *   searchTerm        - Text input filtering the table by name or PWSID
+ *   suggestOpen       - Whether the suggestion list under the search box is open
+ *   highlightIndex    - Keyboard-highlighted suggestion
  *   filterStatus      - Dropdown filtering by compliance status
  *   filterExceedances - Checkbox: show only systems with LCR exceedances
  *   filterNoLocation  - Checkbox: show only systems missing map coordinates
@@ -624,34 +681,30 @@ function buildPageItems(totalPages, currentPage) {
  *   sortDirection     - 'asc' or 'desc'
  *   currentPage       - Zero-indexed current page
  *   pageSize          - Rows per page (25 / 50 / 100)
- *   expandedId        - PWSID of the currently open row, or null
  */
 function WaterSystemDirectory({ data = waterSystemsData, initialTrendPwsid = null }) {
 
-  // System shown in the System Trends panel at the top of the page.
-  // Defaults to City of Detroit (or the system handed over from Overview);
-  // row clicks change it.
-  const [trendPwsid, setTrendPwsid] = useState(initialTrendPwsid || 'MI0001800');
-  const trendPanelRef = useRef(null);
-
-  const showTrendsFor = useCallback((pwsid) => {
-    setTrendPwsid(pwsid);
-    trendPanelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  // Resolve the system to open on arrival (Overview hand-off or ?system= link)
+  const initialSystem = useMemo(() => {
+    const pwsid = initialTrendPwsid || getPwsidFromUrl();
+    return pwsid ? data.find((sys) => sys.pwsid === pwsid) ?? null : null;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Arriving from the Overview exceedances table: the page may be scrolled
-  // far down, so bring the trends panel into view.
-  useEffect(() => {
-    if (initialTrendPwsid) {
-      trendPanelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }, [initialTrendPwsid]);
+  // Selection
+  const [selectedPwsid, setSelectedPwsid] = useState(initialSystem?.pwsid ?? null);
+  const [expandedId,    setExpandedId]    = useState(initialSystem?.pwsid ?? null);
 
   // Filter state
-  const [searchTerm,        setSearchTerm]        = useState('');
+  const [searchTerm,        setSearchTerm]        = useState(initialSystem?.name ?? '');
   const [filterStatus,      setFilterStatus]      = useState('all');
   const [filterExceedances, setFilterExceedances] = useState(false);
   const [filterNoLocation,  setFilterNoLocation]  = useState(false);
+
+  // Suggestion list state
+  const [suggestOpen,    setSuggestOpen]    = useState(false);
+  const [highlightIndex, setHighlightIndex] = useState(0);
+  const searchWrapRef = useRef(null);
 
   // Sort state
   const [sortField,     setSortField]     = useState('name');
@@ -661,18 +714,45 @@ function WaterSystemDirectory({ data = waterSystemsData, initialTrendPwsid = nul
   const [currentPage, setCurrentPage] = useState(0);
   const [pageSize,    setPageSize]    = useState(25);
 
-  // Expand state: only one row can be open at a time
-  const [expandedId, setExpandedId] = useState(null);
+  const trendPanelRef = useRef(null);
+
+  // Keep the address in step with the selection (direct links to a system)
+  useEffect(() => { writePwsidToUrl(selectedPwsid); }, [selectedPwsid]);
+
+  // Arriving with a system preselected: bring the charts into view
+  useEffect(() => {
+    if (initialSystem) {
+      trendPanelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }, [initialSystem]);
+
+  // Close the suggestion list on outside click
+  useEffect(() => {
+    if (!suggestOpen) return undefined;
+    const onDown = (e) => {
+      if (searchWrapRef.current && !searchWrapRef.current.contains(e.target)) setSuggestOpen(false);
+    };
+    document.addEventListener('mousedown', onDown);
+    return () => document.removeEventListener('mousedown', onDown);
+  }, [suggestOpen]);
 
   // Derive unique status values from the dataset for the filter dropdown.
-  // Recalculates only when the data prop changes.
   const availableStatuses = useMemo(
     () => Array.from(new Set(data.map((s) => s.status))).sort(),
     [data]
   );
 
+  // Suggestions: systems matching the typed text, ignoring the other filters
+  const suggestions = useMemo(() => {
+    const term = searchTerm.trim().toLowerCase();
+    if (!term) return [];
+    return data
+      .filter((sys) => sys.name.toLowerCase().includes(term) || sys.pwsid.toLowerCase().includes(term))
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .slice(0, MAX_SUGGESTIONS);
+  }, [data, searchTerm]);
+
   // Apply all active filters and the current sort order.
-  // Recalculates only when a filter, sort, or data dependency changes.
   const processedData = useMemo(() => {
     const term = searchTerm.toLowerCase();
 
@@ -719,8 +799,78 @@ function WaterSystemDirectory({ data = waterSystemsData, initialTrendPwsid = nul
   // All filter and sort changes should reset to page 1 to avoid empty pages
   const resetPage = useCallback(() => setCurrentPage(0), []);
 
+  const scrollToTrends = useCallback(() => {
+    trendPanelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, []);
+
+  // ---------------------------------------------------------------------------
+  // SELECTION
+  // ---------------------------------------------------------------------------
+
+  /**
+   * Select a system from the suggestion list: the search box shows its name
+   * (so the table is filtered to it), the other filters are cleared so the row
+   * is guaranteed to be visible, its row is expanded, and the charts switch.
+   */
+  const selectFromSearch = (system) => {
+    setSearchTerm(system.name);
+    setFilterStatus('all');
+    setFilterExceedances(false);
+    setFilterNoLocation(false);
+    setSelectedPwsid(system.pwsid);
+    setExpandedId(system.pwsid);
+    setSuggestOpen(false);
+    resetPage();
+    scrollToTrends();
+  };
+
+  /**
+   * Click a row: select it (charts + highlight) and open its details. Clicking
+   * the open row again just closes the details; the selection stays.
+   */
+  const handleRowClick = (system) => {
+    if (expandedId === system.pwsid) {
+      setExpandedId(null);
+      return;
+    }
+    setExpandedId(system.pwsid);
+    setSelectedPwsid(system.pwsid);
+    scrollToTrends();
+  };
+
+  /** Clear the search and the selection; charts return to the default system. */
+  const clearSearch = () => {
+    setSearchTerm('');
+    setSelectedPwsid(null);
+    setExpandedId(null);
+    setSuggestOpen(false);
+    resetPage();
+  };
+
   // Event handlers — each calls resetPage() after updating its filter value
-  const handleSearch            = (e) => { setSearchTerm(e.target.value);           resetPage(); };
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+    setSuggestOpen(Boolean(e.target.value.trim()));
+    setHighlightIndex(0);
+    resetPage();
+  };
+  const handleSearchKeyDown = (e) => {
+    if (e.key === 'Escape') { setSuggestOpen(false); return; }
+    if (!suggestOpen || suggestions.length === 0) {
+      if (e.key === 'ArrowDown' && suggestions.length) { setSuggestOpen(true); e.preventDefault(); }
+      return;
+    }
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setHighlightIndex((i) => Math.min(i + 1, suggestions.length - 1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setHighlightIndex((i) => Math.max(i - 1, 0));
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      selectFromSearch(suggestions[highlightIndex] ?? suggestions[0]);
+    }
+  };
   const handleStatusFilter      = (e) => { setFilterStatus(e.target.value);          resetPage(); };
   const handleExceedancesFilter = (e) => { setFilterExceedances(e.target.checked);   resetPage(); };
   const handleNoLocationFilter  = (e) => { setFilterNoLocation(e.target.checked);    resetPage(); };
@@ -728,7 +878,7 @@ function WaterSystemDirectory({ data = waterSystemsData, initialTrendPwsid = nul
 
   const handleSort = (field) => {
     if (sortField === field) {
-      // Same column clicked: flip the sort direction
+      // Same column: flip direction
       setSortDirection((prev) => (prev === 'asc' ? 'desc' : 'asc'));
     } else {
       // New column: default to ascending for name, descending for numeric fields
@@ -738,17 +888,11 @@ function WaterSystemDirectory({ data = waterSystemsData, initialTrendPwsid = nul
     resetPage();
   };
 
-  // Toggle a row open; clicking the same row again closes it.
-  // Opening a row also points the System Trends panel at that system.
-  const toggleExpand = (pwsid) => {
-    const opening = expandedId !== pwsid;
-    setExpandedId(opening ? pwsid : null);
-    if (opening) showTrendsFor(pwsid);
-  };
-
   // ---------------------------------------------------------------------------
   // RENDER
   // ---------------------------------------------------------------------------
+
+  const trendPwsid = selectedPwsid || DEFAULT_TREND_PWSID;
 
   return (
     <div className="dir-container">
@@ -756,43 +900,60 @@ function WaterSystemDirectory({ data = waterSystemsData, initialTrendPwsid = nul
       {/* Page header */}
       <div className="dir-header">
         <h1>Michigan Water System Directory</h1>
-        <p>Search and explore lead service line data for water systems across Michigan</p>
-      </div>
-
-      {/* System Trends — annual replacements + 90th percentile lead levels for
-          one system. Pick a system from its dropdown or click a row in the
-          table below. */}
-      <div ref={trendPanelRef} className="dir-trend-panel">
-        <SystemTrendPanel selectedPwsid={trendPwsid} onSelect={setTrendPwsid} layout="row" />
+        <p>Search for a water system to see its lead line replacement trend, lead test results, and inventory details</p>
       </div>
 
       {/* Search input, filter controls, and results count */}
       <div className="dir-controls">
 
-        {/* Text search */}
-        <div className="dir-search-wrap">
-          <span className="dir-search-icon" aria-hidden="true">⌕</span>
-          <input
-            type="text"
-            className="dir-search-input"
-            placeholder="Search by system name or PWSID…"
-            value={searchTerm}
-            onChange={handleSearch}
-          />
-          {/* Clear button appears only when there is text to clear */}
-          {searchTerm && (
-            <button
-              className="dir-search-clear"
-              onClick={() => { setSearchTerm(''); resetPage(); }}
-              aria-label="Clear search"
-            >
-              ×
-            </button>
-          )}
-        </div>
+        <div className="dir-controls-row">
 
-        {/* Filter row */}
-        <div className="dir-filters">
+          {/* Text search with suggestions */}
+          <div className="dir-search-wrap" ref={searchWrapRef}>
+            <span className="dir-search-icon" aria-hidden="true">⌕</span>
+            <input
+              type="text"
+              className="dir-search-input"
+              placeholder="Search by water system name or PWSID…"
+              value={searchTerm}
+              onChange={handleSearch}
+              onKeyDown={handleSearchKeyDown}
+              onFocus={() => { if (searchTerm.trim()) setSuggestOpen(true); }}
+              role="combobox"
+              aria-expanded={suggestOpen && suggestions.length > 0}
+              aria-controls="dir-suggestions"
+              aria-autocomplete="list"
+              autoComplete="off"
+            />
+            {/* Clear button appears only when there is text to clear */}
+            {searchTerm && (
+              <button
+                className="dir-search-clear"
+                onClick={clearSearch}
+                aria-label="Clear search"
+              >
+                ×
+              </button>
+            )}
+
+            {suggestOpen && suggestions.length > 0 && (
+              <ul id="dir-suggestions" className="dir-suggest" role="listbox">
+                {suggestions.map((sys, i) => (
+                  <li
+                    key={sys.pwsid}
+                    role="option"
+                    aria-selected={i === highlightIndex}
+                    className={`dir-suggest-item ${i === highlightIndex ? 'dir-suggest-item--active' : ''}`}
+                    onMouseDown={(e) => { e.preventDefault(); selectFromSearch(sys); }}
+                    onMouseEnter={() => setHighlightIndex(i)}
+                  >
+                    <span className="dir-suggest-name">{sys.name}</span>
+                    <span className="dir-suggest-pwsid">{sys.pwsid}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
 
           <div className="dir-filter-group">
             <label className="dir-filter-label" htmlFor="statusFilter">Status</label>
@@ -815,7 +976,6 @@ function WaterSystemDirectory({ data = waterSystemsData, initialTrendPwsid = nul
             <span>No map location</span>
           </label>
 
-          {/* Rows-per-page selector, pushed to the far right */}
           <div className="dir-filter-group dir-filter-group--right">
             <label className="dir-filter-label" htmlFor="pageSize">Rows</label>
             <select id="pageSize" className="dir-select dir-select--sm" value={pageSize} onChange={handlePageSize}>
@@ -827,10 +987,12 @@ function WaterSystemDirectory({ data = waterSystemsData, initialTrendPwsid = nul
 
         </div>
 
-        {/* Results count and current page */}
+        {/* Results count, legend link, and current page */}
         <div className="dir-meta">
           <span className="dir-count">
             Showing <strong>{processedData.length.toLocaleString()}</strong> of {data.length.toLocaleString()} systems
+            <span className="dir-meta-sep" aria-hidden="true">·</span>
+            <LegendPopover />
           </span>
           {processedData.length > 0 && (
             <span className="dir-page-info">Page {safePage + 1} of {totalPages}</span>
@@ -839,8 +1001,18 @@ function WaterSystemDirectory({ data = waterSystemsData, initialTrendPwsid = nul
 
       </div>
 
-      {/* Collapsible status legend */}
-      <Legend />
+      {/* System Trends — annual replacements + 90th percentile lead levels for
+          the selected system (City of Detroit until one is selected) */}
+      <div ref={trendPanelRef} className="dir-trend-panel">
+        <SystemTrendPanel
+          selectedPwsid={trendPwsid}
+          showSelector={false}
+          layout="row"
+          note={selectedPwsid
+            ? null
+            : 'Showing City of Detroit. Search for your water system above, or click a row in the table below.'}
+        />
+      </div>
 
       {/* Data table */}
       <div className="dir-table-wrap">
@@ -855,7 +1027,14 @@ function WaterSystemDirectory({ data = waterSystemsData, initialTrendPwsid = nul
               </th>
               <th className="col-status">Status</th>
               <th className="col-prog"   onClick={() => handleSort('percentReplaced')}>
-                Progress <SortIcon field="percentReplaced" sortField={sortField} sortDirection={sortDirection} />
+                Progress{' '}
+                <span
+                  className="dir-th-info"
+                  title={`${PROGRESS_FORMULA}\n\nUnknown-material lines count toward the total still to identify or replace.`}
+                  onClick={(e) => e.stopPropagation()}
+                  aria-label="How progress is calculated"
+                >ⓘ</span>
+                {' '}<SortIcon field="percentReplaced" sortField={sortField} sortDirection={sortDirection} />
               </th>
               <th className="col-lead"   onClick={() => handleSort('leadLines')}>
                 Lead lines <SortIcon field="leadLines" sortField={sortField} sortDirection={sortDirection} />
@@ -877,6 +1056,7 @@ function WaterSystemDirectory({ data = waterSystemsData, initialTrendPwsid = nul
             ) : (
               pageData.map((system) => {
                 const isExpanded = expandedId === system.pwsid;
+                const isSelected = selectedPwsid === system.pwsid;
                 const exceedance = hasExceedance(system);
 
                 return (
@@ -884,11 +1064,12 @@ function WaterSystemDirectory({ data = waterSystemsData, initialTrendPwsid = nul
                   // the data row and the optional expanded detail row.
                   <React.Fragment key={system.pwsid}>
 
-                    {/* Data row — click to expand or collapse */}
+                    {/* Data row — click to select (charts + details) */}
                     <tr
-                      className={`dir-row ${getRowClass(system.status)} ${isExpanded ? 'dir-row--expanded' : ''}`}
-                      onClick={() => toggleExpand(system.pwsid)}
+                      className={`dir-row ${getRowClass(system.status)} ${isExpanded ? 'dir-row--expanded' : ''} ${isSelected ? 'dir-row--selected' : ''}`}
+                      onClick={() => handleRowClick(system)}
                       aria-expanded={isExpanded}
+                      aria-selected={isSelected}
                     >
                       <td className="col-name">
                         <span className="dir-row-expand-icon">{isExpanded ? '▾' : '▸'}</span>

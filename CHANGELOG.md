@@ -5,16 +5,25 @@ Plain-language log of significant changes to the dashboard. Newest first.
 
 ## November 12, 2026
 
-**Layout**
+**Search Systems redesign (Nina's requests, built with Claude Code)**
+- One search box now runs the page. Typing filters the table and shows
+  suggestions; picking a suggestion (or clicking a row) selects that system:
+  the System Trends charts switch to it, its row is highlighted and
+  expanded, and the table stays filtered to the search. The × in the search
+  box clears the selection.
 - The System Trends panel (annual lead service line replacements and 90th
-  percentile lead levels over time for one system, chosen from its dropdown)
-  moved from the Overview tab to the top of the Search Systems tab. The two
-  charts now sit side by side on wide screens. Clicking a row in the
-  directory table switches the panel to that system.
-- Overview keeps the statewide totals, the service line composition pie,
-  the compliance breakdown, and the Current Lead Action Level Exceedances
-  table. Clicking a system in that table now opens Search Systems with the
-  system loaded in the trends panel.
+  percentile lead levels over time) moved here from the Overview tab. It
+  sits between the search controls and the table, charts side by side on
+  wide screens, and shows City of Detroit until a system is selected.
+- The big status legend block is gone. A small "Legend and definitions"
+  link next to the results count opens a popover with the status colors and
+  the progress formula; the Progress column header has an ⓘ that shows the
+  formula on hover.
+- A selected system is reflected in the page address (for example
+  `?system=MI0002310`), so a story can link straight to one system's charts.
+- Overview keeps the statewide totals, the composition pie, the compliance
+  breakdown, and the Current Lead Action Level Exceedances table. Clicking
+  a system in that table opens Search Systems with the system selected.
 
 ## October 24, 2026
 

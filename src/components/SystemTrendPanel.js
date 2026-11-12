@@ -12,11 +12,11 @@
  * Those files are kept as standalone exports in case they are needed elsewhere,
  * but their individual dropdowns are no longer used here.
  *
- * Where it is used (Nov 2026): at the top of the Search Systems tab
- * (WaterSystemDirectory.js) in the side-by-side "row" layout, with the
- * exceedances table below it. Clicking a table row or an exceedance entry
- * switches the selected system. It was previously on the Overview tab; the
- * Overview now keeps only statewide charts.
+ * Where it is used (Nov 2026): on the Search Systems tab
+ * (WaterSystemDirectory.js) between the search controls and the table, in
+ * the side-by-side "row" layout with the built-in selector hidden — the
+ * page's search box is the single way to pick a system. It was previously on
+ * the Overview tab; the Overview now keeps only statewide charts.
  *
  * Data source: src/data/mergedData.js
  *
@@ -31,7 +31,9 @@
  *   showSelector  {boolean}  — show the searchable system dropdown (default true).
  *                              When false, the header shows the selected system's
  *                              name instead, and `onClose` (if given) adds a × button.
- *   onClose       {function} — optional close handler (used by Search Systems)
+ *   onClose       {function} — optional close handler
+ *   note          {string}   — optional short line shown under the header
+ *                              (Search Systems uses it for "Showing City of Detroit…")
  *   layout        {'column'|'row'} — 'column' stacks the two charts (default);
  *                              'row' puts them side by side on wide screens.
  */
@@ -463,6 +465,7 @@ function SystemTrendPanel({
   onSelect,
   showSelector = true,
   onClose,
+  note = null,
   layout = 'column',
 }) {
   const isRow = layout === 'row';
@@ -561,6 +564,10 @@ function SystemTrendPanel({
           </button>
         ) : null}
       </div>
+
+      {note && (
+        <p style={{ margin: '-0.25rem 0 0.75rem', fontSize: '0.8rem', color: '#6b7280' }}>{note}</p>
+      )}
 
       {/* System not in the merged history: nothing to chart */}
       {!selectedSystem && (

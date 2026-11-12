@@ -36,12 +36,12 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* System Trends panel at the top of the page. scroll-margin keeps it clear
-   of the sticky tab bar (~76px tall, see .tab-navigation in App.css) when it
-   is scrolled into view. */
+/* System Trends panel between the controls and the table. scroll-margin
+   keeps the sticky tab bar (~76px, see .tab-navigation in App.css) AND the
+   search controls (~80px) visible above it when it is scrolled into view. */
 .dir-trend-panel {
-  margin-bottom: 1.75rem;
-  scroll-margin-top: 90px;
+  margin-bottom: 1rem;
+  scroll-margin-top: 180px;
 }
 
 .dir-header {
@@ -69,11 +69,19 @@
   background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
-  padding: 1rem 1.25rem;
+  padding: 0.85rem 1.25rem;
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.6rem;
+}
+
+/* Search box and filters share one row on wide screens; wraps on narrow ones */
+.dir-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* -- Search input -- */
@@ -82,6 +90,56 @@
   position: relative;
   display: flex;
   align-items: center;
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+/* -- Suggestion list under the search box -- */
+
+.dir-suggest {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 60;
+  margin: 0;
+  padding: 0.25rem 0;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.dir-suggest-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.875rem;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+.dir-suggest-item--active {
+  background: #eff6ff;
+}
+
+.dir-suggest-name {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dir-suggest-pwsid {
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.72rem;
+  color: #9ca3af;
+  flex-shrink: 0;
 }
 
 .dir-search-icon {
@@ -133,14 +191,7 @@
   color: #4b5563;
 }
 
-/* -- Filter row -- */
-
-.dir-filters {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-}
+/* -- Filter controls (share .dir-controls-row with the search box) -- */
 
 .dir-filter-group {
   display: flex;
@@ -216,58 +267,90 @@
   color: #374151;
 }
 
+.dir-meta-sep {
+  margin: 0 0.5rem;
+  color: #d1d5db;
+}
+
+/* -- Legend link + popover -- */
+
+.dir-legend-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.dir-legend-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: #2563eb;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.dir-legend-link:hover {
+  color: #1d4ed8;
+}
+
+.dir-legend-pop {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 70;
+  width: min(680px, calc(100vw - 3rem));
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+  padding: 0.9rem 1.1rem 1.1rem;
+  text-align: left;
+  color: #374151;
+}
+
+.dir-legend-pop-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #1f2937;
+}
+
+.dir-legend-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0 0.2rem;
+}
+
+.dir-legend-close:hover {
+  color: #4b5563;
+}
+
+/* Small info mark in the Progress column header (native tooltip) */
+.dir-th-info {
+  color: #9ca3af;
+  font-size: 0.85em;
+  cursor: help;
+}
+
 .dir-page-info {
   color: #9ca3af;
 }
 
 /* =============================================================================
-   3. Legend panel
+   3. Legend contents (shared by the popover)
    ============================================================================= */
-
-.legend-panel {
-  margin-bottom: 1rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #fff;
-}
-
-.legend-toggle {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
-  background: none;
-  border: none;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #374151;
-  cursor: pointer;
-  text-align: left;
-  transition: background 0.1s;
-}
-
-.legend-toggle:hover {
-  background: #f9fafb;
-}
-
-.legend-toggle-icon {
-  font-size: 0.75rem;
-  color: #9ca3af;
-  width: 12px;
-}
-
-.legend-body {
-  padding: 0 1.25rem 1.25rem;
-  border-top: 1px solid #f3f4f6;
-}
 
 .legend-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 0.6rem;
-  margin: 1rem 0;
+  margin: 0.75rem 0;
 }
 
 .legend-item {
@@ -426,6 +509,12 @@
 
 .dir-row:hover {
   filter: brightness(0.97);
+}
+
+/* Selected system (drives the trend charts) */
+.dir-row--selected {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
 }
 
 .dir-row--expanded {
@@ -961,8 +1050,13 @@
   .col-prog { width: 22%; }
   .col-exc  { width: 18%; }
 
-  .dir-filters {
+  .dir-controls-row {
     gap: 0.75rem;
+  }
+
+  /* Controls wrap onto several lines on phones; keep only the tab bar clear */
+  .dir-trend-panel {
+    scroll-margin-top: 90px;
   }
 
   /* Rows selector no longer needs to be pushed right on narrow screens */

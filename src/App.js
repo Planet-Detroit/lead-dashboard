@@ -38,12 +38,14 @@ const trackPageView = (pageName) => {
 };
 
 function App() {
-  const [activeTab, setActiveTab] = useState('map');
+  // A direct link with ?system=PWSID opens straight to Search Systems
+  const linkedSystem = new URLSearchParams(window.location.search).get('system');
+  const [activeTab, setActiveTab] = useState(linkedSystem ? 'directory' : 'map');
 
-  // Hand-off from the Overview exceedances table: which system the Search
-  // Systems tab should show in its System Trends panel on arrival. Cleared on
+  // Hand-off from the Overview exceedances table (or a ?system= link): which
+  // system the Search Systems tab should select on arrival. Cleared on
   // ordinary tab clicks so a later visit starts from the default system.
-  const [trendRequest, setTrendRequest] = useState(null); // base PWSID or null
+  const [trendRequest, setTrendRequest] = useState(linkedSystem || null); // base PWSID or null
 
   const openSystemTrends = (pwsid) => {
     setTrendRequest(pwsid);
@@ -52,6 +54,13 @@ function App() {
 
   const handleTabClick = (tabId) => {
     setTrendRequest(null);
+    // Drop ?system= from the address when leaving Search Systems so a reload
+    // comes back to the tab the user is actually on
+    if (tabId !== 'directory' && window.location.search.includes('system=')) {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('system');
+      window.history.replaceState(null, '', url);
+    }
     setActiveTab(tabId);
   };
 
