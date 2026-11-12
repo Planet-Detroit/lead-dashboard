@@ -10,6 +10,9 @@
  *  - Filter by compliance status, LCR exceedance, or missing map location
  *  - Sort by any column (click column header)
  *  - Click any row to expand and see full details + yearly sparkline
+ *  - Selecting a row also shows that system's trend charts (annual
+ *    replacements + 90th percentile lead levels) in a panel directly above
+ *    the results table, so they are visible without scrolling (SystemTrendPanel)
  *  - Paginated (25 / 50 / 100 rows per page)
  *  - Color-coded rows match the original card header colors
  *
@@ -25,10 +28,11 @@
  *  3. Update the hasYearlyData check in ExpandedDetail
  */
 
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import './WaterSystemDirectory.css';
 import waterSystemsData from '../data/waterSystemsData';
 import { getExceedanceYear } from '../data/exceedanceUtils';
+import SystemTrendPanel from './SystemTrendPanel';
 
 // =============================================================================
 // CONFIGURATION — edit these objects to change status labels, colors, or legend
@@ -602,6 +606,14 @@ function buildPageItems(totalPages, currentPage) {
  * Top-level component for the "Search Systems" tab.
  * Accepts an optional `data` prop for testing; defaults to the full dataset.
  *
+ * Props:
+ *   data       - system list (default: waterSystemsData)
+ *   focusPwsid - optional PWSID to open on arrival (set by App.js when a
+ *                system is clicked on the Overview exceedances table):
+ *                fills the search box with it and expands its row
+ *   focusKey   - counter that changes with every new focus request, so the
+ *                same PWSID can be requested twice in a row
+ *
  * State summary:
  *   searchTerm        - Text input filtering by name or PWSID
  *   filterStatus      - Dropdown filtering by compliance status
@@ -613,7 +625,7 @@ function buildPageItems(totalPages, currentPage) {
  *   pageSize          - Rows per page (25 / 50 / 100)
  *   expandedId        - PWSID of the currently open row, or null
  */
-function WaterSystemDirectory({ data = waterSystemsData }) {
+function WaterSystemDirectory({ data = waterSystemsData, focusPwsid = null, focusKey = 0 }) {
 
   // Filter state
   const [searchTerm,        setSearchTerm]        = useState('');
@@ -711,6 +723,26 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
     setExpandedId((prev) => (prev === pwsid ? null : pwsid));
   };
 
+  // Hand-off from the Overview tab: show just that system and open it
+  useEffect(() => {
+    if (!focusPwsid) return;
+    setSearchTerm(focusPwsid);
+    setFilterStatus('all');
+    setFilterExceedances(false);
+    setFilterNoLocation(false);
+    setCurrentPage(0);
+    setExpandedId(focusPwsid);
+  }, [focusPwsid, focusKey]);
+
+  // The trend panel sits above the table. When a row is selected, bring the
+  // panel into view so the charts are seen without scrolling back up.
+  const trendPanelRef = useRef(null);
+  useEffect(() => {
+    if (expandedId && trendPanelRef.current) {
+      trendPanelRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }, [expandedId]);
+
   // ---------------------------------------------------------------------------
   // RENDER
   // ---------------------------------------------------------------------------
@@ -799,6 +831,19 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
 
       {/* Collapsible status legend */}
       <Legend />
+
+      {/* Selected system's trend charts — replacement progress and 90th
+          percentile lead levels — shown above the table once a row is picked */}
+      {expandedId && (
+        <div ref={trendPanelRef} className="dir-trend-panel">
+          <SystemTrendPanel
+            selectedPwsid={expandedId}
+            showSelector={false}
+            layout="row"
+            onClose={() => setExpandedId(null)}
+          />
+        </div>
+      )}
 
       {/* Data table */}
       <div className="dir-table-wrap">

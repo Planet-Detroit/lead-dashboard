@@ -8,9 +8,14 @@
  * A single system dropdown at the top controls both charts simultaneously,
  * eliminating any risk of a user comparing mismatched systems across the two charts.
  *
- * Replaces the separate ReplacementTrendChart and LeadLevelTrendChart components
- * in Dashboard.js. Those files are kept as standalone exports in case they are
- * needed elsewhere, but their individual dropdowns are no longer used here.
+ * Replaces the separate ReplacementTrendChart and LeadLevelTrendChart components.
+ * Those files are kept as standalone exports in case they are needed elsewhere,
+ * but their individual dropdowns are no longer used here.
+ *
+ * Where it is used (Nov 2026): the Search Systems tab (WaterSystemDirectory.js)
+ * renders it above the results table whenever a row is selected, in the
+ * side-by-side "row" layout with the built-in selector hidden. It was
+ * previously on the Overview tab; the Overview now keeps only statewide charts.
  *
  * Data source: src/data/mergedData.js
  *
@@ -19,7 +24,15 @@
  *   2. Ensure mergedData.js has lines_replaced populated for that year
  *
  * Props:
- *   data {Array} — merged dataset (default: mergedData)
+ *   data          {Array}    — merged dataset (default: mergedData)
+ *   selectedPwsid {string}   — controlled selection (base PWSID); optional
+ *   onSelect      {function} — called with a base PWSID when the selector changes
+ *   showSelector  {boolean}  — show the searchable system dropdown (default true).
+ *                              When false, the header shows the selected system's
+ *                              name instead, and `onClose` (if given) adds a × button.
+ *   onClose       {function} — optional close handler (used by Search Systems)
+ *   layout        {'column'|'row'} — 'column' stacks the two charts (default);
+ *                              'row' puts them side by side on wide screens.
  */
 
 import React, { useState, useMemo, useRef, useEffect, useCallback } from 'react';
@@ -36,6 +49,7 @@ import {
   ReferenceLine,
 } from 'recharts';
 import mergedData from '../data/mergedData';
+import './Dashboard.css'; // .chart-card styles
 
 // =============================================================================
 // CONFIGURATION
@@ -442,7 +456,15 @@ function SystemSearch({ systems, selectedPwsid, onSelect }) {
  *
  * Both charts always reflect the same selected system.
  */
-function SystemTrendPanel({ data = mergedData, selectedPwsid: controlledPwsid, onSelect }) {
+function SystemTrendPanel({
+  data = mergedData,
+  selectedPwsid: controlledPwsid,
+  onSelect,
+  showSelector = true,
+  onClose,
+  layout = 'column',
+}) {
+  const isRow = layout === 'row';
 
   // All systems — union of monitoring and replacement data
   const allSystems = useMemo(() => getAllSystems(data), [data]);
@@ -481,10 +503,31 @@ function SystemTrendPanel({ data = mergedData, selectedPwsid: controlledPwsid, o
   // totalReplaced still needed for potential future use
   const totalReplaced = replacementData.reduce((sum, d) => sum + d.replacements, 0); // eslint-disable-line no-unused-vars
 
+  // Selected system's display name (null when the PWSID is not in mergedData —
+  // a handful of directory systems have no monitoring or replacement history)
+  const selectedSystem = allSystems.find((s) => s.base_pwsid === selectedPwsid) ?? null;
+
+  // In row layout the two chart sections sit in a responsive 2-column grid
+  // with fixed chart heights; in column layout they stack and flex to fill.
+  const chartsWrapperStyle = isRow
+    ? {
+        display:             'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))',
+        gap:                 '1.5rem',
+        alignItems:          'start',
+      }
+    : { display: 'contents' };
+  const sectionStyle = isRow
+    ? { display: 'flex', flexDirection: 'column', minWidth: 0 }
+    : { flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 };
+  const chartHeightProps = isRow
+    ? { height: 220 }
+    : { style: { flex: 1 }, height: '100%', minHeight: 160 };
+
   return (
     <div id="system-trends" className="chart-card" style={{ display: 'flex', flexDirection: 'column' }}>
 
-      {/* ── Shared header: title + single system selector ── */}
+      {/* ── Shared header: title + single system selector (or selected name + close) ── */}
       <div style={{
         display:        'flex',
         alignItems:     'center',
@@ -493,12 +536,43 @@ function SystemTrendPanel({ data = mergedData, selectedPwsid: controlledPwsid, o
         flexWrap:       'wrap',
         gap:            '0.5rem',
       }}>
-        <h3 style={{ margin: 0 }}>System Trends</h3>
-        <SystemSearch systems={allSystems} selectedPwsid={selectedPwsid} onSelect={setSelectedPwsid} />
+        <h3 style={{ margin: 0 }}>
+          System Trends
+          {!showSelector && selectedSystem && (
+            <span style={{ fontWeight: 500, color: '#475569' }}>: {selectedSystem.display_name}</span>
+          )}
+        </h3>
+        {showSelector ? (
+          <SystemSearch systems={allSystems} selectedPwsid={selectedPwsid} onSelect={setSelectedPwsid} />
+        ) : onClose ? (
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close system trends"
+            title="Close"
+            style={{
+              background: 'none', border: '1px solid #d1d5db', borderRadius: '6px',
+              color: '#6b7280', cursor: 'pointer', fontSize: '0.9rem', lineHeight: 1,
+              padding: '0.3rem 0.55rem', fontFamily: 'inherit',
+            }}
+          >
+            ×
+          </button>
+        ) : null}
       </div>
 
+      {/* System not in the merged history: nothing to chart */}
+      {!selectedSystem && (
+        <div style={{ textAlign: 'center', padding: '1.5rem 1rem', color: '#9ca3af', fontSize: '0.875rem' }}>
+          No lead monitoring or replacement history on file for this system.
+        </div>
+      )}
+
+      {selectedSystem && (
+      <div style={chartsWrapperStyle}>
+
       {/* ── Chart 1: Annual Replacement Trend ── */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+      <div style={sectionStyle}>
       <p style={{ margin: '0 0 0.5rem', fontSize: '0.85rem', fontWeight: 600, color: '#374151' }}>
         Annual Replacement Trend
       </p>
@@ -506,7 +580,7 @@ function SystemTrendPanel({ data = mergedData, selectedPwsid: controlledPwsid, o
         Lead and GPCL service lines replaced per year (2021–2025)
       </p>
 
-      <ResponsiveContainer width="100%" style={{ flex: 1 }} height="100%" minHeight={160}>
+      <ResponsiveContainer width="100%" {...chartHeightProps}>
         <BarChart data={replacementData} margin={{ top: 4, right: 0, left: 0, bottom: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
           <XAxis dataKey="year" stroke="#64748b" tick={{ fontSize: 12 }} padding={{ right: 20 }} />
@@ -544,13 +618,13 @@ function SystemTrendPanel({ data = mergedData, selectedPwsid: controlledPwsid, o
 
       {/* Replacement insight */}
       {/* insight box removed per client request */}
-      </div> {/* end flex:1 wrapper */}
+      </div> {/* end chart 1 section */}
 
-      {/* Divider */}
-      <div style={{ borderTop: '1px solid #e5e7eb', marginBottom: '0.75rem' }} />
+      {/* Divider (stacked layout only) */}
+      {!isRow && <div style={{ borderTop: '1px solid #e5e7eb', marginBottom: '0.75rem' }} />}
 
       {/* ── Chart 2: Lead Levels Over Time ── */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+      <div style={sectionStyle}>
       <p style={{ margin: '0 0 0.5rem', fontSize: '0.85rem', fontWeight: 600, color: '#374151' }}>
         Lead Levels Over Time
       </p>
@@ -563,7 +637,7 @@ function SystemTrendPanel({ data = mergedData, selectedPwsid: controlledPwsid, o
           No lead monitoring data available for this system.
         </div>
       ) : (
-        <ResponsiveContainer width="100%" style={{ flex: 1 }} height="100%" minHeight={160}>
+        <ResponsiveContainer width="100%" {...chartHeightProps}>
           <LineChart data={leadData} margin={{ top: 4, right: 0, left: 0, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
             <XAxis
@@ -626,7 +700,10 @@ function SystemTrendPanel({ data = mergedData, selectedPwsid: controlledPwsid, o
         </ResponsiveContainer>
       )}
 
-      </div> {/* end lead chart flex:1 wrapper */}
+      </div> {/* end chart 2 section */}
+
+      </div> /* end charts wrapper */
+      )}
     </div>
   );
 }

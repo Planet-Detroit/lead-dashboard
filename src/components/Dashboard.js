@@ -1,15 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
 import './Dashboard.css';
-import SystemTrendPanel from './SystemTrendPanel';
 import ComplianceStatusChart from './ComplianceStatusChart';
 import CurrentExceedances from './CurrentExceedances';
 
-
-function Dashboard() {
+/**
+ * Overview tab: statewide totals, service line composition, compliance
+ * breakdown, and the current exceedances table.
+ *
+ * The per-system charts (annual replacement trend + 90th percentile lead
+ * levels) moved to the Search Systems tab in Nov 2026 — see
+ * WaterSystemDirectory.js / SystemTrendPanel.js.
+ *
+ * Props:
+ *   onViewSystem {function} — optional; called with a base PWSID when a system
+ *                             in the exceedances table is clicked. App.js uses
+ *                             it to open that system on the Search Systems tab.
+ */
+function Dashboard({ onViewSystem }) {
   const [animatedProgress, setAnimatedProgress] = useState(0);
-  // System Trends selection, lifted here so the exceedance table can drive it
-  const [trendPwsid, setTrendPwsid] = useState('MI0001800'); // City of Detroit
   const [animatedReplaced, setAnimatedReplaced] = useState(0);
   
   const totalToReplace = 580030;
@@ -83,13 +92,7 @@ function Dashboard() {
         </div>
         
         <div className="charts-grid">
-          {/* Combined system trend panel — one dropdown controls both
-              Annual Replacement Trend and Lead Levels Over Time charts.
-              Spans the full left column height. */}
-          <SystemTrendPanel selectedPwsid={trendPwsid} onSelect={setTrendPwsid} />
-
-          {/* Right column: composition pie chart + compliance breakdown stacked */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', minWidth: 0 }}>
+          {/* Statewide service line composition (left) + compliance breakdown (right) */}
           <div className="chart-card">
             <h3>Service Line Composition</h3>
             <ResponsiveContainer width="100%" height={250}>
@@ -128,17 +131,12 @@ function Dashboard() {
             </div>
           </div>
 
-          {/* Compliance status breakdown — stacked below composition in right column */}
+          {/* Compliance status breakdown */}
           <ComplianceStatusChart />
-          </div> {/* end right column wrapper */}
         </div> {/* end charts-grid */}
 
-        <CurrentExceedances
-          onSelect={(pwsid) => {
-            setTrendPwsid(pwsid);
-            document.getElementById('system-trends')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }}
-        />
+        {/* Clicking a system opens it (with its trend charts) on Search Systems */}
+        <CurrentExceedances onSelect={onViewSystem} />
         
         <div className="footer">
           <p>Data source: Michigan EGLE Community Drinking Supply Monitoring Inventory (CDSMI) and Lead Service Line Replacement Reports</p>

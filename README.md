@@ -22,7 +22,7 @@ This dashboard visualizes data from Michigan's Department of Environment, Great 
 
 ### 📊 Dashboard Overview
 * Animated statistics and progress tracking
-* Interactive charts showing annual replacement trends
+* Compliance status breakdown and a table of current lead action level exceedances (click a system to open it on Search Systems)
 * Service line composition breakdown by material type
 * Population exposure metrics
 * Real-time progress bar animations
@@ -32,6 +32,7 @@ This dashboard visualizes data from Michigan's Department of Environment, Great 
 * Filter systems with lead action level exceedances
 * Filter systems with **LCR exceedances since 2018** (Michigan's Lead and Copper Rule revision year)
 * Sort by name, lead lines, population, or compliance progress
+* Selecting a system shows its trend charts right above the results: annual lead line replacements (2021–2025) and 90th-percentile lead levels over time
 * Detailed system cards displaying:
   - Population served
   - Known lead lines, GPCL (Galvanized Previously Connected to Lead), and unknown materials

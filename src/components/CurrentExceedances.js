@@ -13,8 +13,8 @@ import {
  *
  * Props:
  *   onSelect {function} — optional; called with a base_pwsid when a system
- *                         name is clicked (used to drive the System Trends
- *                         panel above).
+ *                         name is clicked. App.js uses it to open that system
+ *                         on the Search Systems tab, where its trend charts live.
  */
 function CurrentExceedances({ onSelect }) {
   const exceedances = getCurrentExceedances();
@@ -43,7 +43,8 @@ function CurrentExceedances({ onSelect }) {
       <p style={{ margin: '0.4rem 0 0.9rem', fontSize: '0.85rem', color: '#6b7280' }}>
         Systems whose most recent 90th percentile lead result is above
         Michigan&rsquo;s {ACTION_LEVEL_NEW} ppb action level. Click a system to
-        see its trend above.
+        see its replacement progress and lead levels over time on the Search
+        Systems page.
       </p>
 
       {exceedances.length === 0 ? (

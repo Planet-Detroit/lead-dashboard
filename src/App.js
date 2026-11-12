@@ -40,6 +40,23 @@ const trackPageView = (pageName) => {
 function App() {
   const [activeTab, setActiveTab] = useState('map');
 
+  // Cross-tab hand-off: the Overview exceedances table can ask to open a
+  // specific system on Search Systems. `key` increments on every request so
+  // clicking the same system twice still re-triggers the focus.
+  const [directoryFocus, setDirectoryFocus] = useState(null); // { pwsid, key } | null
+
+  const openSystemInDirectory = (pwsid) => {
+    setDirectoryFocus((prev) => ({ pwsid, key: (prev?.key ?? 0) + 1 }));
+    setActiveTab('directory');
+  };
+
+  // Ordinary tab clicks clear any pending hand-off so revisiting Search
+  // Systems later starts from a clean search.
+  const handleTabClick = (tabId) => {
+    setDirectoryFocus(null);
+    setActiveTab(tabId);
+  };
+
   // Initialize GA on mount
   useEffect(() => {
     initGA();
@@ -115,7 +132,7 @@ function App() {
             <button
               key={tab.id}
               className={`tab-button ${activeTab === tab.id ? 'active' : ''}`}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => handleTabClick(tab.id)}
             >
               <span className="tab-icon">{tab.icon}</span>
               <span className="tab-label">{tab.label}</span>
@@ -126,8 +143,13 @@ function App() {
 
       <main className="app-content">
         {activeTab === 'about' && <About />}
-        {activeTab === 'dashboard' && <Dashboard />}
-        {activeTab === 'directory' && <WaterSystemDirectory />}
+        {activeTab === 'dashboard' && <Dashboard onViewSystem={openSystemInDirectory} />}
+        {activeTab === 'directory' && (
+          <WaterSystemDirectory
+            focusPwsid={directoryFocus?.pwsid ?? null}
+            focusKey={directoryFocus?.key ?? 0}
+          />
+        )}
         {activeTab === 'ranking' && <RankingTable />}
         {activeTab === 'map' && <LeadLineMap />}
       </main>

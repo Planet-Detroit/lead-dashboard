@@ -3,6 +3,19 @@
 Plain-language log of significant changes to the dashboard. Newest first.
 (Every individual change is also recorded in the git commit history.)
 
+## November 12, 2026
+
+**Layout**
+- The two system-specific charts (annual lead service line replacements and
+  90th percentile lead levels over time) moved from the Overview tab to the
+  Search Systems tab. They now appear directly above the results table as
+  soon as a system's row is selected, side by side on wide screens, with a
+  close button. Overview keeps the statewide service line composition pie,
+  the compliance breakdown, and the current exceedances table.
+- Clicking a system in the Overview exceedances table now opens that system
+  on Search Systems (search box pre-filled, row expanded, charts showing)
+  instead of scrolling to a chart on the Overview.
+
 ## October 24, 2026
 
 No dashboard changes. The state deleted the open data portal dataset that
