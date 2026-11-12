@@ -2,16 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
 import './Dashboard.css';
 import ComplianceStatusChart from './ComplianceStatusChart';
+import CurrentExceedances from './CurrentExceedances';
 
 /**
- * Overview tab: statewide totals, service line composition, and compliance
- * breakdown.
+ * Overview tab: statewide totals, service line composition, compliance
+ * breakdown, and the Current Lead Action Level Exceedances table.
  *
  * The per-system System Trends panel (annual replacement trend + 90th
- * percentile lead levels) and the Current Lead Action Level Exceedances table
- * moved to the Search Systems tab in Nov 2026 — see WaterSystemDirectory.js.
+ * percentile lead levels) moved to the top of the Search Systems tab in
+ * Nov 2026 — see WaterSystemDirectory.js.
+ *
+ * Props:
+ *   onViewSystem {function} — optional; called with a base PWSID when a system
+ *                             in the exceedances table is clicked. App.js uses
+ *                             it to open Search Systems with that system in
+ *                             the System Trends panel.
  */
-function Dashboard() {
+function Dashboard({ onViewSystem }) {
   const [animatedProgress, setAnimatedProgress] = useState(0);
   const [animatedReplaced, setAnimatedReplaced] = useState(0);
   
@@ -129,9 +136,12 @@ function Dashboard() {
           <ComplianceStatusChart />
         </div> {/* end charts-grid */}
 
+        {/* Clicking a system opens it in the System Trends panel on Search Systems */}
+        <CurrentExceedances onSelect={onViewSystem} />
+
         <div className="footer">
           <p>Data source: Michigan EGLE Community Drinking Supply Monitoring Inventory (CDSMI) and Lead Service Line Replacement Reports</p>
-          <p style={{ marginTop: '10px' }}>Look up any water system, its replacement trend, and current lead action level exceedances on the <strong>Search Systems</strong> page.</p>
+          <p style={{ marginTop: '10px' }}>If the water utility you are looking for is not listed here, look them up on the <strong>Search Systems</strong> page.</p>
         </div>
       </div>
     </div>

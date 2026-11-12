@@ -40,6 +40,21 @@ const trackPageView = (pageName) => {
 function App() {
   const [activeTab, setActiveTab] = useState('map');
 
+  // Hand-off from the Overview exceedances table: which system the Search
+  // Systems tab should show in its System Trends panel on arrival. Cleared on
+  // ordinary tab clicks so a later visit starts from the default system.
+  const [trendRequest, setTrendRequest] = useState(null); // base PWSID or null
+
+  const openSystemTrends = (pwsid) => {
+    setTrendRequest(pwsid);
+    setActiveTab('directory');
+  };
+
+  const handleTabClick = (tabId) => {
+    setTrendRequest(null);
+    setActiveTab(tabId);
+  };
+
   // Initialize GA on mount
   useEffect(() => {
     initGA();
@@ -115,7 +130,7 @@ function App() {
             <button
               key={tab.id}
               className={`tab-button ${activeTab === tab.id ? 'active' : ''}`}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => handleTabClick(tab.id)}
             >
               <span className="tab-icon">{tab.icon}</span>
               <span className="tab-label">{tab.label}</span>
@@ -126,8 +141,8 @@ function App() {
 
       <main className="app-content">
         {activeTab === 'about' && <About />}
-        {activeTab === 'dashboard' && <Dashboard />}
-        {activeTab === 'directory' && <WaterSystemDirectory />}
+        {activeTab === 'dashboard' && <Dashboard onViewSystem={openSystemTrends} />}
+        {activeTab === 'directory' && <WaterSystemDirectory initialTrendPwsid={trendRequest} />}
         {activeTab === 'ranking' && <RankingTable />}
         {activeTab === 'map' && <LeadLineMap />}
       </main>

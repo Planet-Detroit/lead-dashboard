@@ -13,8 +13,8 @@
  *  - System Trends panel at the top of the page (annual replacements +
  *    90th percentile lead levels for one system, chosen from its dropdown);
  *    clicking a table row also switches the panel to that system
- *  - Current Lead Action Level Exceedances table below the trends panel;
- *    clicking a system there switches the trends panel to it
+ *  - The Overview tab's exceedances table can open this tab with a given
+ *    system preselected in the trends panel (initialTrendPwsid prop)
  *  - Paginated (25 / 50 / 100 rows per page)
  *  - Color-coded rows match the original card header colors
  *
@@ -30,12 +30,11 @@
  *  3. Update the hasYearlyData check in ExpandedDetail
  */
 
-import React, { useState, useMemo, useCallback, useRef } from 'react';
+import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react';
 import './WaterSystemDirectory.css';
 import waterSystemsData from '../data/waterSystemsData';
 import { getExceedanceYear } from '../data/exceedanceUtils';
 import SystemTrendPanel from './SystemTrendPanel';
-import CurrentExceedances from './CurrentExceedances';
 
 // =============================================================================
 // CONFIGURATION — edit these objects to change status labels, colors, or legend
@@ -609,8 +608,14 @@ function buildPageItems(totalPages, currentPage) {
  * Top-level component for the "Search Systems" tab.
  * Accepts an optional `data` prop for testing; defaults to the full dataset.
  *
+ * Props:
+ *   data             - system list (default: waterSystemsData)
+ *   initialTrendPwsid - optional PWSID to preselect in the System Trends panel
+ *                      (set by App.js when a system is clicked on the Overview
+ *                      exceedances table); defaults to City of Detroit
+ *
  * State summary:
- *   trendPwsid        - System shown in the System Trends panel (default Detroit)
+ *   trendPwsid        - System shown in the System Trends panel
  *   searchTerm        - Text input filtering by name or PWSID
  *   filterStatus      - Dropdown filtering by compliance status
  *   filterExceedances - Checkbox: show only systems with LCR exceedances
@@ -621,17 +626,26 @@ function buildPageItems(totalPages, currentPage) {
  *   pageSize          - Rows per page (25 / 50 / 100)
  *   expandedId        - PWSID of the currently open row, or null
  */
-function WaterSystemDirectory({ data = waterSystemsData }) {
+function WaterSystemDirectory({ data = waterSystemsData, initialTrendPwsid = null }) {
 
   // System shown in the System Trends panel at the top of the page.
-  // Defaults to City of Detroit; row clicks and the exceedances table change it.
-  const [trendPwsid, setTrendPwsid] = useState('MI0001800');
+  // Defaults to City of Detroit (or the system handed over from Overview);
+  // row clicks change it.
+  const [trendPwsid, setTrendPwsid] = useState(initialTrendPwsid || 'MI0001800');
   const trendPanelRef = useRef(null);
 
   const showTrendsFor = useCallback((pwsid) => {
     setTrendPwsid(pwsid);
     trendPanelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, []);
+
+  // Arriving from the Overview exceedances table: the page may be scrolled
+  // far down, so bring the trends panel into view.
+  useEffect(() => {
+    if (initialTrendPwsid) {
+      trendPanelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [initialTrendPwsid]);
 
   // Filter state
   const [searchTerm,        setSearchTerm]        = useState('');
@@ -746,15 +760,10 @@ function WaterSystemDirectory({ data = waterSystemsData }) {
       </div>
 
       {/* System Trends — annual replacements + 90th percentile lead levels for
-          one system. Pick a system from its dropdown, click a row in the table
-          below, or click a system in the exceedances table. */}
+          one system. Pick a system from its dropdown or click a row in the
+          table below. */}
       <div ref={trendPanelRef} className="dir-trend-panel">
         <SystemTrendPanel selectedPwsid={trendPwsid} onSelect={setTrendPwsid} layout="row" />
-      </div>
-
-      {/* Current Lead Action Level Exceedances — click a system to see its trends above */}
-      <div className="dir-exceedances">
-        <CurrentExceedances onSelect={showTrendsFor} />
       </div>
 
       {/* Search input, filter controls, and results count */}
