@@ -37,9 +37,10 @@
 }
 
 /* System Trends panel and exceedances table at the top of the page.
-   scroll-margin keeps the panel clear of the top edge when scrolled into view. */
+   scroll-margin keeps the panel clear of the sticky tab bar (~76px tall,
+   see .tab-navigation in App.css) when it is scrolled into view. */
 .dir-trend-panel {
-  scroll-margin-top: 1rem;
+  scroll-margin-top: 90px;
 }
 
 .dir-exceedances {
